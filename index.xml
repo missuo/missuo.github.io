@@ -10,7 +10,65 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Feb 2023 00:01:04 +0000</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 03:32:33 +0800</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create query API for 500 million Weibo data</title>
+      <link>https://missuo.me/posts/weibo-data-searcher/</link>
+      <pubDate>Thu, 09 Feb 2023 03:32:33 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/weibo-data-searcher/</guid>
+      <description>Preparation Clickhouse Database Linux/Windows/macOS Server Data Import First you need to deploy Clickhouse and finish creating a brand new database. Create two tables.
+Table For Query Weibo Uid. CREATE TABLE wb_uid( uid String, mobile String )ENGINE = MergeTree() ORDER BY (uid) PRIMARY KEY (uid); Table For Query Mobile Phone Number
+CREATE TABLE wb_mobile( uid String, mobile String )ENGINE = MergeTree() ORDER BY (mobile) PRIMARY KEY (mobile); Query Data WeiboSearcher is an API program written in Golang.</description>
+      <content:encoded><![CDATA[<h2 id="preparation">Preparation</h2>
+<ul>
+<li>Clickhouse Database</li>
+<li>Linux/Windows/macOS Server</li>
+</ul>
+<h2 id="data-import">Data Import</h2>
+<ol>
+<li>First you need to deploy Clickhouse and finish creating a brand new database.</li>
+<li>Create two tables.<br>
+Table For Query Weibo Uid.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">wb_uid</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">uid</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mobile</span><span class="w"> </span><span class="n">String</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MergeTree</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">  </span><span class="p">(</span><span class="n">uid</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">uid</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p>Table For Query Mobile Phone Number</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">wb_mobile</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">uid</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mobile</span><span class="w"> </span><span class="n">String</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MergeTree</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">  </span><span class="p">(</span><span class="n">mobile</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">mobile</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><h2 id="query-data">Query Data</h2>
+<p><a href="https://github.com/OwO-Network/WeiboSearcher">WeiboSearcher</a> is an API program written in Golang. But he is not out of the box, because there is no configuration file that allows you to modify the database information, which will be supported in the future. But you can modify some of the configuration code and recompile it yourself.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./weibo_linux_amd64
+</span></span></code></pre></div><h2 id="qa">Q&amp;A</h2>
+<ul>
+<li>Why not use a MySQL database?</li>
+</ul>
+<blockquote>
+<p>Because even after building indexes, sorting, and splitting tables, MySQL data is much worse than Clickhouse, I gave up on optimizing MySQL query speed.</p>
+</blockquote>
+<ul>
+<li>Why use two tables?</li>
+</ul>
+<blockquote>
+<p>Because two tables are used and the indexes are different fields. It can greatly speed up the query efficiency.</p>
+</blockquote>
+<ul>
+<li>Where is the data downloaded from?</li>
+</ul>
+<blockquote>
+<p>We do not provide any data, and we do not keep any data. Please find your own data sources.</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Remove National Anti-Fraud Center on MIUI</title>
       <link>https://missuo.me/posts/fuck-miui/</link>
@@ -20,7 +78,7 @@
       <description>Uninstall Directly(Recommended) ROOT is not required, but it may be reinstalled after updating the system.
 Connect your phone to your computer and turn on ADB debugging.
 Install ADB CLI tools on your computer.
-1 2 3 4 5 6 7 # macOS brew install android-platform-tools or https://dl.google.com/android/repository/platform-tools-latest-darwin.zip # Windows https://dl.google.com/android/repository/platform-tools-latest-windows.zip Execute the following code. 1 2 3 4 5 6 adb shell pm list package | grep com.miui.guardprovider adb uninstall --user 0 com.</description>
+# macOS brew install android-platform-tools or https://dl.google.com/android/repository/platform-tools-latest-darwin.zip # Windows https://dl.google.com/android/repository/platform-tools-latest-windows.zip Execute the following code. adb shell pm list package | grep com.miui.guardprovider adb uninstall --user 0 com.miui.guardprovider adb shell pm list users # if you find other users on your phone, please execute the following command.</description>
       <content:encoded><![CDATA[<h2 id="uninstall-directlyrecommended">Uninstall Directly(Recommended)</h2>
 <blockquote>
 <p>ROOT is not required, but it may be reinstalled after updating the system.</p>
@@ -33,48 +91,23 @@ Install ADB CLI tools on your computer.
 <p>Install <code>ADB</code> CLI tools on your computer.</p>
 </li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
-</span><span class="lnt" id="hl-0-2"><a class="lnlinks" href="#hl-0-2">2</a>
-</span><span class="lnt" id="hl-0-3"><a class="lnlinks" href="#hl-0-3">3</a>
-</span><span class="lnt" id="hl-0-4"><a class="lnlinks" href="#hl-0-4">4</a>
-</span><span class="lnt" id="hl-0-5"><a class="lnlinks" href="#hl-0-5">5</a>
-</span><span class="lnt" id="hl-0-6"><a class="lnlinks" href="#hl-0-6">6</a>
-</span><span class="lnt" id="hl-0-7"><a class="lnlinks" href="#hl-0-7">7</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># macOS
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># macOS
 </span></span><span class="line"><span class="cl">brew install android-platform-tools
 </span></span><span class="line"><span class="cl">or
 </span></span><span class="line"><span class="cl">https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"># Windows
 </span></span><span class="line"><span class="cl">https://dl.google.com/android/repository/platform-tools-latest-windows.zip
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="3">
+</span></span></code></pre></div><ol start="3">
 <li>Execute the following code.</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1">1</a>
-</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2">2</a>
-</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3">3</a>
-</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4">4</a>
-</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5">5</a>
-</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6">6</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">adb</span> <span class="nx">shell</span> <span class="nx">pm</span> <span class="nx">list</span> <span class="kn">package</span> <span class="p">|</span> <span class="nx">grep</span> <span class="nx">com</span><span class="p">.</span><span class="nx">miui</span><span class="p">.</span><span class="nx">guardprovider</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">adb</span> <span class="nx">shell</span> <span class="nx">pm</span> <span class="nx">list</span> <span class="kn">package</span> <span class="p">|</span> <span class="nx">grep</span> <span class="nx">com</span><span class="p">.</span><span class="nx">miui</span><span class="p">.</span><span class="nx">guardprovider</span>
 </span></span><span class="line"><span class="cl"><span class="nx">adb</span> <span class="nx">uninstall</span> <span class="o">--</span><span class="nx">user</span> <span class="mi">0</span> <span class="nx">com</span><span class="p">.</span><span class="nx">miui</span><span class="p">.</span><span class="nx">guardprovider</span>
 </span></span><span class="line"><span class="cl"><span class="nx">adb</span> <span class="nx">shell</span> <span class="nx">pm</span> <span class="nx">list</span> <span class="nx">users</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="k">if</span> <span class="nx">you</span> <span class="nx">find</span> <span class="nx">other</span> <span class="nx">users</span> <span class="nx">on</span> <span class="nx">your</span> <span class="nx">phone</span><span class="p">,</span> <span class="nx">please</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">command</span><span class="p">.</span>
 </span></span><span class="line"><span class="cl"><span class="nx">adb</span> <span class="nx">uninstall</span> <span class="o">--</span><span class="nx">user</span> <span class="p">[</span><span class="nx">USERID</span><span class="p">]</span> <span class="nx">com</span><span class="p">.</span><span class="nx">miui</span><span class="p">.</span><span class="nx">guardprovider</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img loading="lazy" src="https://static.nisekoo.com/blog/20230204UJZpcM.png" alt="20230204UJZpcM"  />
+</span></span></code></pre></div><p><img loading="lazy" src="https://static.nisekoo.com/blog/20230204UJZpcM.png" alt="20230204UJZpcM"  />
 </p>
 <h2 id="install-magisk-module">Install Magisk Module</h2>
 <blockquote>
@@ -184,7 +217,7 @@ OK，既然他们这样说，我就按照客服给我的反馈，我写违规原
       <guid>https://missuo.me/posts/english-name-passport/</guid>
       <description>只是在护照的备注页添加您的 英文名，护照主页的英文名字只能是你中文名的拼音形式。
 用途 可以使用该英文名字购买火车票、机票等。（飞猪不支持使用护照购买机票，但是大部分航空公司自己的App或者官网应该可以） 可以使用该名字作为您在境外的主要名字，例如学生卡、驾驶证等。 该名字理论上是你的法定名字之一，因此应该和你的中文名，以及中文名拼音有一样的效果。 准备材料 声明书原件或复印件（经过公证的） 身份证原件 护照原件 建议先电话联系当地的 出入境管理局，询问护照加注英文名需要哪些材料。一般情况下，上述这些材料一定是可以成功加注的，但是不同地区的规定可能不一样。而且上述的材料中，公证书需要花费较高的费用，如果有其他材料替代的话，或许可以剩下一笔费用。例如，跨国公司提供的全英文合同，在境外公司的员工卡，境外上学的学生证，境外大学提供的Offer等包含您英文名的所有正式的文件。但是如果您提供这些文件的，不能是仅仅一份，具体需要多少文件需要由出入境管理局的工作人员评判。当然如果您不愿意麻烦，可以按照上述材料准备。
-声明书 样式 1 2 3 4 5 6 7 8 9 10 11 12 13 声明书 声明人：张三，2000年12月12日出生，公民身份证号码：130011200012121111。 本人姓名 张三，因境外工作学习需要，本人声明：MIKE ZHANG 为本人在中华人民共和国境内和境外唯一使用的英文姓名，MIKE ZHANG 与本人的中文姓名 张三 和拼音 ZHANG SAN 均为本人使用。 因此本人的英文名 MIKE ZHANG 在中华人民共和国境外的所有行为均由本人承担所有法律后果。 特此声明。 声明人：张三 二〇二二年六月二十二日 公证 据我所知，公证只能在户籍所在地的公证处办理。当然某宝也可以帮忙办理这类中英文同一人的公证，但是收费一般在2000元人民币以上，非常不建议。我在浙江省办理的声明书公证，花费400元人民币，包含一份公证书，当然您可以要求多份，每一份加20元。我强烈建议要两份，其中的一份可能会被出入境管理局收走存档，当然我去的出入境管理局仅需要复印件，他们会帮你复印。但是我还是直接给了原件。
+声明书 样式 声明书 声明人：张三，2000年12月12日出生，公民身份证号码：130011200012121111。 本人姓名 张三，因境外工作学习需要，本人声明：MIKE ZHANG 为本人在中华人民共和国境内和境外唯一使用的英文姓名，MIKE ZHANG 与本人的中文姓名 张三 和拼音 ZHANG SAN 均为本人使用。 因此本人的英文名 MIKE ZHANG 在中华人民共和国境外的所有行为均由本人承担所有法律后果。 特此声明。 声明人：张三 二〇二二年六月二十二日 公证 据我所知，公证只能在户籍所在地的公证处办理。当然某宝也可以帮忙办理这类中英文同一人的公证，但是收费一般在2000元人民币以上，非常不建议。我在浙江省办理的声明书公证，花费400元人民币，包含一份公证书，当然您可以要求多份，每一份加20元。我强烈建议要两份，其中的一份可能会被出入境管理局收走存档，当然我去的出入境管理局仅需要复印件，他们会帮你复印。但是我还是直接给了原件。
 重点：建议提前打电话询问您户籍所在地的公证处是否愿意办理此类公证。有的可能需要向领导请示，因为这类公证办理的人非常少。请注意，不是外国人的中英文名公证。
 公证书是当天办理，立马可以取走的。建议安排在同一天，办理完公证可以直接前往出入境管理局。
 费用和耗时 全程仅有公证需要花费400元人民币，护照加注是完全免费的。如果您没有护照，新办护照需要花费160元人民币。当然，在新办护照时直接加注不确定是否可以，您可以尝试。
@@ -208,24 +241,7 @@ OK，既然他们这样说，我就按照客服给我的反馈，我写违规原
 <p><strong>建议先电话联系当地的 <code>出入境管理局</code>，询问<code>护照加注英文名需要哪些材料</code>。一般情况下，上述这些材料一定是可以成功加注的，但是不同地区的规定可能不一样。而且上述的材料中，公证书需要花费较高的费用，如果有其他材料替代的话，或许可以剩下一笔费用。例如，跨国公司提供的全英文合同，在境外公司的员工卡，境外上学的学生证，境外大学提供的Offer等包含您英文名的所有正式的文件。但是如果您提供这些文件的，不能是仅仅一份，具体需要多少文件需要由出入境管理局的工作人员评判。当然如果您不愿意麻烦，可以按照上述材料准备。</strong></p>
 <h2 id="声明书">声明书</h2>
 <h3 id="样式">样式</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1"> 1</a>
-</span><span class="lnt" id="hl-0-2"><a class="lnlinks" href="#hl-0-2"> 2</a>
-</span><span class="lnt" id="hl-0-3"><a class="lnlinks" href="#hl-0-3"> 3</a>
-</span><span class="lnt" id="hl-0-4"><a class="lnlinks" href="#hl-0-4"> 4</a>
-</span><span class="lnt" id="hl-0-5"><a class="lnlinks" href="#hl-0-5"> 5</a>
-</span><span class="lnt" id="hl-0-6"><a class="lnlinks" href="#hl-0-6"> 6</a>
-</span><span class="lnt" id="hl-0-7"><a class="lnlinks" href="#hl-0-7"> 7</a>
-</span><span class="lnt" id="hl-0-8"><a class="lnlinks" href="#hl-0-8"> 8</a>
-</span><span class="lnt" id="hl-0-9"><a class="lnlinks" href="#hl-0-9"> 9</a>
-</span><span class="lnt" id="hl-0-10"><a class="lnlinks" href="#hl-0-10">10</a>
-</span><span class="lnt" id="hl-0-11"><a class="lnlinks" href="#hl-0-11">11</a>
-</span><span class="lnt" id="hl-0-12"><a class="lnlinks" href="#hl-0-12">12</a>
-</span><span class="lnt" id="hl-0-13"><a class="lnlinks" href="#hl-0-13">13</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">声明书
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">声明书
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">声明人：张三，2000年12月12日出生，公民身份证号码：130011200012121111。
 </span></span><span class="line"><span class="cl">
@@ -238,9 +254,7 @@ OK，既然他们这样说，我就按照客服给我的反馈，我写违规原
 </span></span><span class="line"><span class="cl">声明人：张三
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">二〇二二年六月二十二日
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="公证">公证</h3>
+</span></span></code></pre></div><h3 id="公证">公证</h3>
 <p>据我所知，公证只能在户籍所在地的公证处办理。当然某宝也可以帮忙办理这类<code>中英文同一人</code>的公证，但是收费一般在2000元人民币以上，非常不建议。我在浙江省办理的声明书公证，花费400元人民币，包含一份公证书，当然您可以要求多份，每一份加20元。我强烈建议要两份，其中的一份可能会被出入境管理局收走存档，当然我去的出入境管理局仅需要复印件，他们会帮你复印。但是我还是直接给了原件。</p>
 <p><strong>重点：建议提前打电话询问您户籍所在地的公证处是否愿意办理此类公证。有的可能需要向领导请示，因为这类公证办理的人非常少。请注意，不是外国人的中英文名公证。</strong></p>
 <p>公证书是当天办理，立马可以取走的。建议安排在同一天，办理完公证可以直接前往出入境管理局。</p>
@@ -377,47 +391,28 @@ Telegram: <a href="https://t.me/missuo">missuo</a></p>
 既然某宝那么贵到底成本有多少呢，理论上除去开发成本，成本应该只有一个Apple Developer订阅的账号(688元)的成本吧。因此，会有很多叫做卡密网的网站以非常低的价格售卖微信多开。基本上价格在5-40元之间，10-20元居多。我曾经也买了很多次，最后总结的经验就是，基本上在三个月之内，作者必定会跑路。也就是意味着你三个月之后就用不了了，而且最恶心的事情是，作者会更换一个名字，三个月后重新开始售卖。典型的改名继续圈钱。
 正常的流程，买的是一个激活码，然后第一次打开这个多开的时候，需要输入激活码进行验证。验证成功后可以正常使用。我想，是否有办法去绕过这个验证呢？
 直接屏蔽验证接口 一般情况下，作者为了控制激活码的有效性，简单来说，如果你退款了，他可以立刻封禁你的激活码让你无法使用。所以他们一般会在每次打开App的时候，向服务器发起一个请求，如果服务端验证通过，会返回一些东西，例如“成功”等等。这种验证方式，其实还是有办法解决的，我们只要拿到正常的激活码，Response的内容是什么，我们通过强大的QuanX或者Surge这类工具，开启MITM，重写Response即可。在我测试的过程中，有遇到过直接Reject接口也可以绕过验证。
-1 DOMAIN-SUFFIX, xxx.com, Reject 当然有些开发者可能已经考虑到我们会这样做，于是他直接将验证的代码写在了本地。这类程序几乎是无法绕过的。
+DOMAIN-SUFFIX, xxx.com, Reject 当然有些开发者可能已经考虑到我们会这样做，于是他直接将验证的代码写在了本地。这类程序几乎是无法绕过的。
 自己获取激活码 由于被薅过太多次羊毛，每次三个月就跑路。我就开始想，有没有办法薅作者的羊毛。初步的想法是搞明白作者的激活码的规律。但是这显然不靠谱，因为这些基本随机生成的，当然肯定有一定的规律，只是我们不是开发者本人，几乎是不可能猜到的。
 既然找不到规律，就只能开始暴力破解。我发现大部分的多开的激活码都是YW-XXXXXX，前面两个字母是产品名字的首字母，例如云微是YW，云彩是YC等等。然后后面的这一串XXXXXX是随机的六个字母。也就是说激活码的可能性只存在于AAAAAA-ZZZZZZ之中。这个可能性非常大，但是交给我们的服务器去做，简直是小菜一碟。
-1 2 3 4 5 6 pool = threadpool.ThreadPool(99) while True: code = create_code() tasks = threadpool.makeRequests(run, code) [pool.putRequest(req) for req in tasks] pool.wait() 我开始编写脚本，采用多线程的方案去尝试。效果非常好，几分钟出现很多验证通过的结果。服务器运行24小时，可以出现上千个激活码。于是我就有了用不完的激活码，成功薅到了作者的羊毛。</description>
+pool = threadpool.ThreadPool(99) while True: code = create_code() tasks = threadpool.makeRequests(run, code) [pool.putRequest(req) for req in tasks] pool.wait() 我开始编写脚本，采用多线程的方案去尝试。效果非常好，几分钟出现很多验证通过的结果。服务器运行24小时，可以出现上千个激活码。于是我就有了用不完的激活码，成功薅到了作者的羊毛。</description>
       <content:encoded><![CDATA[<p>正常情况下，在iOS设备上是不可能安装两个一模一样的App。但是大部分人对于<code>微信</code>这款App都希望能够有2个及以上。工作和个人两个号，互不打扰。也能够及时的看到两个账号的消息，这是最完美的事情。</p>
 <p>如果要做到以上的情况需要怎么做呢，大部分的选择可能是去某宝购买。某宝的价格基本上在40-100元不等，非常昂贵。平均下来，买一次最多使用1-3个月左右。淘宝售卖的是各种品牌的微信多开，但是按大类来分，无非就是两种，<code>TestFlight(TF)</code>和<code>企业证书</code>。我不展开说这两个版本有什么区别，如果要我硬是选择一个更好的，我会选择TF版本。</p>
 <p>既然某宝那么贵到底成本有多少呢，理论上除去开发成本，成本应该只有一个Apple Developer订阅的账号(688元)的成本吧。因此，会有很多叫做<code>卡密网</code>的网站以非常低的价格售卖微信多开。基本上价格在5-40元之间，10-20元居多。我曾经也买了很多次，最后总结的经验就是，基本上在三个月之内，作者必定会跑路。也就是意味着你三个月之后就用不了了，而且最恶心的事情是，作者会更换一个名字，三个月后重新开始售卖。典型的改名继续圈钱。</p>
 <p>正常的流程，买的是一个激活码，然后第一次打开这个多开的时候，需要输入激活码进行验证。验证成功后可以正常使用。我想，是否有办法去绕过这个验证呢？</p>
 <h3 id="直接屏蔽验证接口">直接屏蔽验证接口</h3>
 <p>一般情况下，作者为了控制激活码的有效性，简单来说，如果你退款了，他可以立刻封禁你的激活码让你无法使用。所以他们一般会在每次打开App的时候，向服务器发起一个请求，如果服务端验证通过，会返回一些东西，例如“成功”等等。这种验证方式，其实还是有办法解决的，我们只要拿到正常的激活码，<code>Response</code>的内容是什么，我们通过强大的<code>QuanX</code>或者<code>Surge</code>这类工具，开启<code>MITM</code>，重写<code>Response</code>即可。在我测试的过程中，有遇到过直接<code>Reject</code>接口也可以绕过验证。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DOMAIN-SUFFIX, xxx.com, Reject
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>当然有些开发者可能已经考虑到我们会这样做，于是他直接将验证的代码写在了本地。这类程序几乎是无法绕过的。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DOMAIN-SUFFIX, xxx.com, Reject
+</span></span></code></pre></div><p>当然有些开发者可能已经考虑到我们会这样做，于是他直接将验证的代码写在了本地。这类程序几乎是无法绕过的。</p>
 <h3 id="自己获取激活码">自己获取激活码</h3>
 <p>由于被薅过太多次羊毛，每次三个月就跑路。我就开始想，有没有办法薅作者的羊毛。初步的想法是搞明白作者的激活码的规律。但是这显然不靠谱，因为这些基本随机生成的，当然肯定有一定的规律，只是我们不是开发者本人，几乎是不可能猜到的。</p>
 <p>既然找不到规律，就只能开始暴力破解。我发现大部分的多开的激活码都是<code>YW-XXXXXX</code>，前面两个字母是产品名字的首字母，例如云微是<code>YW</code>，云彩是<code>YC</code>等等。然后后面的这一串<code>XXXXXX</code>是随机的六个字母。也就是说激活码的可能性只存在于<code>AAAAAA</code>-<code>ZZZZZZ</code>之中。这个可能性非常大，但是交给我们的服务器去做，简直是小菜一碟。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1">1</a>
-</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2">2</a>
-</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3">3</a>
-</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4">4</a>
-</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5">5</a>
-</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6">6</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pool = threadpool.ThreadPool(99)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pool = threadpool.ThreadPool(99)
 </span></span><span class="line"><span class="cl">while True:
 </span></span><span class="line"><span class="cl">	code = create_code()
 </span></span><span class="line"><span class="cl">	tasks = threadpool.makeRequests(run, code)
 </span></span><span class="line"><span class="cl">	[pool.putRequest(req) for req in tasks]
 </span></span><span class="line"><span class="cl">	pool.wait()
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>我开始编写脚本，采用多线程的方案去尝试。效果非常好，几分钟出现很多验证通过的结果。服务器运行24小时，可以出现上千个激活码。于是我就有了用不完的激活码，成功薅到了作者的羊毛。</p>
+</span></span></code></pre></div><p>我开始编写脚本，采用多线程的方案去尝试。效果非常好，几分钟出现很多验证通过的结果。服务器运行24小时，可以出现上千个激活码。于是我就有了用不完的激活码，成功薅到了作者的羊毛。</p>
 ]]></content:encoded>
     </item>
     
@@ -755,7 +750,7 @@ Since the original 2.53GB version was not collected, the 1.31GB HD version was u
 我的ASN信息——AS206729 AS206729 Prefixes v6 2401:95c0:f001::/48
 AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401:95c0:f001::1/128 AS53667 更多详情，前往BGP.TOOLS查看。 如何申请ASN 一般情况下，需要寻找APNIC或者RIPE的会员来作为你的LIR。当然你也可以自己加入APNIC或者RIPE，需要每年缴纳费用。
 我找的是台湾的一个朋友 Hostinginside LTD(AS9678)，他作为我的LIR，申请的是RIPE。提供信息到签合同到补全信息，最后下号，花了不到一周的时间。APNIC可能没那么快。
-RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的护照照片 你在欧洲拥有网络服务的证明（购买的订单截图、机房地址和管理员邮箱） ISP愿意给你接入BGP的证明 两个需要接入的ASN ASN下号 接入BGP Session（以BuyVM为例，Vultr类似） 发Ticket告诉客服你的ASN号，客服一般会向该ASN的管理员邮箱发送一串随机字符串，需要在工单中回复，验证你是ASN的持有人。稍后，客服会在面板里面加入你的ASN和你的IP段。 在你的VPS上安装bird。用于宣告你的IP。 修改 /etc/bird/bird6.conf的配置文件 修改配置中的 router id 改为自己的IPv4地址 1 router id 205.121.23.12; 在文件的最后添加上 1 2 3 4 5 6 7 8 9 10 11 protocol bgp vultr { local as 你的asn(开头不带as); source address 实例的ipv6; import none; export all; graceful restart on; multihop 2; neighbor 2001:19f0:ffff::1 as 64515; #这个是服务器的ip password &amp;#34;在申请广播的时候设置的bgp密码&amp;#34;; } 寻找到protocol static（没有的话自己加一个） 1 2 3 4 5 protocol static { route [v6前缀] via [实例的IPv6]; #route 2001:2333:2333::/48 via 4096:4096:4096:338:5400:01ff:fecf:596c; } 找到protocol direct 1 2 3 4 5 protocol direct { interface &amp;#34;dummy*&amp;#34;; import all; } 配置虚拟网卡以及ip地址 1 2 3 ip link add dev dummy1 type dummy # 添加虚拟网卡 ip link set dummy1 up ip addr add dev dummy1 [前缀内的任意一个地址] # 添加地址 启动bird6 1 service bird6 restart 查看状态 1 2 birdc6 show route birdc6 show proto all 如果想要开机自启 在 /etc/netplan新增01.</description>
+RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的护照照片 你在欧洲拥有网络服务的证明（购买的订单截图、机房地址和管理员邮箱） ISP愿意给你接入BGP的证明 两个需要接入的ASN ASN下号 接入BGP Session（以BuyVM为例，Vultr类似） 发Ticket告诉客服你的ASN号，客服一般会向该ASN的管理员邮箱发送一串随机字符串，需要在工单中回复，验证你是ASN的持有人。稍后，客服会在面板里面加入你的ASN和你的IP段。 在你的VPS上安装bird。用于宣告你的IP。 修改 /etc/bird/bird6.conf的配置文件 修改配置中的 router id 改为自己的IPv4地址 router id 205.121.23.12; 在文件的最后添加上 protocol bgp vultr { local as 你的asn(开头不带as); source address 实例的ipv6; import none; export all; graceful restart on; multihop 2; neighbor 2001:19f0:ffff::1 as 64515; #这个是服务器的ip password &amp;#34;在申请广播的时候设置的bgp密码&amp;#34;; } 寻找到protocol static（没有的话自己加一个） protocol static { route [v6前缀] via [实例的IPv6]; #route 2001:2333:2333::/48 via 4096:4096:4096:338:5400:01ff:fecf:596c; } 找到protocol direct protocol direct { interface &amp;#34;dummy*&amp;#34;; import all; } 配置虚拟网卡以及ip地址 ip link add dev dummy1 type dummy # 添加虚拟网卡 ip link set dummy1 up ip addr add dev dummy1 [前缀内的任意一个地址] # 添加地址 启动bird6 service bird6 restart 查看状态 birdc6 show route birdc6 show proto all 如果想要开机自启 在 /etc/netplan新增01.</description>
       <content:encoded><![CDATA[<h2 id="asn是什么">ASN是什么</h2>
 <blockquote>
 <p>自治系统(Autonomous System)，用通俗的语言来形容，就是一个互联网的独立王国，这一个个独立王国互联起来，就组成了互联网(Internet)。</p>
@@ -829,33 +824,11 @@ RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的�
 <li>修改 /etc/bird/bird6.conf的配置文件</li>
 <li>修改配置中的 router id 改为自己的IPv4地址</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">router id 205.121.23.12;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">router id 205.121.23.12;
+</span></span></code></pre></div><ul>
 <li>在文件的最后添加上</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1"> 1</a>
-</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2"> 2</a>
-</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3"> 3</a>
-</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4"> 4</a>
-</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5"> 5</a>
-</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6"> 6</a>
-</span><span class="lnt" id="hl-1-7"><a class="lnlinks" href="#hl-1-7"> 7</a>
-</span><span class="lnt" id="hl-1-8"><a class="lnlinks" href="#hl-1-8"> 8</a>
-</span><span class="lnt" id="hl-1-9"><a class="lnlinks" href="#hl-1-9"> 9</a>
-</span><span class="lnt" id="hl-1-10"><a class="lnlinks" href="#hl-1-10">10</a>
-</span><span class="lnt" id="hl-1-11"><a class="lnlinks" href="#hl-1-11">11</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol bgp vultr
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol bgp vultr
 </span></span><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">  local as 你的asn(开头不带as);
 </span></span><span class="line"><span class="cl">  source address 实例的ipv6;
@@ -866,104 +839,41 @@ RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的�
 </span></span><span class="line"><span class="cl">  neighbor 2001:19f0:ffff::1 as 64515; #这个是服务器的ip
 </span></span><span class="line"><span class="cl">  password &#34;在申请广播的时候设置的bgp密码&#34;;
 </span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></code></pre></div><ul>
 <li>寻找到protocol static（没有的话自己加一个）</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1">1</a>
-</span><span class="lnt" id="hl-2-2"><a class="lnlinks" href="#hl-2-2">2</a>
-</span><span class="lnt" id="hl-2-3"><a class="lnlinks" href="#hl-2-3">3</a>
-</span><span class="lnt" id="hl-2-4"><a class="lnlinks" href="#hl-2-4">4</a>
-</span><span class="lnt" id="hl-2-5"><a class="lnlinks" href="#hl-2-5">5</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol static
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol static
 </span></span><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">  route  [v6前缀] via [实例的IPv6];
 </span></span><span class="line"><span class="cl">  #route  2001:2333:2333::/48 via 4096:4096:4096:338:5400:01ff:fecf:596c;
 </span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></code></pre></div><ul>
 <li>找到protocol direct</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1">1</a>
-</span><span class="lnt" id="hl-3-2"><a class="lnlinks" href="#hl-3-2">2</a>
-</span><span class="lnt" id="hl-3-3"><a class="lnlinks" href="#hl-3-3">3</a>
-</span><span class="lnt" id="hl-3-4"><a class="lnlinks" href="#hl-3-4">4</a>
-</span><span class="lnt" id="hl-3-5"><a class="lnlinks" href="#hl-3-5">5</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol direct
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol direct
 </span></span><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">  interface &#34;dummy*&#34;;
 </span></span><span class="line"><span class="cl">  import all;
 </span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></code></pre></div><ul>
 <li>配置虚拟网卡以及ip地址</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-4-1"><a class="lnlinks" href="#hl-4-1">1</a>
-</span><span class="lnt" id="hl-4-2"><a class="lnlinks" href="#hl-4-2">2</a>
-</span><span class="lnt" id="hl-4-3"><a class="lnlinks" href="#hl-4-3">3</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ip link add dev dummy1 type dummy # 添加虚拟网卡
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ip link add dev dummy1 type dummy # 添加虚拟网卡
 </span></span><span class="line"><span class="cl">ip link set dummy1 up
 </span></span><span class="line"><span class="cl">ip addr add dev dummy1 [前缀内的任意一个地址] # 添加地址
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></code></pre></div><ul>
 <li>启动bird6</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-5-1"><a class="lnlinks" href="#hl-5-1">1</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">service bird6 restart
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">service bird6 restart
+</span></span></code></pre></div><ul>
 <li>查看状态</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-6-1"><a class="lnlinks" href="#hl-6-1">1</a>
-</span><span class="lnt" id="hl-6-2"><a class="lnlinks" href="#hl-6-2">2</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">birdc6 show route
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">birdc6 show route
 </span></span><span class="line"><span class="cl">birdc6 show proto all
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></code></pre></div><ul>
 <li>如果想要开机自启 在 <code>/etc/netplan</code>新增<code>01.dummy.yaml</code></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-7-1"><a class="lnlinks" href="#hl-7-1"> 1</a>
-</span><span class="lnt" id="hl-7-2"><a class="lnlinks" href="#hl-7-2"> 2</a>
-</span><span class="lnt" id="hl-7-3"><a class="lnlinks" href="#hl-7-3"> 3</a>
-</span><span class="lnt" id="hl-7-4"><a class="lnlinks" href="#hl-7-4"> 4</a>
-</span><span class="lnt" id="hl-7-5"><a class="lnlinks" href="#hl-7-5"> 5</a>
-</span><span class="lnt" id="hl-7-6"><a class="lnlinks" href="#hl-7-6"> 6</a>
-</span><span class="lnt" id="hl-7-7"><a class="lnlinks" href="#hl-7-7"> 7</a>
-</span><span class="lnt" id="hl-7-8"><a class="lnlinks" href="#hl-7-8"> 8</a>
-</span><span class="lnt" id="hl-7-9"><a class="lnlinks" href="#hl-7-9"> 9</a>
-</span><span class="lnt" id="hl-7-10"><a class="lnlinks" href="#hl-7-10">10</a>
-</span><span class="lnt" id="hl-7-11"><a class="lnlinks" href="#hl-7-11">11</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">network:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">network:
 </span></span><span class="line"><span class="cl">  version: 2
 </span></span><span class="line"><span class="cl">  renderer: networkd
 </span></span><span class="line"><span class="cl">  bridges:
@@ -974,48 +884,8 @@ RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的�
 </span></span><span class="line"><span class="cl">      interfaces: [ ]
 </span></span><span class="line"><span class="cl">      addresses:
 </span></span><span class="line"><span class="cl">        - 2401:95c0:f001::1/128 #你的IP
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="配置xrayr的出站路由">配置XrayR的出站路由</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-8-1"><a class="lnlinks" href="#hl-8-1"> 1</a>
-</span><span class="lnt" id="hl-8-2"><a class="lnlinks" href="#hl-8-2"> 2</a>
-</span><span class="lnt" id="hl-8-3"><a class="lnlinks" href="#hl-8-3"> 3</a>
-</span><span class="lnt" id="hl-8-4"><a class="lnlinks" href="#hl-8-4"> 4</a>
-</span><span class="lnt" id="hl-8-5"><a class="lnlinks" href="#hl-8-5"> 5</a>
-</span><span class="lnt" id="hl-8-6"><a class="lnlinks" href="#hl-8-6"> 6</a>
-</span><span class="lnt" id="hl-8-7"><a class="lnlinks" href="#hl-8-7"> 7</a>
-</span><span class="lnt" id="hl-8-8"><a class="lnlinks" href="#hl-8-8"> 8</a>
-</span><span class="lnt" id="hl-8-9"><a class="lnlinks" href="#hl-8-9"> 9</a>
-</span><span class="lnt" id="hl-8-10"><a class="lnlinks" href="#hl-8-10">10</a>
-</span><span class="lnt" id="hl-8-11"><a class="lnlinks" href="#hl-8-11">11</a>
-</span><span class="lnt" id="hl-8-12"><a class="lnlinks" href="#hl-8-12">12</a>
-</span><span class="lnt" id="hl-8-13"><a class="lnlinks" href="#hl-8-13">13</a>
-</span><span class="lnt" id="hl-8-14"><a class="lnlinks" href="#hl-8-14">14</a>
-</span><span class="lnt" id="hl-8-15"><a class="lnlinks" href="#hl-8-15">15</a>
-</span><span class="lnt" id="hl-8-16"><a class="lnlinks" href="#hl-8-16">16</a>
-</span><span class="lnt" id="hl-8-17"><a class="lnlinks" href="#hl-8-17">17</a>
-</span><span class="lnt" id="hl-8-18"><a class="lnlinks" href="#hl-8-18">18</a>
-</span><span class="lnt" id="hl-8-19"><a class="lnlinks" href="#hl-8-19">19</a>
-</span><span class="lnt" id="hl-8-20"><a class="lnlinks" href="#hl-8-20">20</a>
-</span><span class="lnt" id="hl-8-21"><a class="lnlinks" href="#hl-8-21">21</a>
-</span><span class="lnt" id="hl-8-22"><a class="lnlinks" href="#hl-8-22">22</a>
-</span><span class="lnt" id="hl-8-23"><a class="lnlinks" href="#hl-8-23">23</a>
-</span><span class="lnt" id="hl-8-24"><a class="lnlinks" href="#hl-8-24">24</a>
-</span><span class="lnt" id="hl-8-25"><a class="lnlinks" href="#hl-8-25">25</a>
-</span><span class="lnt" id="hl-8-26"><a class="lnlinks" href="#hl-8-26">26</a>
-</span><span class="lnt" id="hl-8-27"><a class="lnlinks" href="#hl-8-27">27</a>
-</span><span class="lnt" id="hl-8-28"><a class="lnlinks" href="#hl-8-28">28</a>
-</span><span class="lnt" id="hl-8-29"><a class="lnlinks" href="#hl-8-29">29</a>
-</span><span class="lnt" id="hl-8-30"><a class="lnlinks" href="#hl-8-30">30</a>
-</span><span class="lnt" id="hl-8-31"><a class="lnlinks" href="#hl-8-31">31</a>
-</span><span class="lnt" id="hl-8-32"><a class="lnlinks" href="#hl-8-32">32</a>
-</span><span class="lnt" id="hl-8-33"><a class="lnlinks" href="#hl-8-33">33</a>
-</span><span class="lnt" id="hl-8-34"><a class="lnlinks" href="#hl-8-34">34</a>
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
+</span></span></code></pre></div><h2 id="配置xrayr的出站路由">配置XrayR的出站路由</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">    &#34;domainStrategy&#34;: &#34;IPOnDemand&#34;,
 </span></span><span class="line"><span class="cl">    &#34;rules&#34;: [
 </span></span><span class="line"><span class="cl">        {
@@ -1049,9 +919,7 @@ RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的�
 </span></span><span class="line"><span class="cl">        }
 </span></span><span class="line"><span class="cl">    ]
 </span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>##上网测试</p>
+</span></span></code></pre></div><p>##上网测试</p>
 <h3 id="ipsb">IP.SB</h3>
 <p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402WVLK3S.png" alt="20220402WVLK3S"  />
 </p>
