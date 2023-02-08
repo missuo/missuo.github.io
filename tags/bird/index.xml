@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bird on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/bird/</link>
+    <description>Recent content in Bird on Vincent&#39;s Notes</description>
+    <image>
+      <url>https://missuo.me/papermod-cover.png</url>
+      <link>https://missuo.me/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Apr 2022 05:44:38 +0000</lastBuildDate><atom:link href="https://missuo.me/tags/bird/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASN Application | Use your own IP to access the Internet</title>
+      <link>https://missuo.me/posts/as206729/</link>
+      <pubDate>Mon, 04 Apr 2022 05:44:38 +0000</pubDate>
+      
+      <guid>https://missuo.me/posts/as206729/</guid>
+      <description>ASN是什么 自治系统(Autonomous System)，用通俗的语言来形容，就是一个互联网的独立王国，这一个个独立王国互联起来，就组成了互联网(Internet)。
+每个王国有自己独立的国号，以区别于别的王国，这个国号用自治系统号ASN(Autonomous System Number)，ASN由两个字节组成，理论上取值范围为1-65535，末尾的1024个ASN是私有自治号，用于王国内部的下属郡国使用，不能外泄（类似私有IP，如果不小心外泄，别人也会忽略)
+每一个互联网用户都置身于AS内，比如中国电信的AS号为4809，那么中国电信的用户就置身于4809的独立王国，如果用户访问的服务器也是在这个AS内，那双向的流量都在王国里来回溜达。
+但如果服务器IP位于中国移动AS内，如何跨运营商访问呢？
+运营商之间会使用BGP(Border Gateway Protocol)路由协议来交换各自的lP路由表，AS号就是BGP协议用来辨识邻国的一个身份证，同时在交换的路由表信息里，会附上各自的AS号。
+既然中国电信通过BGP学习到中国移动的路由信息，就会把用户的访问请求转发给中国移动的边界路由器，既然IP包进入中国移动的地界，接下来就任由中国移动的设备来处理了，假设顺利到达服务器，回程检查客户IP，发现是电信的IP，就会转发到电信的边界路由器，并到达用户。
+我的ASN信息——AS206729 AS206729 Prefixes v6 2401:95c0:f001::/48
+AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401:95c0:f001::1/128 AS53667 更多详情，前往BGP.TOOLS查看。 如何申请ASN 一般情况下，需要寻找APNIC或者RIPE的会员来作为你的LIR。当然你也可以自己加入APNIC或者RIPE，需要每年缴纳费用。
+我找的是台湾的一个朋友 Hostinginside LTD(AS9678)，他作为我的LIR，申请的是RIPE。提供信息到签合同到补全信息，最后下号，花了不到一周的时间。APNIC可能没那么快。
+RIPE准备的材料 注册RIPE账号，新建一些 Database的信息。 你的护照照片 你在欧洲拥有网络服务的证明（购买的订单截图、机房地址和管理员邮箱） ISP愿意给你接入BGP的证明 两个需要接入的ASN ASN下号 接入BGP Session（以BuyVM为例，Vultr类似） 发Ticket告诉客服你的ASN号，客服一般会向该ASN的管理员邮箱发送一串随机字符串，需要在工单中回复，验证你是ASN的持有人。稍后，客服会在面板里面加入你的ASN和你的IP段。 在你的VPS上安装bird。用于宣告你的IP。 修改 /etc/bird/bird6.conf的配置文件 修改配置中的 router id 改为自己的IPv4地址 1 router id 205.121.23.12; 在文件的最后添加上 1 2 3 4 5 6 7 8 9 10 11 protocol bgp vultr { local as 你的asn(开头不带as); source address 实例的ipv6; import none; export all; graceful restart on; multihop 2; neighbor 2001:19f0:ffff::1 as 64515; #这个是服务器的ip password &amp;#34;在申请广播的时候设置的bgp密码&amp;#34;; } 寻找到protocol static（没有的话自己加一个） 1 2 3 4 5 protocol static { route [v6前缀] via [实例的IPv6]; #route 2001:2333:2333::/48 via 4096:4096:4096:338:5400:01ff:fecf:596c; } 找到protocol direct 1 2 3 4 5 protocol direct { interface &amp;#34;dummy*&amp;#34;; import all; } 配置虚拟网卡以及ip地址 1 2 3 ip link add dev dummy1 type dummy # 添加虚拟网卡 ip link set dummy1 up ip addr add dev dummy1 [前缀内的任意一个地址] # 添加地址 启动bird6 1 service bird6 restart 查看状态 1 2 birdc6 show route birdc6 show proto all 如果想要开机自启 在 /etc/netplan新增01.</description>
+      <content:encoded><![CDATA[<h2 id="asn是什么">ASN是什么</h2>
+<blockquote>
+<p>自治系统(Autonomous System)，用通俗的语言来形容，就是一个互联网的独立王国，这一个个独立王国互联起来，就组成了互联网(Internet)。</p>
+</blockquote>
+<blockquote>
+<p>每个王国有自己独立的国号，以区别于别的王国，这个国号用自治系统号ASN(Autonomous System Number)，ASN由两个字节组成，理论上取值范围为1-65535，末尾的1024个ASN是私有自治号，用于王国内部的下属郡国使用，不能外泄（类似私有IP，如果不小心外泄，别人也会忽略)</p>
+</blockquote>
+<blockquote>
+<p>每一个互联网用户都置身于AS内，比如中国电信的AS号为4809，那么中国电信的用户就置身于4809的独立王国，如果用户访问的服务器也是在这个AS内，那双向的流量都在王国里来回溜达。</p>
+</blockquote>
+<blockquote>
+<p>但如果服务器IP位于中国移动AS内，如何跨运营商访问呢？</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>运营商之间会使用BGP(Border Gateway Protocol)路由协议来交换各自的lP路由表，AS号就是BGP协议用来辨识邻国的一个身份证，同时在交换的路由表信息里，会附上各自的AS号。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>既然中国电信通过BGP学习到中国移动的路由信息，就会把用户的访问请求转发给中国移动的边界路由器，既然IP包进入中国移动的地界，接下来就任由中国移动的设备来处理了，假设顺利到达服务器，回程检查客户IP，发现是电信的IP，就会转发到电信的边界路由器，并到达用户。</p>
+</blockquote>
+</blockquote>
+<h2 id="我的asn信息as206729">我的ASN信息——AS206729</h2>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402OuAhUS.jpg" alt="20220402OuAhUS"  />
+</p>
+<h3 id="as206729-prefixes-v6"><strong>AS206729 Prefixes v6</strong></h3>
+<p><code>2401:95c0:f001::/48</code></p>
+<h3 id="as206729-peers-v6"><strong>AS206729 Peers v6</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Description</th>
+<th>IPv6</th>
+<th>Peer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>FranTech Solutions</td>
+<td>2401:95c0:f001::1/128</td>
+<td>AS53667</td>
+</tr>
+</tbody>
+</table>
+<h3 id="更多详情前往bgptoolshttpsbgptoolsas206729查看">更多详情，前往<a href="https://bgp.tools/as/206729">BGP.TOOLS</a>查看。</h3>
+<h2 id="如何申请asn">如何申请ASN</h2>
+<p>一般情况下，需要寻找<code>APNIC</code>或者<code>RIPE</code>的会员来作为你的<code>LIR</code>。当然你也可以自己加入<code>APNIC</code>或者<code>RIPE</code>，需要每年缴纳费用。</p>
+<p>我找的是台湾的一个朋友 <code>Hostinginside LTD(AS9678)</code>，他作为我的<code>LIR</code>，申请的是<code>RIPE</code>。提供信息到签合同到补全信息，最后下号，花了不到一周的时间。<code>APNIC</code>可能没那么快。</p>
+<h3 id="ripe准备的材料">RIPE准备的材料</h3>
+<ul>
+<li>注册<code>RIPE</code>账号，新建一些 <code>Database</code>的信息。</li>
+<li>你的护照照片</li>
+<li>你在欧洲拥有网络服务的证明（购买的订单截图、机房地址和管理员邮箱）</li>
+<li>ISP愿意给你接入BGP的证明</li>
+<li>两个需要接入的ASN</li>
+</ul>
+<h2 id="asn下号">ASN下号</h2>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402qbALxU.jpg" alt="20220402qbALxU"  />
+</p>
+<h2 id="接入bgp-session以buyvm为例vultr类似">接入BGP Session（以BuyVM为例，Vultr类似）</h2>
+<ul>
+<li>发<code>Ticket</code>告诉客服你的ASN号，客服一般会向该ASN的管理员邮箱发送一串随机字符串，需要在工单中回复，验证你是ASN的持有人。稍后，客服会在面板里面加入你的ASN和你的IP段。</li>
+</ul>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402T4JgCU.png" alt="20220402T4JgCU"  />
+</p>
+<ul>
+<li>在你的VPS上安装<code>bird</code>。用于宣告你的IP。</li>
+<li>修改 /etc/bird/bird6.conf的配置文件</li>
+<li>修改配置中的 router id 改为自己的IPv4地址</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-0-1"><a class="lnlinks" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">router id 205.121.23.12;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>在文件的最后添加上</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-1-1"><a class="lnlinks" href="#hl-1-1"> 1</a>
+</span><span class="lnt" id="hl-1-2"><a class="lnlinks" href="#hl-1-2"> 2</a>
+</span><span class="lnt" id="hl-1-3"><a class="lnlinks" href="#hl-1-3"> 3</a>
+</span><span class="lnt" id="hl-1-4"><a class="lnlinks" href="#hl-1-4"> 4</a>
+</span><span class="lnt" id="hl-1-5"><a class="lnlinks" href="#hl-1-5"> 5</a>
+</span><span class="lnt" id="hl-1-6"><a class="lnlinks" href="#hl-1-6"> 6</a>
+</span><span class="lnt" id="hl-1-7"><a class="lnlinks" href="#hl-1-7"> 7</a>
+</span><span class="lnt" id="hl-1-8"><a class="lnlinks" href="#hl-1-8"> 8</a>
+</span><span class="lnt" id="hl-1-9"><a class="lnlinks" href="#hl-1-9"> 9</a>
+</span><span class="lnt" id="hl-1-10"><a class="lnlinks" href="#hl-1-10">10</a>
+</span><span class="lnt" id="hl-1-11"><a class="lnlinks" href="#hl-1-11">11</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol bgp vultr
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">  local as 你的asn(开头不带as);
+</span></span><span class="line"><span class="cl">  source address 实例的ipv6;
+</span></span><span class="line"><span class="cl">  import none;
+</span></span><span class="line"><span class="cl">  export all;
+</span></span><span class="line"><span class="cl">  graceful restart on;
+</span></span><span class="line"><span class="cl">  multihop 2;
+</span></span><span class="line"><span class="cl">  neighbor 2001:19f0:ffff::1 as 64515; #这个是服务器的ip
+</span></span><span class="line"><span class="cl">  password &#34;在申请广播的时候设置的bgp密码&#34;;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>寻找到protocol static（没有的话自己加一个）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-2-1"><a class="lnlinks" href="#hl-2-1">1</a>
+</span><span class="lnt" id="hl-2-2"><a class="lnlinks" href="#hl-2-2">2</a>
+</span><span class="lnt" id="hl-2-3"><a class="lnlinks" href="#hl-2-3">3</a>
+</span><span class="lnt" id="hl-2-4"><a class="lnlinks" href="#hl-2-4">4</a>
+</span><span class="lnt" id="hl-2-5"><a class="lnlinks" href="#hl-2-5">5</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol static
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">  route  [v6前缀] via [实例的IPv6];
+</span></span><span class="line"><span class="cl">  #route  2001:2333:2333::/48 via 4096:4096:4096:338:5400:01ff:fecf:596c;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>找到protocol direct</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-3-1"><a class="lnlinks" href="#hl-3-1">1</a>
+</span><span class="lnt" id="hl-3-2"><a class="lnlinks" href="#hl-3-2">2</a>
+</span><span class="lnt" id="hl-3-3"><a class="lnlinks" href="#hl-3-3">3</a>
+</span><span class="lnt" id="hl-3-4"><a class="lnlinks" href="#hl-3-4">4</a>
+</span><span class="lnt" id="hl-3-5"><a class="lnlinks" href="#hl-3-5">5</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">protocol direct
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">  interface &#34;dummy*&#34;;
+</span></span><span class="line"><span class="cl">  import all;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>配置虚拟网卡以及ip地址</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-4-1"><a class="lnlinks" href="#hl-4-1">1</a>
+</span><span class="lnt" id="hl-4-2"><a class="lnlinks" href="#hl-4-2">2</a>
+</span><span class="lnt" id="hl-4-3"><a class="lnlinks" href="#hl-4-3">3</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ip link add dev dummy1 type dummy # 添加虚拟网卡
+</span></span><span class="line"><span class="cl">ip link set dummy1 up
+</span></span><span class="line"><span class="cl">ip addr add dev dummy1 [前缀内的任意一个地址] # 添加地址
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>启动bird6</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-5-1"><a class="lnlinks" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">service bird6 restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看状态</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-6-1"><a class="lnlinks" href="#hl-6-1">1</a>
+</span><span class="lnt" id="hl-6-2"><a class="lnlinks" href="#hl-6-2">2</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">birdc6 show route
+</span></span><span class="line"><span class="cl">birdc6 show proto all
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>如果想要开机自启 在 <code>/etc/netplan</code>新增<code>01.dummy.yaml</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-7-1"><a class="lnlinks" href="#hl-7-1"> 1</a>
+</span><span class="lnt" id="hl-7-2"><a class="lnlinks" href="#hl-7-2"> 2</a>
+</span><span class="lnt" id="hl-7-3"><a class="lnlinks" href="#hl-7-3"> 3</a>
+</span><span class="lnt" id="hl-7-4"><a class="lnlinks" href="#hl-7-4"> 4</a>
+</span><span class="lnt" id="hl-7-5"><a class="lnlinks" href="#hl-7-5"> 5</a>
+</span><span class="lnt" id="hl-7-6"><a class="lnlinks" href="#hl-7-6"> 6</a>
+</span><span class="lnt" id="hl-7-7"><a class="lnlinks" href="#hl-7-7"> 7</a>
+</span><span class="lnt" id="hl-7-8"><a class="lnlinks" href="#hl-7-8"> 8</a>
+</span><span class="lnt" id="hl-7-9"><a class="lnlinks" href="#hl-7-9"> 9</a>
+</span><span class="lnt" id="hl-7-10"><a class="lnlinks" href="#hl-7-10">10</a>
+</span><span class="lnt" id="hl-7-11"><a class="lnlinks" href="#hl-7-11">11</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">network:
+</span></span><span class="line"><span class="cl">  version: 2
+</span></span><span class="line"><span class="cl">  renderer: networkd
+</span></span><span class="line"><span class="cl">  bridges:
+</span></span><span class="line"><span class="cl">    dummy0:
+</span></span><span class="line"><span class="cl">      dhcp4: no
+</span></span><span class="line"><span class="cl">      dhcp6: no
+</span></span><span class="line"><span class="cl">      accept-ra: no
+</span></span><span class="line"><span class="cl">      interfaces: [ ]
+</span></span><span class="line"><span class="cl">      addresses:
+</span></span><span class="line"><span class="cl">        - 2401:95c0:f001::1/128 #你的IP
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置xrayr的出站路由">配置XrayR的出站路由</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt" id="hl-8-1"><a class="lnlinks" href="#hl-8-1"> 1</a>
+</span><span class="lnt" id="hl-8-2"><a class="lnlinks" href="#hl-8-2"> 2</a>
+</span><span class="lnt" id="hl-8-3"><a class="lnlinks" href="#hl-8-3"> 3</a>
+</span><span class="lnt" id="hl-8-4"><a class="lnlinks" href="#hl-8-4"> 4</a>
+</span><span class="lnt" id="hl-8-5"><a class="lnlinks" href="#hl-8-5"> 5</a>
+</span><span class="lnt" id="hl-8-6"><a class="lnlinks" href="#hl-8-6"> 6</a>
+</span><span class="lnt" id="hl-8-7"><a class="lnlinks" href="#hl-8-7"> 7</a>
+</span><span class="lnt" id="hl-8-8"><a class="lnlinks" href="#hl-8-8"> 8</a>
+</span><span class="lnt" id="hl-8-9"><a class="lnlinks" href="#hl-8-9"> 9</a>
+</span><span class="lnt" id="hl-8-10"><a class="lnlinks" href="#hl-8-10">10</a>
+</span><span class="lnt" id="hl-8-11"><a class="lnlinks" href="#hl-8-11">11</a>
+</span><span class="lnt" id="hl-8-12"><a class="lnlinks" href="#hl-8-12">12</a>
+</span><span class="lnt" id="hl-8-13"><a class="lnlinks" href="#hl-8-13">13</a>
+</span><span class="lnt" id="hl-8-14"><a class="lnlinks" href="#hl-8-14">14</a>
+</span><span class="lnt" id="hl-8-15"><a class="lnlinks" href="#hl-8-15">15</a>
+</span><span class="lnt" id="hl-8-16"><a class="lnlinks" href="#hl-8-16">16</a>
+</span><span class="lnt" id="hl-8-17"><a class="lnlinks" href="#hl-8-17">17</a>
+</span><span class="lnt" id="hl-8-18"><a class="lnlinks" href="#hl-8-18">18</a>
+</span><span class="lnt" id="hl-8-19"><a class="lnlinks" href="#hl-8-19">19</a>
+</span><span class="lnt" id="hl-8-20"><a class="lnlinks" href="#hl-8-20">20</a>
+</span><span class="lnt" id="hl-8-21"><a class="lnlinks" href="#hl-8-21">21</a>
+</span><span class="lnt" id="hl-8-22"><a class="lnlinks" href="#hl-8-22">22</a>
+</span><span class="lnt" id="hl-8-23"><a class="lnlinks" href="#hl-8-23">23</a>
+</span><span class="lnt" id="hl-8-24"><a class="lnlinks" href="#hl-8-24">24</a>
+</span><span class="lnt" id="hl-8-25"><a class="lnlinks" href="#hl-8-25">25</a>
+</span><span class="lnt" id="hl-8-26"><a class="lnlinks" href="#hl-8-26">26</a>
+</span><span class="lnt" id="hl-8-27"><a class="lnlinks" href="#hl-8-27">27</a>
+</span><span class="lnt" id="hl-8-28"><a class="lnlinks" href="#hl-8-28">28</a>
+</span><span class="lnt" id="hl-8-29"><a class="lnlinks" href="#hl-8-29">29</a>
+</span><span class="lnt" id="hl-8-30"><a class="lnlinks" href="#hl-8-30">30</a>
+</span><span class="lnt" id="hl-8-31"><a class="lnlinks" href="#hl-8-31">31</a>
+</span><span class="lnt" id="hl-8-32"><a class="lnlinks" href="#hl-8-32">32</a>
+</span><span class="lnt" id="hl-8-33"><a class="lnlinks" href="#hl-8-33">33</a>
+</span><span class="lnt" id="hl-8-34"><a class="lnlinks" href="#hl-8-34">34</a>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    &#34;domainStrategy&#34;: &#34;IPOnDemand&#34;,
+</span></span><span class="line"><span class="cl">    &#34;rules&#34;: [
+</span></span><span class="line"><span class="cl">        {
+</span></span><span class="line"><span class="cl">            &#34;type&#34;: &#34;field&#34;,
+</span></span><span class="line"><span class="cl">            &#34;outboundTag&#34;: &#34;block&#34;,
+</span></span><span class="line"><span class="cl">            &#34;ip&#34;: [
+</span></span><span class="line"><span class="cl">                &#34;geoip:private&#34;
+</span></span><span class="line"><span class="cl">            ]
+</span></span><span class="line"><span class="cl">        },
+</span></span><span class="line"><span class="cl">        {
+</span></span><span class="line"><span class="cl">            &#34;type&#34;: &#34;field&#34;,
+</span></span><span class="line"><span class="cl">            &#34;outboundTag&#34;: &#34;block&#34;,
+</span></span><span class="line"><span class="cl">            &#34;protocol&#34;: [
+</span></span><span class="line"><span class="cl">                &#34;bittorrent&#34;
+</span></span><span class="line"><span class="cl">            ]
+</span></span><span class="line"><span class="cl">        },
+</span></span><span class="line"><span class="cl">		# 指定域名走我自己的IP
+</span></span><span class="line"><span class="cl">        {
+</span></span><span class="line"><span class="cl">            &#34;type&#34;: &#34;field&#34;,
+</span></span><span class="line"><span class="cl">            &#34;outboundTag&#34;: &#34;bgp_session&#34;,
+</span></span><span class="line"><span class="cl">            &#34;domain&#34;: [&#34;ipv6.ip.sb&#34;]
+</span></span><span class="line"><span class="cl">        },
+</span></span><span class="line"><span class="cl">		# Netflix和YouTube走我自己的IP
+</span></span><span class="line"><span class="cl">        {
+</span></span><span class="line"><span class="cl">            &#34;type&#34;: &#34;field&#34;,
+</span></span><span class="line"><span class="cl">            &#34;outboundTag&#34;: &#34;bgp_session&#34;,
+</span></span><span class="line"><span class="cl">            &#34;domain&#34;: [
+</span></span><span class="line"><span class="cl">                &#34;geosite:netflix&#34;,
+</span></span><span class="line"><span class="cl">                &#34;geosite:youtube&#34;
+</span></span><span class="line"><span class="cl">            ]
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    ]
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>##上网测试</p>
+<h3 id="ipsb">IP.SB</h3>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402WVLK3S.png" alt="20220402WVLK3S"  />
+</p>
+<h3 id="netflix解锁台湾nf所有片源">Netflix（解锁台湾NF所有片源）</h3>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402MRa9zP.png" alt="20220402MRa9zP"  />
+</p>
+<h3 id="youtube支持premium-tw">YouTube（支持Premium TW）</h3>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402oAFKci.png" alt="20220402oAFKci"  />
+</p>
+<h2 id="参考文章">参考文章</h2>
+<p><a href="https://hex.moe/p/d6a20b99/">年轻人的第一个私人BGP(二) - 广播你的IP</a>
+<a href="https://blog.ni-co.moe/public/560.html">IP 广播: 使用bird广播(组播)ipv6</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

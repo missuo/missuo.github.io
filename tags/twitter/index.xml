@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Twitter on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/twitter/</link>
+    <description>Recent content in Twitter on Vincent&#39;s Notes</description>
+    <image>
+      <url>https://missuo.me/papermod-cover.png</url>
+      <link>https://missuo.me/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Nov 2022 22:52:42 +0000</lastBuildDate><atom:link href="https://missuo.me/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Twitter using NFT avatar</title>
+      <link>https://missuo.me/posts/twitter-nft-avatar/</link>
+      <pubDate>Sun, 06 Nov 2022 22:52:42 +0000</pubDate>
+      
+      <guid>https://missuo.me/posts/twitter-nft-avatar/</guid>
+      <description>准备工作 OpenSea 帐号 MetaMask 钱包 Coinbase 钱包 开通步骤 开通 Twitter Blue 推荐使用iPhone打开Twitter官方客户端，我的Apple ID是美区的，可以直接通过内购开通，价格为每月 4.99USD。
+往你的 MetaMask 钱包充钱 正常情况下，等值2USD的ETH足够了。因为我是用OKX向我的MetaMask转账的，OKX的最低转账是0.01ETH，所以我充值了大概130CNY全部买成ETH。（0.01ETH大概可以生成6-7个NFT头像）
+请注意最好是复制粘贴你的 MetaMask 的ETH收款地址，输错无法找回。
+以上这笔费用，主要是用于转移你的NFT头像头像的手续费。大概不到2USD。
+在OpenSea上传你的头像 点击 Create 按扭。上传你的头像，并且取一个名字即可。
+转移你的头像到 Coinbase 点击红色框框内的 转移 图标。输入你的 Coinbase ETH地址，这个时候会需要你支付手续费。你直接支付即可。
+更换Twitter头像 在Twitter上点击更换头像，选择NFT，这个时候会提示你连接你的ETH钱包，你连接你的 Coinbase 钱包之后，会发现已经有一个可选的头像了。换好之后就是六边形的NFT专属头像。</description>
+      <content:encoded><![CDATA[<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>OpenSea 帐号</li>
+<li>MetaMask 钱包</li>
+<li>Coinbase 钱包</li>
+</ul>
+<h2 id="开通步骤">开通步骤</h2>
+<h3 id="开通-twitter-blue">开通 Twitter Blue</h3>
+<p>推荐使用iPhone打开Twitter官方客户端，我的Apple ID是美区的，可以直接通过内购开通，价格为每月 <code>4.99USD</code>。</p>
+<h3 id="往你的-metamask-钱包充钱">往你的 MetaMask 钱包充钱</h3>
+<p>正常情况下，等值2USD的ETH足够了。因为我是用OKX向我的MetaMask转账的，OKX的最低转账是0.01ETH，所以我充值了大概130CNY全部买成ETH。（0.01ETH大概可以生成6-7个NFT头像）</p>
+<p><strong>请注意最好是复制粘贴你的 MetaMask 的ETH收款地址，输错无法找回。</strong></p>
+<p>以上这笔费用，主要是用于转移你的NFT头像头像的手续费。大概不到2USD。</p>
+<h3 id="在opensea上传你的头像">在OpenSea上传你的头像</h3>
+<p>点击 <a href="https://opensea.io/asset/create">Create</a> 按扭。上传你的头像，并且取一个名字即可。</p>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20221106KsQLZo.png" alt="20221106KsQLZo"  />
+</p>
+<h3 id="转移你的头像到-coinbase">转移你的头像到 Coinbase</h3>
+<p>点击红色框框内的 <code>转移</code> 图标。输入你的 Coinbase ETH地址，这个时候会需要你支付手续费。你直接支付即可。</p>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20221106gfwJSy.png" alt="20221106gfwJSy"  />
+</p>
+<h3 id="更换twitter头像">更换Twitter头像</h3>
+<p>在Twitter上点击更换头像，选择NFT，这个时候会提示你连接你的ETH钱包，你连接你的 Coinbase 钱包之后，会发现已经有一个可选的头像了。换好之后就是六边形的NFT专属头像。</p>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20221106rcFWOB.jpg" alt="20221106rcFWOB"  />
+</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

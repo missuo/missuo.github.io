@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Google Voice on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/google-voice/</link>
+    <description>Recent content in Google Voice on Vincent&#39;s Notes</description>
+    <image>
+      <url>https://missuo.me/papermod-cover.png</url>
+      <link>https://missuo.me/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Apr 2022 20:05:32 +0000</lastBuildDate><atom:link href="https://missuo.me/tags/google-voice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Makes Google Voice permanent</title>
+      <link>https://missuo.me/posts/makes-google-voice-permanent/</link>
+      <pubDate>Sat, 23 Apr 2022 20:05:32 +0000</pubDate>
+      
+      <guid>https://missuo.me/posts/makes-google-voice-permanent/</guid>
+      <description>Google Voice是由Google 推出的VOIP 服务，能够将个人所用的众多电话号码集中成为一个号码，同时提供许多加值服务，它在美加地区提供的免费语音通话和短信服务。
+过去常用的方法是花10美元买一个新号，然后再花20美元永久保留旧号，总共需要花费30美元，但是现在仅需花费10美元低成本保留旧号。
+准备工作 一张 Visa/Master/American Express Debit/Credit Card 一个美国IP的梯子 具体操作 打开 https://voice.google.com ，登陆你的账号。 进入旧版控制台，由于现在谷歌已经隐藏了旧版工作台的入口，你无法直接进入，我们直接在地址栏，替换为 https://www.google.com/voice/b/1?noredirect=1#phones ，按回车访问。 选择Change / Port进行换号。 选择 I want a new number。 换号10美元，点Continue继续。 选择一个你喜欢的号点Continue继续。 点Purchase number继续。 付款，换号成功，点Done。 账号上已经有两个Google Voice号了，但旧Google Voice号后面有过期时间。 返回 新版控制台，访问 https://voice.google.com ，点右上角的设置 ⚙️ 图标。 旧号码上会出现 永久保留 选项，点击这个按钮。 会提示 此号码将由您永久保留。完成。
+可靠性 很多朋友可能都会疑惑，这样操作，两个号码是不是都会变成永久保留。针对这个问题，我特地给谷歌支持团队发了邮件咨询。
+大概的意思是旧号码将会被永久保留，但是新买的新号不会被永久保留，需要在六个月内保持活跃，通过主动发短信/打电话的方式来保号。
+译文 原文 感谢 由于我已经操作完，部分截图来自 https://www.winvps.eu/279/</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>Google Voice是由Google 推出的VOIP 服务，能够将个人所用的众多电话号码集中成为一个号码，同时提供许多加值服务，它在美加地区提供的免费语音通话和短信服务。</p>
+</blockquote>
+<blockquote>
+<p>过去常用的方法是花10美元买一个新号，然后再花20美元永久保留旧号，总共需要花费30美元，但是现在仅需花费10美元低成本保留旧号。</p>
+</blockquote>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220423g8fPwZ.jpg" alt="20220423g8fPwZ"  />
+</p>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>一张 Visa/Master/American Express Debit/Credit Card</li>
+<li>一个美国IP的梯子</li>
+</ul>
+<h2 id="具体操作">具体操作</h2>
+<ol>
+<li>
+<p>打开 <a href="https://voice.google.com">https://voice.google.com</a> ，登陆你的账号。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423u3L6jx.jpg" alt="20220423u3L6jx"  />
+</p>
+</li>
+<li>
+<p>进入<code>旧版控制台</code>，由于现在谷歌已经隐藏了旧版工作台的入口，你无法直接进入，我们直接在地址栏，替换为 <a href="https://www.google.com/voice/b/1?noredirect=1#phones">https://www.google.com/voice/b/1?noredirect=1#phones</a> ，按回车访问。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423KzTqAj.jpg" alt="20220423KzTqAj"  />
+</p>
+</li>
+<li>
+<p>选择<code>Change / Port</code>进行换号。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423TqML9v.jpg" alt="20220423TqML9v"  />
+</p>
+</li>
+<li>
+<p>选择 <code>I want a new number</code>。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423Sxzvsc.jpg" alt="20220423Sxzvsc"  />
+</p>
+</li>
+<li>
+<p>换号10美元，点<code>Continue</code>继续。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423roSmPv.jpg" alt="20220423roSmPv"  />
+</p>
+</li>
+<li>
+<p>选择一个你喜欢的号点<code>Continue</code>继续。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423tDGH4h.jpg" alt="20220423tDGH4h"  />
+</p>
+</li>
+<li>
+<p>点<code>Purchase number</code>继续。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423NIY5tJ.jpg" alt="20220423NIY5tJ"  />
+</p>
+</li>
+<li>
+<p>付款，换号成功，点<code>Done</code>。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423dLmuFA.jpg" alt="20220423dLmuFA"  />
+</p>
+</li>
+<li>
+<p>账号上已经有两个Google Voice号了，但旧Google Voice号后面有过期时间。
+<img loading="lazy" src="https://static.nisekoo.com/blog/20220423Yfdup6.jpg" alt="20220423Yfdup6"  />
+</p>
+</li>
+<li>
+<p>返回 <code>新版控制台</code>，访问 <a href="https://voice.google.com">https://voice.google.com</a>  ，点右上角的设置 ⚙️ 图标。
+<img loading="lazy" src="https://static.nisekoo.com/blog/202204235B4ldU.png" alt="202204235B4ldU"  />
+</p>
+</li>
+<li>
+<p>旧号码上会出现 <code>永久保留</code> 选项，点击这个按钮。
+<img loading="lazy" src="https://static.nisekoo.com/blog/202204233zMpPp.jpg" alt="202204233zMpPp"  />
+</p>
+</li>
+<li>
+<p>会提示 <code>此号码将由您永久保留</code>。完成。</p>
+</li>
+</ol>
+<h2 id="可靠性">可靠性</h2>
+<blockquote>
+<p>很多朋友可能都会疑惑，这样操作，两个号码是不是都会变成永久保留。针对这个问题，我特地给谷歌支持团队发了邮件咨询。</p>
+</blockquote>
+<p><strong>大概的意思是旧号码将会被<code>永久保留</code>，但是新买的新号不会被永久保留，需要在六个月内保持活跃，通过主动发短信/打电话的方式来保号。</strong></p>
+<h3 id="译文">译文</h3>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220423PhwlfY.png" alt="20220423PhwlfY"  />
+</p>
+<h3 id="原文">原文</h3>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220423aziEAw.JPEG" alt="20220423aziEAw"  />
+</p>
+<h2 id="感谢">感谢</h2>
+<p>由于我已经操作完，部分截图来自 <a href="https://www.winvps.eu/279/">https://www.winvps.eu/279/</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
