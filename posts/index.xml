@@ -6,7 +6,73 @@
     <description>Recent content in Posts on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Feb 2023 03:32:33 +0800</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Feb 2023 07:04:11 +0800</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I subscribed to ChatGPT Plus</title>
+      <link>https://missuo.me/posts/chatgpt-plus/</link>
+      <pubDate>Sat, 11 Feb 2023 07:04:11 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/chatgpt-plus/</guid>
+      <description>ChatGPT Plus 功能 Available even when demand is high 即使在需求大的时候也可以使用 Faster response speed 更快的反应速度 Priority access to new features 优先获得新功能 订阅 正常方式 填写表格并等待官方给你发送电子邮件获取资格。
+https://docs.google.com/forms/d/e/1FAIpQLScee6ST3o-kZDjlw1ROfUNyjuRBwGdcoewxjCULNejbP5hdzQ/viewform
+漏洞 在中国时间的2月10日下午，看到群里有很多朋友说出现了Upgrade Plan的按钮，我立即登陆了我的帐号发现确实也有了，但是因为中国信用卡无法支付，导致开通失败。2月11日我再次登录的时候发现已经消失了这个按钮。
+我翻看了我的Chrome历史记录，找到了一个pay.openai.com的链接，点进去发现还是熟悉的Stripe的界面。但是奇怪的事情是我无法填写地址信息，但是没有地址信息无法提交。无奈之下，当然是按下F12，找到填写地址的每一个input标签，把diable全部改为enable，顺利地填写了信息。在我的好朋友Ming C的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到chat.openai.com发现已经开通好了。
+体验 Plus版本有两个模式，分别是 Default 和 Turbo。
+根据描述和实际体验，Turbo模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。
+IP的问题 无法访问 ChatGPT封锁了很多机房的IP，因为ChatGPT使用的是Cloudflare的服务，我猜测是使用了Country匹配，也就是说只有在指定国家可用，目前是161个国家。除此之外，应该还加入了Threat Score和Known Bots的判断。意味着你的IP要想顺利访问，需要具备两个条件，IP属于来自161个国家之一，并且你的IP危险分数足够低。
+我的方案 在2022年3月28日，我在RIPE申请到了ASN，也就意味着我可以持有IPv4和IPv6，我目前持有两个/48的IPv6。我目前的IPv6分别来自台湾和英国，都在161个国家之内，危险分数是0分。我建立了BGP Session，完全可以使用自己的IP来访问OpenAI的服务。
+Prefixes: 2401:95c0:f001::/48 2a0f:9400:6907::/48 检测是否可用 为了验证当前IP是否能够正常使用OpenAI服务，我用Shell写了一个检测脚本——OpenAI-Checker。使用方法也非常简单，仅需要在任何Linux/macOS上执行以下命令。
+bash &amp;lt;(curl -Ls https://cpp.li/openai) 检测结果示例：
+&amp;gt; bash &amp;lt;(curl -Ls https://cpp.li/openai) OpenAI Access Checker. Made by Vincent https://github.com/missuo/OpenAI-Checker ------------------------------------- [IPv4] Your IPv4: 205.185.1.1 - FranTech Solutions Your IP supports access to OpenAI.</description>
+      <content:encoded><![CDATA[<h2 id="chatgpt-plus-功能">ChatGPT Plus 功能</h2>
+<ul>
+<li>Available even when demand is high 即使在需求大的时候也可以使用</li>
+<li>Faster response speed 更快的反应速度</li>
+<li>Priority access to new features 优先获得新功能</li>
+</ul>
+<h2 id="订阅">订阅</h2>
+<h3 id="正常方式">正常方式</h3>
+<p>填写表格并等待官方给你发送电子邮件获取资格。<br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScee6ST3o-kZDjlw1ROfUNyjuRBwGdcoewxjCULNejbP5hdzQ/viewform">https://docs.google.com/forms/d/e/1FAIpQLScee6ST3o-kZDjlw1ROfUNyjuRBwGdcoewxjCULNejbP5hdzQ/viewform</a></p>
+<h3 id="漏洞">漏洞</h3>
+<p>在中国时间的2月10日下午，看到群里有很多朋友说出现了<strong>Upgrade Plan</strong>的按钮，我立即登陆了我的帐号发现确实也有了，但是因为中国信用卡无法支付，导致开通失败。2月11日我再次登录的时候发现已经消失了这个按钮。</p>
+<p>我翻看了我的<strong>Chrome历史记录</strong>，找到了一个<a href="https://pay.openai.com">pay.openai.com</a>的链接，点进去发现还是熟悉的<strong>Stripe</strong>的界面。但是奇怪的事情是<strong>我无法填写地址信息</strong>，但是没有地址信息无法提交。无奈之下，当然是按下F12，找到填写地址的每一个<code>input</code>标签，把<code>diable</code>全部改为<code>enable</code>，顺利地填写了信息。在我的好朋友<strong>Ming C</strong>的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到<a href="https://chat.openai.com">chat.openai.com</a>发现已经开通好了。</p>
+<h2 id="体验">体验</h2>
+<p>Plus版本有两个模式，分别是 <strong>Default</strong> 和 <strong>Turbo</strong>。<br>
+<img loading="lazy" src="https://static.nisekoo.com/blog/202302114W6T0j.png" alt="202302114W6T0j"  />
+</p>
+<p>根据描述和实际体验，<strong>Turbo</strong>模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。</p>
+<h2 id="ip的问题">IP的问题</h2>
+<h3 id="无法访问">无法访问</h3>
+<p>ChatGPT封锁了很多机房的IP，因为ChatGPT使用的是<a href="https://cloudflare.com">Cloudflare</a>的服务，我猜测是使用了<code>Country</code>匹配，也就是说只有在指定国家可用，目前是161个国家。除此之外，应该还加入了<code>Threat Score</code>和<code>Known Bots</code>的判断。意味着你的IP要想顺利访问，需要具备两个条件，IP属于来自161个国家之一，并且你的IP危险分数足够低。</p>
+<h3 id="我的方案">我的方案</h3>
+<p>在2022年3月28日，我在RIPE申请到了ASN，也就意味着我可以持有IPv4和IPv6，我目前持有两个<code>/48</code>的IPv6。我目前的IPv6分别来自<code>台湾</code>和<code>英国</code>，都在161个国家之内，危险分数是0分。我建立了BGP Session，完全可以使用自己的IP来访问OpenAI的服务。<br>
+<img loading="lazy" src="https://static.nisekoo.com/blog/20230211Dlnlje.png" alt="20230211Dlnlje"  />
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Prefixes:
+</span></span><span class="line"><span class="cl">2401:95c0:f001::/48
+</span></span><span class="line"><span class="cl">2a0f:9400:6907::/48
+</span></span></code></pre></div><h3 id="检测是否可用">检测是否可用</h3>
+<p>为了验证当前IP是否能够正常使用OpenAI服务，我用Shell写了一个检测脚本——<a href="https://github.com/missuo/OpenAI-Checker">OpenAI-Checker</a>。使用方法也非常简单，仅需要在任何Linux/macOS上执行以下命令。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -Ls https://cpp.li/openai<span class="o">)</span>
+</span></span></code></pre></div><p>检测结果示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; bash &lt;(curl -Ls https://cpp.li/openai)
+</span></span><span class="line"><span class="cl">OpenAI Access Checker. Made by Vincent
+</span></span><span class="line"><span class="cl">https://github.com/missuo/OpenAI-Checker
+</span></span><span class="line"><span class="cl">-------------------------------------
+</span></span><span class="line"><span class="cl">[IPv4]
+</span></span><span class="line"><span class="cl">Your IPv4: 205.185.1.1 - FranTech Solutions
+</span></span><span class="line"><span class="cl">Your IP supports access to OpenAI. Region: US
+</span></span><span class="line"><span class="cl">-------------------------------------
+</span></span><span class="line"><span class="cl">[IPv6]
+</span></span><span class="line"><span class="cl">Your IPv6: 2401:95c0:f001::1 - Vincent Yang
+</span></span><span class="line"><span class="cl">Your IP supports access to OpenAI. Region: TW
+</span></span><span class="line"><span class="cl">-------------------------------------
+</span></span></code></pre></div><h2 id="总结">总结</h2>
+<p>ChatGPT Plus的订阅价格为20美元/月，其实我觉得还可以，毕竟它能让你的体验更好，它能帮助你做很多事。只是中国大陆用户需要解决网络、绑定手机、和支付问题，这一下子提高了使用门槛。</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Create query API for 500 million Weibo data</title>
       <link>https://missuo.me/posts/weibo-data-searcher/</link>
