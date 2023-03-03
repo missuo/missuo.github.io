@@ -8,7 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Mar 2023 02:42:51 +0800</lastBuildDate><atom:link href="https://missuo.me/tags/casks/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Brew Version Update</title>
+      <title>Automatically update Homebrew versions using Action</title>
       <link>https://missuo.me/posts/brew-version-update/</link>
       <pubDate>Sat, 04 Mar 2023 02:42:51 +0800</pubDate>
       
