@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Homebrew on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/homebrew/</link>
+    <description>Recent content in Homebrew on Vincent&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Mar 2023 02:42:51 +0800</lastBuildDate><atom:link href="https://missuo.me/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brew Version Update</title>
+      <link>https://missuo.me/posts/brew-version-update/</link>
+      <pubDate>Sat, 04 Mar 2023 02:42:51 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/brew-version-update/</guid>
+      <description>Homebrew可以说是Mac上必装的命令行工具之一。它真的太好用太方便的。但是你在维护一个Homebrew Tap的时候，如果你的程序有新的Release发布时，需要在对应的.rb文件中修改版本号以及对应的二进制文件的sha256，这显然会有些繁琐，或者说不太优雅。
+我习惯使用GitHub Action去交叉编译各种Release，重要的是Action可以帮助我自动发布。其实在每一次Action发布之后，可以添加一个Step，去更新Casks或者Formula的.rb。为了方便，你可以创建一个.sh文件来做这件事。
+部分代码（以DeepL X为例） 更新版本号 # Get the latest version of Deeplx last_version=$(curl -Ls &amp;#34;https://api.github.com/repos/OwO-Network/DeepLX/releases/latest&amp;#34; | grep &amp;#39;&amp;#34;tag_name&amp;#34;:&amp;#39; | sed -E &amp;#39;s/.*&amp;#34;([^&amp;#34;]+)&amp;#34;.*/\1/&amp;#39; | sed &amp;#39;s/v//g&amp;#39;) # Update the version number in the formula sed -i &amp;#34;s/version \&amp;#34;.*/version \&amp;#34;${last_version}\&amp;#34;/g&amp;#34; Formula/deeplx.rb 更新sha256 # Download the new binaries wget -O deeplx_darwin_amd64 https://github.com/OwO-Network/DeepLX/releases/download/v${last_version}/deeplx_darwin_amd64 wget -O deeplx_darwin_arm64 https://github.com/OwO-Network/DeepLX/releases/download/v${last_version}/deeplx_darwin_arm64 # Calculate the SHA256 hash for the new binaries amd64_sha256=$(sha256sum deeplx_darwin_amd64 | cut -d &amp;#39; &amp;#39; -f 1) arm64_sha256=$(sha256sum deeplx_darwin_arm64 | cut -d &amp;#39; &amp;#39; -f 1) # Update the SHA256 hashes in the formula sed -i &amp;#34;8s/.</description>
+      <content:encoded><![CDATA[<p>Homebrew可以说是Mac上必装的命令行工具之一。它真的太好用太方便的。但是你在维护一个Homebrew Tap的时候，如果你的程序有新的Release发布时，需要在对应的<code>.rb</code>文件中修改版本号以及对应的二进制文件的sha256，这显然会有些繁琐，或者说不太优雅。</p>
+<p>我习惯使用GitHub Action去交叉编译各种Release，重要的是Action可以帮助我自动发布。其实在每一次Action发布之后，可以添加一个Step，去更新Casks或者Formula的<code>.rb</code>。为了方便，你可以创建一个<code>.sh</code>文件来做这件事。</p>
+<h2 id="部分代码以deepl-x为例">部分代码（以DeepL X为例）</h2>
+<h4 id="更新版本号">更新版本号</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Get the latest version of Deeplx</span>
+</span></span><span class="line"><span class="cl"><span class="nv">last_version</span><span class="o">=</span><span class="k">$(</span>curl -Ls <span class="s2">&#34;https://api.github.com/repos/OwO-Network/DeepLX/releases/latest&#34;</span> <span class="p">|</span> grep <span class="s1">&#39;&#34;tag_name&#34;:&#39;</span> <span class="p">|</span> sed -E <span class="s1">&#39;s/.*&#34;([^&#34;]+)&#34;.*/\1/&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/v//g&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Update the version number in the formula</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/version \&#34;.*/version \&#34;</span><span class="si">${</span><span class="nv">last_version</span><span class="si">}</span><span class="s2">\&#34;/g&#34;</span> Formula/deeplx.rb
+</span></span></code></pre></div><h4 id="更新sha256">更新sha256</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="c1"># Download the new binaries</span>
+</span></span><span class="line"><span class="cl">wget -O deeplx_darwin_amd64 https://github.com/OwO-Network/DeepLX/releases/download/v<span class="si">${</span><span class="nv">last_version</span><span class="si">}</span>/deeplx_darwin_amd64
+</span></span><span class="line"><span class="cl">wget -O deeplx_darwin_arm64 https://github.com/OwO-Network/DeepLX/releases/download/v<span class="si">${</span><span class="nv">last_version</span><span class="si">}</span>/deeplx_darwin_arm64
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Calculate the SHA256 hash for the new binaries</span>
+</span></span><span class="line"><span class="cl"><span class="nv">amd64_sha256</span><span class="o">=</span><span class="k">$(</span>sha256sum deeplx_darwin_amd64 <span class="p">|</span> cut -d <span class="s1">&#39; &#39;</span> -f 1<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">arm64_sha256</span><span class="o">=</span><span class="k">$(</span>sha256sum deeplx_darwin_arm64 <span class="p">|</span> cut -d <span class="s1">&#39; &#39;</span> -f 1<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Update the SHA256 hashes in the formula</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;8s/.*/    sha256 \&#34;</span><span class="si">${</span><span class="nv">arm64_sha256</span><span class="si">}</span><span class="s2">\&#34;/&#34;</span> Formula/deeplx.rb
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;11s/.*/    sha256 \&#34;</span><span class="si">${</span><span class="nv">amd64_sha256</span><span class="si">}</span><span class="s2">\&#34;/&#34;</span> Formula/deeplx.rb
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Delete the new binaries</span>
+</span></span><span class="line"><span class="cl">rm -f deeplx_darwin*
+</span></span></code></pre></div><p>在Action发布到Release之后，触发这个shell文件就可以啦。这样的话，当你有新的Release发布的时候，无需去维护Homebrew Tap。用户可以直接获取到最新的版本。</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
