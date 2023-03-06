@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GPG on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/gpg/</link>
+    <description>Recent content in GPG on Vincent&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Mar 2023 04:12:33 +0800</lastBuildDate><atom:link href="https://missuo.me/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Enable Commit Signing</title>
+      <link>https://missuo.me/posts/git-commit-enable-signing/</link>
+      <pubDate>Tue, 07 Mar 2023 04:12:33 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/git-commit-enable-signing/</guid>
+      <description>Generate GPG key $ gpg --full-generate-key Choose RSA and RS and 4096. Please make sure the email is the same as your Git.
+Export GPG Key $ gpg --list-secret-keys --keyid-format LONG gpg: checking the trustdb gpg: marginals needed: 3 completes needed: 1 trust model: pgp gpg: depth: 0 valid: 2 signed: 0 trust: 0-, 0q, 0n, 0m, 0f, 2u /Users/vincent/.gnupg/pubring.kbx --------------------------------- sec rsa3072/A035553B8A2F45A2 2022-09-10 [SC] 21B1DADC35757E3C1680ABF0A035553B8A2F45A2 uid [ultimate] Vincent Young &amp;lt;i@yyt.</description>
+      <content:encoded><![CDATA[<h3 id="generate-gpg-key">Generate GPG key</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gpg --full-generate-key
+</span></span></code></pre></div><p>Choose <code>RSA and RS</code> and <code>4096</code>. Please make sure the email is the same as your Git.</p>
+<h3 id="export-gpg-key">Export GPG Key</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gpg --list-secret-keys --keyid-format LONG
+</span></span><span class="line"><span class="cl">gpg: checking the trustdb
+</span></span><span class="line"><span class="cl">gpg: marginals needed: <span class="m">3</span>  completes needed: <span class="m">1</span>  trust model: pgp
+</span></span><span class="line"><span class="cl">gpg: depth: <span class="m">0</span>  valid:   <span class="m">2</span>  signed:   <span class="m">0</span>  trust: 0-, 0q, 0n, 0m, 0f, 2u
+</span></span><span class="line"><span class="cl">/Users/vincent/.gnupg/pubring.kbx
+</span></span><span class="line"><span class="cl">---------------------------------
+</span></span><span class="line"><span class="cl">sec   rsa3072/A035553B8A2F45A2 2022-09-10 <span class="o">[</span>SC<span class="o">]</span>
+</span></span><span class="line"><span class="cl">      21B1DADC35757E3C1680ABF0A035553B8A2F45A2
+</span></span><span class="line"><span class="cl">uid                 <span class="o">[</span>ultimate<span class="o">]</span> Vincent Young &lt;i@yyt.moe&gt;
+</span></span><span class="line"><span class="cl">ssb   rsa3072/FDE12D34BDBDE80E 2022-09-10 <span class="o">[</span>E<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sec   rsa4096/84A0830C90354A56 2023-03-06 <span class="o">[</span>SC<span class="o">]</span>
+</span></span><span class="line"><span class="cl">      7BF3AA3C919F20EA1A36CCD984A0830C90354A56
+</span></span><span class="line"><span class="cl">uid                 <span class="o">[</span>ultimate<span class="o">]</span> Vincent Young <span class="o">(</span>Git<span class="o">)</span> &lt;missuo@pm.me&gt;
+</span></span><span class="line"><span class="cl">ssb   rsa4096/D611020AF7422B8D 2023-03-06 <span class="o">[</span>E<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ gpg --armor --export 84A0830C90354A56
+</span></span><span class="line"><span class="cl">-----BEGIN PGP PUBLIC KEY BLOCK-----
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">-----END PGP PUBLIC KEY BLOCK-----
+</span></span></code></pre></div><h3 id="fill-in-your-github">Fill in your GitHub</h3>
+<p><a href="https://github.com/settings/gpg/new">Add new GPG Key</a></p>
+<h3 id="configure-git">Configure Git</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git config --global user.signingkey 84A0830C90354A56
+</span></span><span class="line"><span class="cl">$ git config --global commit.gpgsign <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Avoid entering your password every time</span>
+</span></span><span class="line"><span class="cl">brew install gpg-suite --cask
+</span></span></code></pre></div><h3 id="configure-vscode">Configure VSCode</h3>
+<p>Check the box in the settings <code>Git: Enable Commit Signing</code>.</p>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20230307sUo8Vy.png" alt="20230307sUo8Vy"  />
+</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
