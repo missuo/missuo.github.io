@@ -2,21 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://missuo.me/tags/essay/</loc>
-    <lastmod>2023-03-23T01:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/netizen/</loc>
-    <lastmod>2023-03-23T01:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-03-23T01:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-03-23T01:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
-    <lastmod>2023-03-23T01:58:26+08:00</lastmod>
-  </url><url>
     <loc>https://missuo.me/tags/commit/</loc>
     <lastmod>2023-03-07T04:12:33+08:00</lastmod>
   </url><url>
@@ -27,6 +12,15 @@
     <lastmod>2023-03-07T04:12:33+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/gpg/</loc>
+    <lastmod>2023-03-07T04:12:33+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-03-07T04:12:33+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-03-07T04:12:33+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
     <lastmod>2023-03-07T04:12:33+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/brew-version-update/</loc>
