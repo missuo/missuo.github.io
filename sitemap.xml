@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/tags/bank/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/bochk-open-account/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/debit-card/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/hong-kong/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2023-04-16T22:18:24+08:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/tags/commit/</loc>
     <lastmod>2023-03-07T04:12:33+08:00</lastmod>
   </url><url>
@@ -12,15 +33,6 @@
     <lastmod>2023-03-07T04:12:33+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/gpg/</loc>
-    <lastmod>2023-03-07T04:12:33+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-03-07T04:12:33+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-03-07T04:12:33+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2023-03-07T04:12:33+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/brew-version-update/</loc>
@@ -240,9 +252,6 @@
     <lastmod>2022-04-04T05:28:03+00:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/2019-hong-kong-travel/</loc>
-    <lastmod>2019-06-30T07:30:46+00:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/hong-kong/</loc>
     <lastmod>2019-06-30T07:30:46+00:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/travel/</loc>
