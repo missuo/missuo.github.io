@@ -16,7 +16,7 @@
       <description>原理分析 Cloudflare WARP 拥有很多 IP，而 ChatGPT 的 CDN 又是 Cloudflare 提供的，也就是说，能不能访问完全取决于 Cloudflare。因此使用 Cloudflare 自己的 IP 大概率不会被 Ban。除了 WARP 之外，iCloud Private Relay 也是 Cloudflare 的 IP 哦。
 具体步骤 本文的方案仅改变 IPv6 出口 IP，不会改变 IPv4 出口 IP，更不会改变路由。
 准备一台 VPS，需要是 OpenGPT 支持的 161 个国家之一。因为你的网络在哪里，WARP 就会使用你所在地的 IP。比如香港就不行。 Supported countries and territories
-使用以下命令安装 WARP。 bash &amp;lt;(curl -fsSL git.io/warp.sh) proxy 配置XrayR/V2Ray的出站规则和路由。（以XrayR为例，XrayR/V2Ray的使用本文略过） # custom_outbound.json { &amp;#34;tag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;protocol&amp;#34;: &amp;#34;socks&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;servers&amp;#34;: [{ &amp;#34;address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;port&amp;#34;: 40000 }] } } # route.</description>
+使用以下命令安装 WARP。 bash &amp;lt;(curl -fsSL git.io/warp.sh) proxy 配置 XrayR/V2Ray 的出站规则和路由。（以 XrayR 为例，XrayR/V2Ray 的使用本文略过） # custom_outbound.json { &amp;#34;tag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;protocol&amp;#34;: &amp;#34;socks&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;servers&amp;#34;: [{ &amp;#34;address&amp;#34;: &amp;#34;127.</description>
       <content:encoded><![CDATA[<h2 id="原理分析">原理分析</h2>
 <p><strong>Cloudflare WARP</strong> 拥有很多 IP，而 ChatGPT 的 CDN 又是 Cloudflare 提供的，也就是说，能不能访问完全取决于 Cloudflare。因此使用 Cloudflare 自己的 IP 大概率不会被 Ban。除了 WARP 之外，iCloud Private Relay 也是 Cloudflare 的 IP 哦。</p>
 <h2 id="具体步骤">具体步骤</h2>
@@ -30,7 +30,7 @@
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bash &lt;(curl -fsSL git.io/warp.sh) proxy
 </span></span></code></pre></div><ol start="3">
-<li>配置XrayR/V2Ray的出站规则和路由。（以XrayR为例，XrayR/V2Ray的使用本文略过）</li>
+<li>配置 XrayR/V2Ray 的出站规则和路由。（以 XrayR 为例，XrayR/V2Ray 的使用本文略过）</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">#</span> <span class="err">custom_outbound.json</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -49,9 +49,9 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;outboundTag&#34;</span><span class="p">:</span> <span class="s2">&#34;socks5-warp&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;ip&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;::/0&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>简单解释一下，出站规则是指出站走40000端口的SOCKS代理。路由规则是指所有IPv6出站均走SOCKS代理。</p>
+</span></span></code></pre></div><p>简单解释一下，出站规则是指出站走 40000 端口的 SOCKS 代理。路由规则是指所有 IPv6 出站均走 SOCKS 代理。</p>
 <ol start="4">
-<li>如果你只是想让OpenAI走WARP的IPv6，可以这样写。</li>
+<li>如果你只是想让 OpenAI 走 WARP 的 IPv6，可以这样写。</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">#</span> <span class="err">route.json</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
