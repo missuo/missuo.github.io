@@ -13,21 +13,20 @@
       <pubDate>Sat, 11 Feb 2023 13:33:35 +0800</pubDate>
       
       <guid>https://missuo.me/posts/cloudflare-warp-chatgpt/</guid>
-      <description>原理分析 Cloudflare WARP拥有很多IP，而ChatGPT的CDN又是Cloudflare提供的，也就是说，能不能访问完全取决于Cloudflare。因此使用Cloudflare自己的IP大概率不会被Ban。除了WARP之外，iCloud Private Relay也是Cloudflare的IP哦。
-具体步骤 本文的方案仅改变IPv6出口IP，不会改变IPv4出口IP，更不会改变路由。
-准备一台VPS，需要是OpenGPT支持的161个国家之一。因为你的网络在哪里，WARP就会使用你所在地的IP。比如香港就不行。 Supported countries and territories
-使用以下命令安装WARP。 bash &amp;lt;(curl -fsSL git.io/warp.sh) proxy 配置XrayR/V2Ray的出站规则和路由。（以XrayR为例，XrayR/V2Ray的使用本文略过） # custom_outbound.json { &amp;#34;tag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;protocol&amp;#34;: &amp;#34;socks&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;servers&amp;#34;: [{ &amp;#34;address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;port&amp;#34;: 40000 }] } } # route.json { &amp;#34;type&amp;#34;: &amp;#34;field&amp;#34;, &amp;#34;outboundTag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;ip&amp;#34;: [&amp;#34;::/0&amp;#34;] } 简单解释一下，出站规则是指出站走40000端口的SOCKS代理。路由规则是指所有IPv6出站均走SOCKS代理。
-如果你只是想让OpenAI走WARP的IPv6，可以这样写。 # route.json { &amp;#34;type&amp;#34;: &amp;#34;field&amp;#34;, &amp;#34;outboundTag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;domain&amp;#34;: [&amp;#34;openai.com&amp;#34;] } </description>
+      <description>原理分析 Cloudflare WARP 拥有很多 IP，而 ChatGPT 的 CDN 又是 Cloudflare 提供的，也就是说，能不能访问完全取决于 Cloudflare。因此使用 Cloudflare 自己的 IP 大概率不会被 Ban。除了 WARP 之外，iCloud Private Relay 也是 Cloudflare 的 IP 哦。
+具体步骤 本文的方案仅改变 IPv6 出口 IP，不会改变 IPv4 出口 IP，更不会改变路由。
+准备一台 VPS，需要是 OpenGPT 支持的 161 个国家之一。因为你的网络在哪里，WARP 就会使用你所在地的 IP。比如香港就不行。 Supported countries and territories
+使用以下命令安装 WARP。 bash &amp;lt;(curl -fsSL git.io/warp.sh) proxy 配置XrayR/V2Ray的出站规则和路由。（以XrayR为例，XrayR/V2Ray的使用本文略过） # custom_outbound.json { &amp;#34;tag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;protocol&amp;#34;: &amp;#34;socks&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;servers&amp;#34;: [{ &amp;#34;address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;port&amp;#34;: 40000 }] } } # route.</description>
       <content:encoded><![CDATA[<h2 id="原理分析">原理分析</h2>
-<p><strong>Cloudflare WARP</strong>拥有很多IP，而ChatGPT的CDN又是Cloudflare提供的，也就是说，能不能访问完全取决于Cloudflare。因此使用Cloudflare自己的IP大概率不会被Ban。除了WARP之外，iCloud Private Relay也是Cloudflare的IP哦。</p>
+<p><strong>Cloudflare WARP</strong> 拥有很多 IP，而 ChatGPT 的 CDN 又是 Cloudflare 提供的，也就是说，能不能访问完全取决于 Cloudflare。因此使用 Cloudflare 自己的 IP 大概率不会被 Ban。除了 WARP 之外，iCloud Private Relay 也是 Cloudflare 的 IP 哦。</p>
 <h2 id="具体步骤">具体步骤</h2>
-<p><strong>本文的方案仅改变IPv6出口IP，不会改变IPv4出口IP，更不会改变路由。</strong></p>
+<p><strong>本文的方案仅改变 IPv6 出口 IP，不会改变 IPv4 出口 IP，更不会改变路由。</strong></p>
 <ol>
-<li>准备一台VPS，需要是OpenGPT支持的161个国家之一。因为你的网络在哪里，WARP就会使用你所在地的IP。比如香港就不行。</li>
+<li>准备一台 VPS，需要是 OpenGPT 支持的 161 个国家之一。因为你的网络在哪里，WARP 就会使用你所在地的 IP。比如香港就不行。</li>
 </ol>
 <p><a href="https://platform.openai.com/docs/supported-countries">Supported countries and territories</a></p>
 <ol start="2">
-<li>使用以下命令安装WARP。</li>
+<li>使用以下命令安装 WARP。</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bash &lt;(curl -fsSL git.io/warp.sh) proxy
 </span></span></code></pre></div><ol start="3">
@@ -69,16 +68,12 @@
       <pubDate>Sat, 11 Feb 2023 07:04:11 +0800</pubDate>
       
       <guid>https://missuo.me/posts/chatgpt-plus/</guid>
-      <description>ChatGPT Plus 功能 Available even when demand is high 即使在需求大的时候也可以使用 Faster response speed 更快的反应速度 Priority access to new features 优先获得新功能 订阅 正常方式 填写表格并等待官方给你发送电子邮件获取资格。
-漏洞 在中国时间的2月10日下午，看到群里有很多朋友说出现了Upgrade Plan的按钮，我立即登陆了我的帐号发现确实也有了，但是因为中国信用卡无法支付，导致开通失败。2月11日我再次登录的时候发现已经消失了这个按钮。
-我翻看了我的Chrome历史记录，找到了一个 pay.openai.com 的链接，点进去发现还是熟悉的Stripe的界面。但是奇怪的事情是我无法填写地址信息，但是没有地址信息无法提交。无奈之下，当然是按下F12，找到填写地址的每一个input标签，把disable全部改为enable，顺利地填写了信息。在我的好朋友Ming的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到 chat.openai.com 发现已经开通好了。
-体验 Plus版本有两个模式，分别是 Default 和 Turbo。
-根据描述和实际体验，Turbo模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。
-IP的问题 无法访问 ChatGPT封锁了很多机房的IP，因为ChatGPT使用的是Cloudflare的服务，我猜测是使用了Country匹配，也就是说只有在指定国家可用，目前是161个国家。除此之外，应该还加入了Threat Score和Known Bots的判断。意味着你的IP要想顺利访问，需要具备两个条件，IP属于来自161个国家之一，并且你的IP危险分数足够低。
-我的方案 在2022年3月28日，我在RIPE申请到了ASN，也就意味着我可以持有IPv4和IPv6，我目前持有两个/48的IPv6。我目前的IPv6分别来自台湾和英国，都在161个国家之内，危险分数都是0。我建立了BGP Session，完全可以使用自己的IP来访问OpenAI的服务。
-Prefixes: 2401:95c0:f001::/48 2a0f:9400:6907::/48 检测是否可用 为了验证当前IP是否能够正常使用OpenAI服务，我用Shell写了一个检测脚本——OpenAI-Checker。使用方法也非常简单，仅需要在任何Linux/macOS上执行以下命令。
-bash &amp;lt;(curl -Ls https://cpp.li/openai) 检测结果示例：
-&amp;gt; bash &amp;lt;(curl -Ls https://cpp.li/openai) OpenAI Access Checker. Made by Vincent https://github.com/missuo/OpenAI-Checker ------------------------------------- [IPv4] Your IPv4: 205.</description>
+      <description>ChatGPT Plus 功能 Available even when demand is high 即使在需求大的时候也可以使用 Faster response speed 更快的反应速度 Priority access to new features 优先获得新功能 订阅 正常方式 填写 表格 并等待官方给你发送电子邮件获取资格。
+漏洞 在中国时间的 2 月 10 日下午，看到群里有很多朋友说出现了 Upgrade Plan 的按钮，我立即登陆了我的帐号发现确实也有了，但是因为中国信用卡无法支付，导致开通失败。2 月 11 日我再次登录的时候发现已经消失了这个按钮。
+我翻看了我的 Chrome 历史记录，找到了一个 pay.openai.com 的链接，点进去发现还是熟悉的 Stripe 的界面。但是奇怪的事情是 我无法填写地址信息，但是没有地址信息无法提交。无奈之下，当然是按下 F12，找到填写地址的每一个 input 标签，把 disable 全部改为 enable，顺利地填写了信息。在我的好朋友 Ming 的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到 chat.openai.com 发现已经开通好了。
+体验 Plus 版本有两个模式，分别是 Default 和 Turbo。
+根据描述和实际体验，Turbo 模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。
+IP 的问题 无法访问 ChatGPT 封锁了很多机房的 IP，因为 ChatGPT 使用的是 Cloudflare 的服务，我猜测是使用了 Country 匹配，也就是说只有在指定国家可用，目前是 161 个国家。除此之外，应该还加入了 Threat Score 和 Known Bots 的判断。意味着你的 IP 要想顺利访问，需要具备两个条件，IP 属于来自 161 个国家之一，并且你的 IP 危险分数足够低。</description>
       <content:encoded><![CDATA[<h2 id="chatgpt-plus-功能">ChatGPT Plus 功能</h2>
 <ul>
 <li>Available even when demand is high 即使在需求大的时候也可以使用</li>
@@ -87,20 +82,20 @@ bash &amp;lt;(curl -Ls https://cpp.li/openai) 检测结果示例：
 </ul>
 <h2 id="订阅">订阅</h2>
 <h3 id="正常方式">正常方式</h3>
-<p>填写<a href="https://docs.google.com/forms/d/e/1FAIpQLScee6ST3o-kZDjlw1ROfUNyjuRBwGdcoewxjCULNejbP5hdzQ/viewform">表格</a>并等待官方给你发送电子邮件获取资格。</p>
+<p>填写 <a href="https://docs.google.com/forms/d/e/1FAIpQLScee6ST3o-kZDjlw1ROfUNyjuRBwGdcoewxjCULNejbP5hdzQ/viewform">表格</a> 并等待官方给你发送电子邮件获取资格。</p>
 <h3 id="漏洞">漏洞</h3>
-<p>在中国时间的2月10日下午，看到群里有很多朋友说出现了<strong>Upgrade Plan</strong>的按钮，我立即登陆了我的帐号发现确实也有了，但是因为中国信用卡无法支付，导致开通失败。2月11日我再次登录的时候发现已经消失了这个按钮。</p>
-<p>我翻看了我的<strong>Chrome历史记录</strong>，找到了一个 <a href="https://pay.openai.com">pay.openai.com</a> 的链接，点进去发现还是熟悉的<strong>Stripe</strong>的界面。但是奇怪的事情是<strong>我无法填写地址信息</strong>，但是没有地址信息无法提交。无奈之下，当然是按下F12，找到填写地址的每一个<strong>input</strong>标签，把<strong>disable</strong>全部改为<strong>enable</strong>，顺利地填写了信息。在我的好朋友<strong>Ming</strong>的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到 <a href="https://chat.openai.com">chat.openai.com</a> 发现已经开通好了。</p>
+<p>在中国时间的 2 月 10 日下午，看到群里有很多朋友说出现了 <strong>Upgrade Plan</strong> 的按钮，我立即登陆了我的帐号发现确实也有了，但是因为中国信用卡无法支付，导致开通失败。2 月 11 日我再次登录的时候发现已经消失了这个按钮。</p>
+<p>我翻看了我的 <strong>Chrome 历史记录</strong>，找到了一个 <a href="https://pay.openai.com">pay.openai.com</a> 的链接，点进去发现还是熟悉的 <strong>Stripe</strong> 的界面。但是奇怪的事情是 <strong>我无法填写地址信息</strong>，但是没有地址信息无法提交。无奈之下，当然是按下 F12，找到填写地址的每一个 <strong>input</strong> 标签，把 <strong>disable</strong> 全部改为 <strong>enable</strong>，顺利地填写了信息。在我的好朋友 <strong>Ming</strong> 的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到 <a href="https://chat.openai.com">chat.openai.com</a> 发现已经开通好了。</p>
 <h2 id="体验">体验</h2>
-<p>Plus版本有两个模式，分别是 <strong>Default</strong> 和 <strong>Turbo</strong>。<br>
+<p>Plus 版本有两个模式，分别是 <strong>Default</strong> 和 <strong>Turbo</strong>。<br>
 <img loading="lazy" src="https://static.nisekoo.com/blog/202302114W6T0j.png" alt="202302114W6T0j"  />
 </p>
-<p>根据描述和实际体验，<strong>Turbo</strong>模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。</p>
-<h2 id="ip的问题">IP的问题</h2>
+<p>根据描述和实际体验，<strong>Turbo</strong> 模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。</p>
+<h2 id="ip-的问题">IP 的问题</h2>
 <h3 id="无法访问">无法访问</h3>
-<p>ChatGPT封锁了很多机房的IP，因为ChatGPT使用的是<a href="https://cloudflare.com">Cloudflare</a>的服务，我猜测是使用了<strong>Country</strong>匹配，也就是说只有在指定国家可用，目前是161个国家。除此之外，应该还加入了<strong>Threat Score</strong>和<strong>Known Bots</strong>的判断。意味着你的IP要想顺利访问，需要具备两个条件，IP属于来自161个国家之一，并且你的IP危险分数足够低。</p>
+<p>ChatGPT 封锁了很多机房的 IP，因为 ChatGPT 使用的是 <a href="https://cloudflare.com">Cloudflare</a> 的服务，我猜测是使用了 <strong>Country</strong> 匹配，也就是说只有在指定国家可用，目前是 161 个国家。除此之外，应该还加入了 <strong>Threat Score</strong> 和 <strong>Known Bots</strong> 的判断。意味着你的 IP 要想顺利访问，需要具备两个条件，IP 属于来自 161 个国家之一，并且你的 IP 危险分数足够低。</p>
 <h3 id="我的方案">我的方案</h3>
-<p>在2022年3月28日，我在RIPE申请到了ASN，也就意味着我可以持有IPv4和IPv6，我目前持有两个/48的IPv6。我目前的IPv6分别来自<strong>台湾</strong>和<strong>英国</strong>，都在161个国家之内，危险分数都是0。我建立了BGP Session，完全可以使用自己的IP来访问OpenAI的服务。<br>
+<p>在 2022 年 3 月 28 日，我在 RIPE 申请到了 ASN，也就意味着我可以持有 IPv4 和 IPv6，我目前持有两个/48 的 IPv6。我目前的 IPv6 分别来自 <strong>台湾</strong> 和 <strong>英国</strong>，都在 161 个国家之内，危险分数都是 0。我建立了 BGP Session，完全可以使用自己的 IP 来访问 OpenAI 的服务。<br>
 <img loading="lazy" src="https://static.nisekoo.com/blog/20230211Dlnlje.png" alt="20230211Dlnlje"  />
 </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Prefixes:
@@ -119,7 +114,7 @@ bash &amp;lt;(curl -Ls https://cpp.li/openai) 检测结果示例：
 </span></span><span class="line"><span class="cl">Your IP supports access to OpenAI. Region: US
 </span></span><span class="line"><span class="cl">-------------------------------------
 </span></span><span class="line"><span class="cl">[IPv6]
-</span></span><span class="line"><span class="cl">Your IPv6: 2401:95c0:f001::1 - Vincent Yang
+</span></span><span class="line"><span class="cl">Your IPv6: 2401: 95c0: f001:: 1 - Vincent Yang
 </span></span><span class="line"><span class="cl">Your IP supports access to OpenAI. Region: TW
 </span></span><span class="line"><span class="cl">-------------------------------------
 </span></span></code></pre></div><h2 id="总结">总结</h2>

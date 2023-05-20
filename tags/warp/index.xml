@@ -13,21 +13,20 @@
       <pubDate>Sat, 11 Feb 2023 13:33:35 +0800</pubDate>
       
       <guid>https://missuo.me/posts/cloudflare-warp-chatgpt/</guid>
-      <description>原理分析 Cloudflare WARP拥有很多IP，而ChatGPT的CDN又是Cloudflare提供的，也就是说，能不能访问完全取决于Cloudflare。因此使用Cloudflare自己的IP大概率不会被Ban。除了WARP之外，iCloud Private Relay也是Cloudflare的IP哦。
-具体步骤 本文的方案仅改变IPv6出口IP，不会改变IPv4出口IP，更不会改变路由。
-准备一台VPS，需要是OpenGPT支持的161个国家之一。因为你的网络在哪里，WARP就会使用你所在地的IP。比如香港就不行。 Supported countries and territories
-使用以下命令安装WARP。 bash &amp;lt;(curl -fsSL git.io/warp.sh) proxy 配置XrayR/V2Ray的出站规则和路由。（以XrayR为例，XrayR/V2Ray的使用本文略过） # custom_outbound.json { &amp;#34;tag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;protocol&amp;#34;: &amp;#34;socks&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;servers&amp;#34;: [{ &amp;#34;address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;port&amp;#34;: 40000 }] } } # route.json { &amp;#34;type&amp;#34;: &amp;#34;field&amp;#34;, &amp;#34;outboundTag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;ip&amp;#34;: [&amp;#34;::/0&amp;#34;] } 简单解释一下，出站规则是指出站走40000端口的SOCKS代理。路由规则是指所有IPv6出站均走SOCKS代理。
-如果你只是想让OpenAI走WARP的IPv6，可以这样写。 # route.json { &amp;#34;type&amp;#34;: &amp;#34;field&amp;#34;, &amp;#34;outboundTag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;domain&amp;#34;: [&amp;#34;openai.com&amp;#34;] } </description>
+      <description>原理分析 Cloudflare WARP 拥有很多 IP，而 ChatGPT 的 CDN 又是 Cloudflare 提供的，也就是说，能不能访问完全取决于 Cloudflare。因此使用 Cloudflare 自己的 IP 大概率不会被 Ban。除了 WARP 之外，iCloud Private Relay 也是 Cloudflare 的 IP 哦。
+具体步骤 本文的方案仅改变 IPv6 出口 IP，不会改变 IPv4 出口 IP，更不会改变路由。
+准备一台 VPS，需要是 OpenGPT 支持的 161 个国家之一。因为你的网络在哪里，WARP 就会使用你所在地的 IP。比如香港就不行。 Supported countries and territories
+使用以下命令安装 WARP。 bash &amp;lt;(curl -fsSL git.io/warp.sh) proxy 配置XrayR/V2Ray的出站规则和路由。（以XrayR为例，XrayR/V2Ray的使用本文略过） # custom_outbound.json { &amp;#34;tag&amp;#34;: &amp;#34;socks5-warp&amp;#34;, &amp;#34;protocol&amp;#34;: &amp;#34;socks&amp;#34;, &amp;#34;settings&amp;#34;: { &amp;#34;servers&amp;#34;: [{ &amp;#34;address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;port&amp;#34;: 40000 }] } } # route.</description>
       <content:encoded><![CDATA[<h2 id="原理分析">原理分析</h2>
-<p><strong>Cloudflare WARP</strong>拥有很多IP，而ChatGPT的CDN又是Cloudflare提供的，也就是说，能不能访问完全取决于Cloudflare。因此使用Cloudflare自己的IP大概率不会被Ban。除了WARP之外，iCloud Private Relay也是Cloudflare的IP哦。</p>
+<p><strong>Cloudflare WARP</strong> 拥有很多 IP，而 ChatGPT 的 CDN 又是 Cloudflare 提供的，也就是说，能不能访问完全取决于 Cloudflare。因此使用 Cloudflare 自己的 IP 大概率不会被 Ban。除了 WARP 之外，iCloud Private Relay 也是 Cloudflare 的 IP 哦。</p>
 <h2 id="具体步骤">具体步骤</h2>
-<p><strong>本文的方案仅改变IPv6出口IP，不会改变IPv4出口IP，更不会改变路由。</strong></p>
+<p><strong>本文的方案仅改变 IPv6 出口 IP，不会改变 IPv4 出口 IP，更不会改变路由。</strong></p>
 <ol>
-<li>准备一台VPS，需要是OpenGPT支持的161个国家之一。因为你的网络在哪里，WARP就会使用你所在地的IP。比如香港就不行。</li>
+<li>准备一台 VPS，需要是 OpenGPT 支持的 161 个国家之一。因为你的网络在哪里，WARP 就会使用你所在地的 IP。比如香港就不行。</li>
 </ol>
 <p><a href="https://platform.openai.com/docs/supported-countries">Supported countries and territories</a></p>
 <ol start="2">
-<li>使用以下命令安装WARP。</li>
+<li>使用以下命令安装 WARP。</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bash &lt;(curl -fsSL git.io/warp.sh) proxy
 </span></span></code></pre></div><ol start="3">
