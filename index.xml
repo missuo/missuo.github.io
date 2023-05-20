@@ -1674,7 +1674,7 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
       <guid>https://missuo.me/about/</guid>
       <description>Welcome to my website, I am very happy to meet you!
 🏠 About this site This site is mainly used for the personal life of the blogger.
-👨‍💻 Who is the blogger Vincent(YingTao) Young Libra, born on October 10, 2000 From Zhejiang, usually living in Shanghai College student, studying Computer Science ⛹ Interests Basketball (Golden State Warriors fans) Travel (love to go see the sea) Programming (working on learning Flutter) 📬 Contact me Email: i@yyt.</description>
+👨‍💻 Who is the blogger Vincent(YingTao) Young Libra, born on October 10, 2000 From Zhejiang, usually living in Shanghai Master Student, studying Computer Science ⛹ Interests Basketball (Golden State Warriors fans) Travel (love to go see the sea) Programming (working on learning Flutter) 📬 Contact me Email: i@yyt.</description>
       <content:encoded><![CDATA[<blockquote>
 <p>Welcome to my website, I am very happy to meet you!</p>
 </blockquote>
@@ -1685,7 +1685,7 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
 <li>Vincent(YingTao) Young</li>
 <li>Libra, born on October 10, 2000</li>
 <li>From Zhejiang, usually living in Shanghai</li>
-<li>College student, studying Computer Science</li>
+<li>Master Student, studying Computer Science</li>
 </ul>
 <h2 id="-interests">⛹ Interests</h2>
 <ul>
@@ -1699,10 +1699,11 @@ Telegram: <a href="https://t.me/missuo">missuo</a><br>
 Twitter: <a href="https://twitter.com/m1ssuo">m1ssuo</a><br>
 Instagram: <a href="https://instagram.com/m1ssuo">m1ssuo</a><br>
 GitHub: <a href="https://github.com/missuo">missuo</a></p>
-<h2 id="my-device">📱My device</h2>
+<h2 id="-my-device">📱 My device</h2>
 <p>MacBook Pro 2019<br>
 Mac mini 2020<br>
 iPad Air 4<br>
+iPhone 12 Pro
 iPhone 12<br>
 Xiaomi Civi<br>
 Apple Watch SE<br>
@@ -1710,7 +1711,6 @@ AirPods 2<br>
 AirPods Pro 2<br>
 KeyChron K2<br>
 Magic Keyboard<br>
-KOIOS 4K Display<br>
 SONGREN 4K Display</p>
 ]]></content:encoded>
     </item>
