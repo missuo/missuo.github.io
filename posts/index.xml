@@ -5,8 +5,75 @@
     <link>https://missuo.me/posts/</link>
     <description>Recent content in Posts on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 17 May 2023 21:18:24 +0800</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 29 May 2023 00:31:40 +0800</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Himo Security</title>
+      <link>https://missuo.me/posts/himo-security/</link>
+      <pubDate>Mon, 29 May 2023 00:31:40 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/himo-security/</guid>
+      <description>因为预约了 6 月头在香港的 F1 签证，所以需要准备一张 签证照，在家这边的小城市，也没什么选择，没有 天真蓝，最好的就是 海马体 了。海马体生意还挺好，当天都约不到，只能约到 5 月 14 日星期天
+在 2023 年 5 月 16 日我已经向海马体的技术团队提交了 可能存在的安全问题。直到今天（2023 年 5 月 29 日），我没有收到海马体技术团队的任何回信，我决定在我的个人博客公开。
+我在拍完照之后，现场等待了一会，大概也就不到半个小时，小姐姐就基本上修好了，让我确认一下是否有需要修改的地方，没有的话就开始打印了。打印完之后，她告诉我电子版随时可以在 海马体小程序 随时下载。这一点我觉得非常方便。
+晚上在家的时候，突然想到海马体小程序的这回事，我在想这些个人的照片应该是存储在 OSS 上的，但是我在想会不会有可能是订单号+编号这样子的文件名来存储的，简单说就是这个图片的链接是有规律的。如果真的是这样的话，我就可以轻松拿到所有用户的照片。
+我在 iPhone 上开启了抓包，结果发现所有的照片的外链确实是固定的，只不过文件名是随机的一串字符串，似乎没有任何规律，应该就是完全随机的。然而有一个 API 会返回这个用户所有的照片的文件名，这个 API 传递的参数似乎没有类似于 userID 这类的参数，也就是说完全按照 Cookie 来判断哪位用户的。到这里，想拿到别的用户的照片外链的计划算是泡汤了。
+我又想到因为每一次的照片肯定是和订单绑定的，也就是说一个 签证照 订单，理论上应该就固定的只有 4 张图。我又仔细地看了一下订单返回的参数，比较有价值的就是用户名、手机号这些，别的都是预约的门店、门店地址、门店联系电话、订单价格之类的一些东西。但是有一个意外的惊喜，我发现订单详情的 API 在 GET 请求的时候携带了 orderNo 参数，我赶紧使用 API 测试工具，发起了请求，把 orderNo 改一个数字，API 返回了 “订单不存在”。心里窃喜，竟然返回的是订单不存在，而不是无权限，说明我的 Cookie 应该可以查看别人的订单信息，我可以拿到任何注册 海马体小程序 用户的 联系方式。
+我的订单的 orderNo 是 T2023051413359999，以首字母 T 开头，前 8 位是当天的日期，后面的 8 个纯数字应该是随机的，但是这难不倒我，手搓一个 Python 脚本，从 00000000 穷举到 99999999 不就完事了，在多线程的帮助下，简直是小菜一碟。</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>因为预约了 6 月头在香港的 F1 签证，所以需要准备一张 <strong>签证照</strong>，在家这边的小城市，也没什么选择，没有 <strong>天真蓝</strong>，最好的就是 <strong>海马体</strong> 了。海马体生意还挺好，当天都约不到，只能约到 5 月 14 日星期天</p>
+</blockquote>
+<p>在 2023 年 5 月 16 日我已经向海马体的技术团队提交了 <strong>可能存在的安全问题</strong>。直到今天（2023 年 5 月 29 日），我没有收到海马体技术团队的任何回信，我决定在我的个人博客公开。</p>
+<p>我在拍完照之后，现场等待了一会，大概也就不到半个小时，小姐姐就基本上修好了，让我确认一下是否有需要修改的地方，没有的话就开始打印了。打印完之后，她告诉我电子版随时可以在 <strong>海马体小程序</strong> 随时下载。这一点我觉得非常方便。</p>
+<p>晚上在家的时候，突然想到海马体小程序的这回事，我在想这些个人的照片应该是存储在 <strong>OSS</strong> 上的，但是我在想会不会有可能是订单号+编号这样子的文件名来存储的，简单说就是这个图片的链接是有规律的。如果真的是这样的话，我就可以轻松拿到所有用户的照片。</p>
+<p>我在 iPhone 上开启了抓包，结果发现所有的照片的外链确实是固定的，只不过文件名是随机的一串字符串，似乎没有任何规律，应该就是完全随机的。然而有一个 API 会返回这个用户所有的照片的文件名，这个 API 传递的参数似乎没有类似于 <strong>userID</strong> 这类的参数，也就是说完全按照 <strong>Cookie</strong> 来判断哪位用户的。到这里，想拿到别的用户的照片外链的计划算是泡汤了。</p>
+<p>我又想到因为每一次的照片肯定是和订单绑定的，也就是说一个 <strong>签证照</strong> 订单，理论上应该就固定的只有 4 张图。我又仔细地看了一下订单返回的参数，比较有价值的就是用户名、手机号这些，别的都是预约的门店、门店地址、门店联系电话、订单价格之类的一些东西。但是有一个意外的惊喜，我发现订单详情的 API 在 GET 请求的时候携带了 <strong>orderNo</strong> 参数，我赶紧使用 API 测试工具，发起了请求，把 <strong>orderNo</strong> 改一个数字，API 返回了 “订单不存在”。心里窃喜，竟然返回的是订单不存在，而不是无权限，说明我的 <strong>Cookie</strong> 应该可以查看别人的订单信息，我可以拿到任何注册 <strong>海马体小程序</strong> 用户的 <strong>联系方式</strong>。</p>
+<p>我的订单的 <strong>orderNo</strong> 是 <strong>T2023051413359999</strong>，以首字母 T 开头，前 8 位是当天的日期，后面的 8 个纯数字应该是随机的，但是这难不倒我，手搓一个 <strong>Python</strong> 脚本，从 <strong>00000000</strong> 穷举到 <strong>99999999</strong> 不就完事了，在多线程的帮助下，简直是小菜一碟。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 这是示例代码，不能直接运行</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">threading</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">httpx</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;app-key&#34;</span><span class="p">:</span> <span class="s2">&#34;himo-wx-mini-program&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;content-type&#34;</span><span class="p">:</span> <span class="s2">&#34;application/json&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;X-Stream-Id&#34;</span><span class="p">:</span> <span class="s2">&#34;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (iPhone; CPU iPhone OS 16_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.37(0x18002528) NetType/WIFI Language/en&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;Referer&#34;</span><span class="p">:</span> <span class="s2">&#34;https://servicewechat.com/xxxxx/456/page-frame.html&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">semaphore</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">getOrderDetails</span><span class="p">(</span><span class="n">orderId</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">with</span> <span class="n">semaphore</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;https://api-gateway.hzmantu.com/appointment_platform/order/order/order_detail?orderNo=T20230515</span><span class="si">{</span><span class="n">orderId</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">resp</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">				<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;result.json&#34;</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">					<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">semaphore</span><span class="o">.</span><span class="fm">__exit__</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl"><span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">orderId</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10013132</span><span class="p">,</span> <span class="mi">99999999</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">getOrderDetails</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">orderId</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">	<span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</span></span></code></pre></div><p>很快，Python 的程序跑出了结果，验证了我的猜想。来自 <strong>武汉</strong> 的一位幸运网友。（<strong>为了保护他人隐私，已将关键信息打码</strong>）</p>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/202305295XA9GS.png" alt="202305295XA9GS"  />
+</p>
+<p>我在 5 月 15 日凌晨发了一条朋友圈和微博，在微博艾特了 <strong>缦图摄影</strong> 和 <strong>海马体照相馆</strong>。很荣幸，在微博私信和我的邮箱都有工作人员联系我，下午醒来的时候我及时地回复了邮件，很遗憾的是过去了接近 2 周的时间，我没有收到任何回信，我不知道他们是修复了这个问题，还是说直接忽略了。之后我也没有再去验证。</p>
+<p><img loading="lazy" src="https://static.nisekoo.com/blog/20230529fzK3kq.png" alt="20230529fzK3kq"  />
+</p>
+<p>其实我写这篇博客，只是想分享这一段有趣的小研究，也算是为海马体做出一点点贡献。<strong>海马体小程序</strong> 其实只是一个很好的例子，其实他们并不是一家小公司，而是一家在中国大陆范围内规模挺大的公司。除了海马体，在过去的时间里我还有研究过很多类似的小程序，很遗憾，大部分小程序都没有在 <strong>用户个人信息</strong> 做到很好保护。</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>U.S. Visa Waiting Time View</title>
       <link>https://missuo.me/posts/us-visa/</link>
