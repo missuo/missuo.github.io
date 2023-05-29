@@ -6,7 +6,113 @@
     <description>Recent content on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 29 May 2023 00:31:40 +0800</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 19:57:54 +0800</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rime on Mac Tutorial</title>
+      <link>https://missuo.me/posts/rime-mac/</link>
+      <pubDate>Mon, 29 May 2023 19:57:54 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/rime-mac/</guid>
+      <description>之前有用过 Mac 原生输入法、搜狗输入法。原生输入法缺点就是词库太烂了，很多时候打出来的侯选词都不是我想要的。而搜狗输入法的词库是无可挑剔的，毕竟是联网的词库，但是会有一定的隐私安全。直到我在 Twitter 看到 luolei 用上了 Rime。
+我第一次接触 Rime 估计过去了快一年了，第一次配置简直是噩梦，因为 Rime 可以自定义的东西太多了，几乎你能想到的一切都可以自定义，这就导致了你要弄明白每一个设置的参数是干什么用的。配置完之后，使用的体验也不算太好，很多时候都出现不了我想要的侯选词，不过随着个人词库的训练，会变得越来越“智能”。老实说，放在以前我不会向你推荐 Rime，我相信很多朋友刚设置完没几天就换回 搜狗 了。直到 雾凇拼音 的出现。雾凇拼音 的好处我就不多赘述了，直接来说说使用方法吧！
+1. 安装 Rime (Squirrel) brew install --cask squirrel 2. 安装 东风破 (plum) cd ~/Library/Rime git clone --depth=1 https://github.com/rime/plum 3. 安装 雾凇拼音 cd plum bash rime-install iDvel/rime-ice:others/recipes/full 到这里安装部分基本上已经是完成了。你已经可以开始使用了。下面的部分是一些优化和高阶玩法的部分。
+使用 微信输入法 Mac 的主题 修改 squirrel.custom.yaml 文件。
+# squirrel.custom.yaml patch: # 通知栏显示方式以及 ascii_mode 应用，与外观无关 show_notifications_via_notification_center: true # 以下软件默认英文模式 app_options: com.svend.uPic: ascii_mode: true # 如果想要修改皮肤，直接更改 color_scheme 的值即可 style: color_scheme: wechat_light color_scheme_dark: wechat_dark preset_color_schemes: wechat_light: name: 微信键盘浅色 horizontal: true # true横排，false竖排 back_color: 0xFFFFFF # 候选条背景色 border_height: 0 # 窗口上下高度，大于圆角半径才生效 border_width: 8 # 窗口左右宽度，大于圆角半径才生效 candidate_format: &amp;#39;%c %@ &amp;#39; # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间 comment_text_color: 0x999999 # 拼音等提示文字颜色 corner_radius: 5 # 窗口圆角 hilited_corner_radius: 5 # 高亮圆角 font_face: PingFangSC # 候选词字体 font_point: 16 # 候选字大小 hilited_candidate_back_color: 0x75B100 # 第一候选项背景色 hilited_candidate_text_color: 0xFFFFFF # 第一候选项文字颜色 label_font_point: 12 # 候选编号大小 text_color: 0x424242 # 拼音行文字颜色 inline_preedit: true # 拼音位于： 候选框 false | 行内 true wechat_dark: name: 微信键盘深色 horizontal: true # true横排，false竖排 back_color: 0x2e2925 # 候选条背景色 border_height: 0 # 窗口上下高度，大于圆角半径才生效 border_width: 8 # 窗口左右宽度，大于圆角半径才生效 candidate_format: &amp;#39;%c %@ &amp;#39; # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间 comment_text_color: 0x999999 # 拼音等提示文字颜色 corner_radius: 5 # 窗口圆角 hilited_corner_radius: 5 # 高亮圆角 font_face: PingFangSC # 候选词字体 font_point: 16 # 候选字大小 hilited_candidate_back_color: 0x75B100 # 第一候选项背景色 hilited_candidate_text_color: 0xFFFFFF # 第一候选项文字颜色 label_font_point: 12 # 候选编号大小 text_color: 0x424242 # 拼音行文字颜色 label_color: 0x999999 # 预选栏编号颜色 candidate_text_color: 0xe9e9ea # 预选项文字颜色 inline_preedit: true # 拼音位于： 候选框 false | 行内 true 更新和同步词库 我这边采用的备份方案是 Dropbox，别的也都类似，可以实现多台设备之间词库互相同步。修改 installation.</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>之前有用过 Mac 原生输入法、搜狗输入法。原生输入法缺点就是词库太烂了，很多时候打出来的侯选词都不是我想要的。而搜狗输入法的词库是无可挑剔的，毕竟是联网的词库，但是会有一定的隐私安全。直到我在 Twitter 看到 <a href="https://twitter.com/luoleiorg">luolei</a> 用上了 Rime。</p>
+</blockquote>
+<p>我第一次接触 Rime 估计过去了快一年了，第一次配置简直是噩梦，因为 Rime 可以自定义的东西太多了，几乎你能想到的一切都可以自定义，这就导致了你要弄明白每一个设置的参数是干什么用的。配置完之后，使用的体验也不算太好，很多时候都出现不了我想要的侯选词，不过随着个人词库的训练，会变得越来越“智能”。老实说，放在以前我不会向你推荐 Rime，我相信很多朋友刚设置完没几天就换回 <strong>搜狗</strong> 了。直到 <strong><a href="https://github.com/iDvel/rime-ice">雾凇拼音</a></strong> 的出现。<strong>雾凇拼音</strong> 的好处我就不多赘述了，直接来说说使用方法吧！</p>
+<h3 id="1-安装-rime-squirrel">1. 安装 Rime (Squirrel)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install --cask squirrel
+</span></span></code></pre></div><h3 id="2-安装-东风破-plum">2. 安装 东风破 (plum)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/Library/Rime
+</span></span><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/rime/plum
+</span></span></code></pre></div><h3 id="3-安装-雾凇拼音">3. 安装 雾凇拼音</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> plum
+</span></span><span class="line"><span class="cl">bash rime-install iDvel/rime-ice:others/recipes/full
+</span></span></code></pre></div><p>到这里安装部分基本上已经是完成了。你已经可以开始使用了。下面的部分是一些优化和高阶玩法的部分。</p>
+<h3 id="使用-微信输入法-mac-的主题">使用 微信输入法 Mac 的主题</h3>
+<p>修改 <code>squirrel.custom.yaml</code> 文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># squirrel.custom.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">patch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 通知栏显示方式以及 ascii_mode 应用，与外观无关</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">show_notifications_via_notification_center</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 以下软件默认英文模式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">app_options</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">com.svend.uPic</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">ascii_mode</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># 如果想要修改皮肤，直接更改 color_scheme 的值即可</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">color_scheme</span><span class="p">:</span><span class="w"> </span><span class="l">wechat_light</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">color_scheme_dark</span><span class="p">:</span><span class="w"> </span><span class="l">wechat_dark</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">preset_color_schemes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">wechat_light</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">微信键盘浅色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">horizontal</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                          </span><span class="c"># true横排，false竖排</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">back_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xFFFFFF                     </span><span class="w"> </span><span class="c"># 候选条背景色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_height</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">                          </span><span class="c"># 窗口上下高度，大于圆角半径才生效</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_width</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">                           </span><span class="c"># 窗口左右宽度，大于圆角半径才生效</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">candidate_format</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;%c %@ &#39;</span><span class="w">                </span><span class="c"># 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">comment_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">              </span><span class="c"># 拼音等提示文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">                          </span><span class="c"># 窗口圆角</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">                  </span><span class="c"># 高亮圆角</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">font_face</span><span class="p">:</span><span class="w"> </span><span class="l">PingFangSC                    </span><span class="w"> </span><span class="c"># 候选词字体</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">font_point</span><span class="p">:</span><span class="w"> </span><span class="m">16</span><span class="w">                            </span><span class="c"># 候选字大小</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_candidate_back_color</span><span class="p">:</span><span class="w"> </span><span class="l">0x75B100   </span><span class="w"> </span><span class="c"># 第一候选项背景色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_candidate_text_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xFFFFFF   </span><span class="w"> </span><span class="c"># 第一候选项文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">label_font_point</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">                      </span><span class="c"># 候选编号大小</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x424242</span><span class="w">                      </span><span class="c"># 拼音行文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">inline_preedit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                      </span><span class="c"># 拼音位于： 候选框 false | 行内 true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">wechat_dark</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">微信键盘深色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">horizontal</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                          </span><span class="c"># true横排，false竖排</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">back_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x2e2925</span><span class="w">                      </span><span class="c"># 候选条背景色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_height</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">                          </span><span class="c"># 窗口上下高度，大于圆角半径才生效</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_width</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">                           </span><span class="c"># 窗口左右宽度，大于圆角半径才生效</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">candidate_format</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;%c %@ &#39;</span><span class="w">                </span><span class="c"># 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">comment_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">              </span><span class="c"># 拼音等提示文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">                          </span><span class="c"># 窗口圆角</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">                  </span><span class="c"># 高亮圆角</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">font_face</span><span class="p">:</span><span class="w"> </span><span class="l">PingFangSC                    </span><span class="w"> </span><span class="c"># 候选词字体</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">font_point</span><span class="p">:</span><span class="w"> </span><span class="m">16</span><span class="w">                            </span><span class="c"># 候选字大小</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_candidate_back_color</span><span class="p">:</span><span class="w"> </span><span class="l">0x75B100   </span><span class="w"> </span><span class="c"># 第一候选项背景色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_candidate_text_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xFFFFFF   </span><span class="w"> </span><span class="c"># 第一候选项文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">label_font_point</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">                      </span><span class="c"># 候选编号大小</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x424242</span><span class="w">                      </span><span class="c"># 拼音行文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">label_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x999999</span><span class="w">                     </span><span class="c"># 预选栏编号颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">candidate_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0xe9e9ea</span><span class="w">            </span><span class="c"># 预选项文字颜色</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">inline_preedit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                      </span><span class="c"># 拼音位于： 候选框 false | 行内 true</span><span class="w">
+</span></span></span></code></pre></div><h3 id="更新和同步词库">更新和同步词库</h3>
+<p>我这边采用的备份方案是 <strong>Dropbox</strong>，别的也都类似，可以实现多台设备之间词库互相同步。修改 <code>installation.yaml</code> 文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># installation.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">distribution_code_name</span><span class="p">:</span><span class="w"> </span><span class="l">Squirrel</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">distribution_name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;鼠鬚管&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">distribution_version</span><span class="p">:</span><span class="w"> </span><span class="m">0.16.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">install_time</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Mon May  8 15:13:26 2023&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">installation_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;mac-mini&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">sync_dir</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/Users/vincent/Library/CloudStorage/Dropbox/Rime/&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">rime_version</span><span class="p">:</span><span class="w"> </span><span class="m">1.8.5</span><span class="w">
+</span></span></span></code></pre></div><p>更新词库脚本，你可以配置 Mac 计划任务，每天或者每隔几个小时自动执行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">cd</span> ~/Library/Rime/plum
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Updating rime...&#34;</span>
+</span></span><span class="line"><span class="cl">bash rime-install iDvel/rime-ice:others/recipes/full
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sleep <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Syncing rime...&#34;</span>
+</span></span><span class="line"><span class="cl">/Library/Input<span class="se">\ </span>Methods/Squirrel.app/Contents/MacOS/Squirrel --sync
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Deploying rime...&#34;</span>
+</span></span><span class="line"><span class="cl">/Library/Input<span class="se">\ </span>Methods/Squirrel.app/Contents/MacOS/Squirrel --reload
+</span></span></code></pre></div><p>别的一些非常具体的设置，我在这里就不介绍了，<a href="https://dvel.me/posts/rime-ice/">雾凇拼音官方介绍</a> 写的非常详细，可以仔细阅读。</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Himo Mini Program Security Issues</title>
       <link>https://missuo.me/posts/himo-security/</link>

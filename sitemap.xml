@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-05-29T19:57:54+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/rime/</loc>
+    <lastmod>2023-05-29T19:57:54+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/rime-mac/</loc>
+    <lastmod>2023-05-29T19:57:54+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/squirrel/</loc>
+    <lastmod>2023-05-29T19:57:54+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-05-29T19:57:54+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2023-05-29T19:57:54+08:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/tags/himo/</loc>
     <lastmod>2023-05-29T00:31:40+08:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2023-05-29T00:31:40+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/information-security/</loc>
-    <lastmod>2023-05-29T00:31:40+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-05-29T00:31:40+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-05-29T00:31:40+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2023-05-29T00:31:40+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/us-visa/</loc>
