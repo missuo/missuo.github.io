@@ -1982,7 +1982,7 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
       <guid>https://missuo.me/about/</guid>
       <description>Welcome to my website, I am very happy to meet you!
 🏠 About this site This site is mainly used for the personal life of the blogger.
-👨‍💻 Who is the blogger Vincent(YingTao) Young Libra, born on October 10, 2000 From Zhejiang, usually living in Shanghai Master Student, studying Computer Science ⛹ Interests Basketball (Golden State Warriors fans) Travel (love to go see the sea) Programming (working on learning Flutter) 📬 Contact me Email: i@yyt.</description>
+👨‍💻 Who is the blogger Vincent(YingTao) Young Libra, born on October 10, 2000 From Zhejiang, about to go to Pennsylvania, USA Master Student, studying Computer Science at University of Pittsburgh ⛹ Interests Basketball (Golden State Warriors fans) Travel (love to go see the sea) Programming (working on learning Flutter) 📬 Contact me Email: i@yyt.</description>
       <content:encoded><![CDATA[<blockquote>
 <p>Welcome to my website, I am very happy to meet you!</p>
 </blockquote>
@@ -1992,8 +1992,8 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
 <ul>
 <li>Vincent(YingTao) Young</li>
 <li>Libra, born on October 10, 2000</li>
-<li>From Zhejiang, usually living in Shanghai</li>
-<li>Master Student, studying Computer Science</li>
+<li>From Zhejiang, about to go to Pennsylvania, USA</li>
+<li>Master Student, studying Computer Science at <a href="https://www.pitt.edu">University of Pittsburgh</a></li>
 </ul>
 <h2 id="-interests">⛹ Interests</h2>
 <ul>
@@ -2020,7 +2020,8 @@ AirPods Pro 2<br>
 KeyChron K2<br>
 Magic Keyboard<br>
 SONGREN 4K Display</p>
-]]></content:encoded>
+<h2 id="sponsor">Sponsor</h2>
+<iframe src="https://github.com/sponsors/missuo/button" title="Sponsor missuo" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>]]></content:encoded>
     </item>
     
     <item>
