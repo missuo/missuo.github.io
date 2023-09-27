@@ -45,7 +45,7 @@ Install ADB CLI tools on your computer.
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="k">if</span> <span class="nx">you</span> <span class="nx">find</span> <span class="nx">other</span> <span class="nx">users</span> <span class="nx">on</span> <span class="nx">your</span> <span class="nx">phone</span><span class="p">,</span> <span class="nx">please</span> <span class="nx">execute</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">command</span><span class="p">.</span>
 </span></span><span class="line"><span class="cl"><span class="nx">adb</span> <span class="nx">uninstall</span> <span class="o">--</span><span class="nx">user</span> <span class="p">[</span><span class="nx">USERID</span><span class="p">]</span> <span class="nx">com</span><span class="p">.</span><span class="nx">miui</span><span class="p">.</span><span class="nx">guardprovider</span>
-</span></span></code></pre></div><p><img loading="lazy" src="https://static.nisekoo.com/blog/20230204UJZpcM.png" alt="20230204UJZpcM"  />
+</span></span></code></pre></div><p><img loading="lazy" src="https://r2.qwq.mx/blog/20230204UJZpcM.png" alt="20230204UJZpcM"  />
 </p>
 <h2 id="install-magisk-module">Install Magisk Module</h2>
 <blockquote>

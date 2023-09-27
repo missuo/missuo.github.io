@@ -64,10 +64,10 @@
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">	<span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </span></span></code></pre></div><p>很快，Python 的程序跑出了结果，验证了我的猜想。来自 <strong>武汉</strong> 的一位幸运网友。（<strong>为了保护他人隐私，已将关键信息打码</strong>）</p>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/202305295XA9GS.png" alt="202305295XA9GS"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/202305295XA9GS.png" alt="202305295XA9GS"  />
 </p>
 <p>我在 5 月 15 日凌晨发了一条朋友圈和微博，在微博艾特了 <strong>缦图摄影</strong> 和 <strong>海马体照相馆</strong>。很荣幸，在微博私信和我的邮箱都有工作人员联系我，下午醒来的时候我及时地回复了邮件，很遗憾的是过去了接近 2 周的时间，我没有收到任何回信，我不知道他们是修复了这个问题，还是说直接忽略了。之后我也没有再去验证。</p>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20230529fzK3kq.png" alt="20230529fzK3kq"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20230529fzK3kq.png" alt="20230529fzK3kq"  />
 </p>
 <p>其实我写这篇博客，只是想分享这一段有趣的小研究，也算是为海马体做出一点点贡献。<strong>海马体小程序</strong> 其实只是一个很好的例子，其实他们并不是一家小公司，而是一家在中国大陆范围内规模挺大的公司。除了海马体，在过去的时间里我还有研究过很多类似的小程序，很遗憾，大部分小程序都没有在 <strong>用户个人信息</strong> 做到很好保护。</p>
 ]]></content:encoded>

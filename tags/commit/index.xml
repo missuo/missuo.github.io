@@ -49,7 +49,7 @@ Export GPG Key $ gpg --list-secret-keys --keyid-format LONG gpg: checking the tr
 </span></span><span class="line"><span class="cl">brew install gpg-suite --cask
 </span></span></code></pre></div><h3 id="configure-vscode">Configure VSCode</h3>
 <p>Check the box in the settings <code>Git: Enable Commit Signing</code>.</p>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20230307sUo8Vy.png" alt="20230307sUo8Vy"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20230307sUo8Vy.png" alt="20230307sUo8Vy"  />
 </p>
 ]]></content:encoded>
     </item>

@@ -36,10 +36,10 @@ Magisk Delta Magisk Delta 就是为了解决这个问题，可以完全地隐藏
 </span></span><span class="line"><span class="cl">fastboot reboot
 </span></span></code></pre></div><ol start="3">
 <li>开机之后，卸载 <strong>Magisk App</strong>，打开新的 <strong>Magisk Delta App</strong>，开启 <strong>MagiskHide</strong> 和 <strong>Enforce SuList</strong>。（注意开机之后不需要重新导入模块，理论上会自动识别之前安装的所有模块，包括<strong>LSP</strong>）
-<img loading="lazy" src="https://static.nisekoo.com/blog/20230712ZBVeDI.jpg" alt="20230712ZBVeDI"  />
+<img loading="lazy" src="https://r2.qwq.mx/blog/20230712ZBVeDI.jpg" alt="20230712ZBVeDI"  />
 </li>
 </ol>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20230712xkDIyI.jpg" alt="20230712xkDIyI"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20230712xkDIyI.jpg" alt="20230712xkDIyI"  />
 </p>
 ]]></content:encoded>
     </item>

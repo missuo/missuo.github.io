@@ -88,7 +88,7 @@ IP 的问题 无法访问 ChatGPT 封锁了很多机房的 IP，因为 ChatGPT �
 <p>我翻看了我的 <strong>Chrome 历史记录</strong>，找到了一个 <a href="https://pay.openai.com">pay.openai.com</a> 的链接，点进去发现还是熟悉的 <strong>Stripe</strong> 的界面。但是奇怪的事情是 <strong>我无法填写地址信息</strong>，但是没有地址信息无法提交。无奈之下，当然是按下 F12，找到填写地址的每一个 <strong>input</strong> 标签，把 <strong>disable</strong> 全部改为 <strong>enable</strong>，顺利地填写了信息。在我的好朋友 <strong>Ming</strong> 的帮助下，用他的美国卡支付，没有显示成功的界面，一直显示处理中，但是收到了订阅成功的邮件。回到 <a href="https://chat.openai.com">chat.openai.com</a> 发现已经开通好了。</p>
 <h2 id="体验">体验</h2>
 <p>Plus 版本有两个模式，分别是 <strong>Default</strong> 和 <strong>Turbo</strong>。<br>
-<img loading="lazy" src="https://static.nisekoo.com/blog/202302114W6T0j.png" alt="202302114W6T0j"  />
+<img loading="lazy" src="https://r2.qwq.mx/blog/202302114W6T0j.png" alt="202302114W6T0j"  />
 </p>
 <p>根据描述和实际体验，<strong>Turbo</strong> 模式显然要快很多，回复速度比免费版有了很大的提升，很少有遇到崩溃的情况。当然英文提问会比中文回复速度快很多。</p>
 <h2 id="ip-的问题">IP 的问题</h2>
@@ -96,7 +96,7 @@ IP 的问题 无法访问 ChatGPT 封锁了很多机房的 IP，因为 ChatGPT �
 <p>ChatGPT 封锁了很多机房的 IP，因为 ChatGPT 使用的是 <a href="https://cloudflare.com">Cloudflare</a> 的服务，我猜测是使用了 <strong>Country</strong> 匹配，也就是说只有在指定国家可用，目前是 161 个国家。除此之外，应该还加入了 <strong>Threat Score</strong> 和 <strong>Known Bots</strong> 的判断。意味着你的 IP 要想顺利访问，需要具备两个条件，IP 属于来自 161 个国家之一，并且你的 IP 危险分数足够低。</p>
 <h3 id="我的方案">我的方案</h3>
 <p>在 2022 年 3 月 28 日，我在 RIPE 申请到了 ASN，也就意味着我可以持有 IPv4 和 IPv6，我目前持有两个/48 的 IPv6。我目前的 IPv6 分别来自 <strong>台湾</strong> 和 <strong>英国</strong>，都在 161 个国家之内，危险分数都是 0。我建立了 BGP Session，完全可以使用自己的 IP 来访问 OpenAI 的服务。<br>
-<img loading="lazy" src="https://static.nisekoo.com/blog/20230211Dlnlje.png" alt="20230211Dlnlje"  />
+<img loading="lazy" src="https://r2.qwq.mx/blog/20230211Dlnlje.png" alt="20230211Dlnlje"  />
 </p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Prefixes:
 </span></span><span class="line"><span class="cl">2401:95c0:f001::/48

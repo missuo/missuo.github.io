@@ -45,7 +45,7 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
 </blockquote>
 </blockquote>
 <h2 id="我的-asn-信息as206729">我的 ASN 信息——AS206729</h2>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402OuAhUS.jpg" alt="20220402OuAhUS"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20220402OuAhUS.jpg" alt="20220402OuAhUS"  />
 </p>
 <h3 id="as206729-prefixes-v6"><strong>AS206729 Prefixes v6</strong></h3>
 <p><code>2401:95c0:f001::/48</code></p>
@@ -81,13 +81,13 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
 <li>两个需要接入的 ASN</li>
 </ul>
 <h2 id="asn-下号">ASN 下号</h2>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402qbALxU.jpg" alt="20220402qbALxU"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20220402qbALxU.jpg" alt="20220402qbALxU"  />
 </p>
 <h2 id="接入-bgp-session以-buyvm-为例vultr-类似">接入 BGP Session（以 BuyVM 为例，Vultr 类似）</h2>
 <ul>
 <li>发 <code>Ticket</code> 告诉客服你的 ASN 号，客服一般会向该 ASN 的管理员邮箱发送一串随机字符串，需要在工单中回复，验证你是 ASN 的持有人。稍后，客服会在面板里面加入你的 ASN 和你的 IP 段。</li>
 </ul>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402T4JgCU.png" alt="20220402T4JgCU"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20220402T4JgCU.png" alt="20220402T4JgCU"  />
 </p>
 <ul>
 <li>在你的 VPS 上安装 <code>bird</code>。用于宣告你的 IP。</li>
@@ -191,13 +191,13 @@ AS206729 Peers v6 Rank Description IPv6 Peer 1 FranTech Solutions 2401: 95c0: f0
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></div><p>##上网测试</p>
 <h3 id="ipsb">IP.SB</h3>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402WVLK3S.png" alt="20220402WVLK3S"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20220402WVLK3S.png" alt="20220402WVLK3S"  />
 </p>
 <h3 id="netflix解锁台湾-nf-所有片源">Netflix（解锁台湾 NF 所有片源）</h3>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402MRa9zP.png" alt="20220402MRa9zP"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20220402MRa9zP.png" alt="20220402MRa9zP"  />
 </p>
 <h3 id="youtube支持-premium-tw">YouTube（支持 Premium TW）</h3>
-<p><img loading="lazy" src="https://static.nisekoo.com/blog/20220402oAFKci.png" alt="20220402oAFKci"  />
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20220402oAFKci.png" alt="20220402oAFKci"  />
 </p>
 <h2 id="参考文章">参考文章</h2>
 <p><a href="https://hex.moe/p/d6a20b99/">年轻人的第一个私人 BGP(二) - 广播你的 IP</a><br>
