@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/posts/choose-vps/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/looking-glass/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/vps/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/tags/computer-science/</loc>
     <lastmod>2023-10-11T23:46:46-04:00</lastmod>
   </url><url>
@@ -14,19 +32,10 @@
     <loc>https://missuo.me/tags/master/</loc>
     <lastmod>2023-10-11T23:46:46-04:00</lastmod>
   </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-10-11T23:46:46-04:00</lastmod>
-  </url><url>
     <loc>https://missuo.me/tags/software-development-engineer/</loc>
     <lastmod>2023-10-11T23:46:46-04:00</lastmod>
   </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-10-11T23:46:46-04:00</lastmod>
-  </url><url>
     <loc>https://missuo.me/tags/united-states/</loc>
-    <lastmod>2023-10-11T23:46:46-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2023-10-11T23:46:46-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/ios/</loc>
@@ -255,9 +264,6 @@
     <lastmod>2023-01-13T02:21:54+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/bandwagonhost/</loc>
-    <lastmod>2023-01-13T02:21:54+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/vps/</loc>
     <lastmod>2023-01-13T02:21:54+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/gridea/</loc>
