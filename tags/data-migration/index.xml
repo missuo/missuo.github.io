@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Clickhouse on Vincent&#39;s Notes</title>
-    <link>https://missuo.me/tags/clickhouse/</link>
-    <description>Recent content in Clickhouse on Vincent&#39;s Notes</description>
+    <title>Data Migration on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/data-migration/</link>
+    <description>Recent content in Data Migration on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Oct 2023 11:04:23 -0400</lastBuildDate><atom:link href="https://missuo.me/tags/clickhouse/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Oct 2023 11:04:23 -0400</lastBuildDate><atom:link href="https://missuo.me/tags/data-migration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clickhouse Data Migration</title>
       <link>https://missuo.me/posts/clickhouse-migrate/</link>
@@ -41,64 +41,6 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">&lt;</span><span class="n">local_database</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">local_table</span><span class="o">&gt;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;remote_clickhouse_addr&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">remote_database</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">remote_table</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;remote_user&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;remote_password&gt;&#39;</span><span class="p">)</span><span class="w">
 </span></span></span></code></pre></div><p>非常方便，当然迁移的速度取决于你的网速，我测试下来速度大概在 50M/s，全程也就几分钟就完成了。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Create query API for 500 million Weibo data</title>
-      <link>https://missuo.me/posts/weibo-data-searcher/</link>
-      <pubDate>Thu, 09 Feb 2023 03:32:33 +0800</pubDate>
-      
-      <guid>https://missuo.me/posts/weibo-data-searcher/</guid>
-      <description>Preparation Clickhouse Database Linux/Windows/macOS Server Data Import First you need to deploy Clickhouse and finish creating a brand new database. Create two tables. Table For Query Weibo Uid.
-CREATE TABLE wb_uid( uid String, mobile String )ENGINE = MergeTree() ORDER BY (uid) PRIMARY KEY (uid); Table For Query Mobile Phone Number
-CREATE TABLE wb_mobile( uid String, mobile String )ENGINE = MergeTree() ORDER BY (mobile) PRIMARY KEY (mobile); Query Data WeiboSearcher is an API program written in Golang.</description>
-      <content:encoded><![CDATA[<h2 id="preparation">Preparation</h2>
-<ul>
-<li>Clickhouse Database</li>
-<li>Linux/Windows/macOS Server</li>
-</ul>
-<h2 id="data-import">Data Import</h2>
-<ol>
-<li>First you need to deploy Clickhouse and finish creating a brand new database.</li>
-<li>Create two tables.</li>
-</ol>
-<p>Table For Query Weibo Uid.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">wb_uid</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">uid</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mobile</span><span class="w"> </span><span class="n">String</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MergeTree</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">  </span><span class="p">(</span><span class="n">uid</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">uid</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></div><p>Table For Query Mobile Phone Number</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">wb_mobile</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">uid</span><span class="w"> </span><span class="n">String</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mobile</span><span class="w"> </span><span class="n">String</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MergeTree</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w">  </span><span class="p">(</span><span class="n">mobile</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">mobile</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></div><h2 id="query-data">Query Data</h2>
-<p><a href="https://github.com/OwO-Network/WeiboSearcher">WeiboSearcher</a> is an API program written in Golang. But he is not out of the box, because there is no configuration file that allows you to modify the database information, which will be supported in the future. But you can modify some of the configuration code and recompile it yourself.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./weibo_linux_amd64
-</span></span></code></pre></div><h2 id="qa">Q&amp;A</h2>
-<ul>
-<li>Why not use a MySQL database?</li>
-</ul>
-<blockquote>
-<p>Because even after building indexes, sorting, and splitting tables, MySQL data is much worse than Clickhouse, I gave up on optimizing MySQL query speed.</p>
-</blockquote>
-<ul>
-<li>Why use two tables?</li>
-</ul>
-<blockquote>
-<p>Because two tables are used and the indexes are different fields. It can greatly speed up the query efficiency.</p>
-</blockquote>
-<ul>
-<li>Where is the data downloaded from?</li>
-</ul>
-<blockquote>
-<p>We do not provide any data, and we do not keep any data. Please find your own data sources.</p>
-</blockquote>
 ]]></content:encoded>
     </item>
     

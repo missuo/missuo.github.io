@@ -6,7 +6,44 @@
     <description>Recent content on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Oct 2023 21:43:56 -0400</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Oct 2023 11:04:23 -0400</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clickhouse Data Migration</title>
+      <link>https://missuo.me/posts/clickhouse-migrate/</link>
+      <pubDate>Wed, 18 Oct 2023 11:04:23 -0400</pubDate>
+      
+      <guid>https://missuo.me/posts/clickhouse-migrate/</guid>
+      <description>因为有一个五亿规模的数据库，我不得不选择使用 Clickhouse 作为数据库，Clickhouse 的 MergeTree 使得查询的效率大概是 MySQL 优化之后的 100 倍以上，这是一个很夸张的数据，MySQL 在建立索引和分表的情况下需要 1-2 分钟，而 Clickhouse 为 0.1s 左右。数据量大概在 50G 左右，迁移起来有些麻烦。
+安装 Clickhouse sudo apt-get install -y apt-transport-https ca-certificates dirmngr GNUPGHOME=$(mktemp -d) sudo GNUPGHOME=&amp;#34;$GNUPGHOME&amp;#34; gpg --no-default-keyring --keyring /usr/share/keyrings/clickhouse-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 8919F6BD2B48D754 sudo rm -r &amp;#34;$GNUPGHOME&amp;#34; sudo chmod +r /usr/share/keyrings/clickhouse-keyring.gpg echo &amp;#34;deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main&amp;#34; | sudo tee \ /etc/apt/sources.list.d/clickhouse.list sudo apt-get update sudo apt-get install -y clickhouse-server clickhouse-client 启动 Clickhouse systemctl start clickhouse-server 连接 Clickhouse clickhouse-client -password xxxx 创建数据库和表 CREATE DATABASE xxx; USE xxx; CREATE TABLE xxxxx; 从远程迁移 INSERT INTO &amp;lt;local_database&amp;gt;.</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>因为有一个五亿规模的数据库，我不得不选择使用 Clickhouse 作为数据库，Clickhouse 的 MergeTree 使得查询的效率大概是 MySQL 优化之后的 100 倍以上，这是一个很夸张的数据，MySQL 在建立索引和分表的情况下需要 1-2 分钟，而 Clickhouse 为 0.1s 左右。数据量大概在 50G 左右，迁移起来有些麻烦。</p>
+</blockquote>
+<h2 id="安装-clickhouse">安装 Clickhouse</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install -y apt-transport-https ca-certificates dirmngr
+</span></span><span class="line"><span class="cl"><span class="nv">GNUPGHOME</span><span class="o">=</span><span class="k">$(</span>mktemp -d<span class="k">)</span>
+</span></span><span class="line"><span class="cl">sudo <span class="nv">GNUPGHOME</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$GNUPGHOME</span><span class="s2">&#34;</span> gpg --no-default-keyring --keyring /usr/share/keyrings/clickhouse-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 8919F6BD2B48D754
+</span></span><span class="line"><span class="cl">sudo rm -r <span class="s2">&#34;</span><span class="nv">$GNUPGHOME</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">sudo chmod +r /usr/share/keyrings/clickhouse-keyring.gpg
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main&#34;</span> <span class="p">|</span> sudo tee <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    /etc/apt/sources.list.d/clickhouse.list
+</span></span><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install -y clickhouse-server clickhouse-client
+</span></span></code></pre></div><h2 id="启动-clickhouse">启动 Clickhouse</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start clickhouse-server
+</span></span></code></pre></div><h2 id="连接-clickhouse">连接 Clickhouse</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">clickhouse-client -password xxxx
+</span></span></code></pre></div><h2 id="创建数据库和表">创建数据库和表</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">USE</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">xxxxx</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h2 id="从远程迁移">从远程迁移</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">&lt;</span><span class="n">local_database</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">local_table</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;remote_clickhouse_addr&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">remote_database</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="n">remote_table</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;remote_user&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;remote_password&gt;&#39;</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></div><p>非常方便，当然迁移的速度取决于你的网速，我测试下来速度大概在 50M/s，全程也就几分钟就完成了。</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>How to choose a VPS with fast speed to Mainland China.</title>
       <link>https://missuo.me/posts/choose-vps/</link>
