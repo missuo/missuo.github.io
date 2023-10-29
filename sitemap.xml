@@ -2,28 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://missuo.me/tags/clickhouse/</loc>
-    <lastmod>2023-10-18T11:04:23-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/clickhouse-migrate/</loc>
-    <lastmod>2023-10-18T11:04:23-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/data-migration/</loc>
-    <lastmod>2023-10-18T11:04:23-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-10-18T11:04:23-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-10-18T11:04:23-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
-    <lastmod>2023-10-18T11:04:23-04:00</lastmod>
-  </url><url>
     <loc>https://missuo.me/posts/choose-vps/</loc>
     <lastmod>2023-10-12T21:43:56-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/looking-glass/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
     <lastmod>2023-10-12T21:43:56-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/vps/</loc>
@@ -250,6 +241,9 @@
   </url><url>
     <loc>https://missuo.me/posts/chatgpt-plus/</loc>
     <lastmod>2023-02-11T07:04:11+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/clickhouse/</loc>
+    <lastmod>2023-02-09T03:32:33+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/weibo-data-searcher/</loc>
     <lastmod>2023-02-09T03:32:33+08:00</lastmod>
