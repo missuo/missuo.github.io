@@ -29,13 +29,13 @@ Install ADB CLI tools on your computer.
 <p>Install <code>ADB</code> CLI tools on your computer.</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># macOS
-</span></span><span class="line"><span class="cl">brew install android-platform-tools
-</span></span><span class="line"><span class="cl">or
-</span></span><span class="line"><span class="cl">https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># macOS</span>
+</span></span><span class="line"><span class="cl"><span class="n">brew</span> <span class="n">install</span> <span class="n">android</span><span class="o">-</span><span class="n">platform</span><span class="o">-</span><span class="n">tools</span>
+</span></span><span class="line"><span class="cl"><span class="ow">or</span>
+</span></span><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">dl</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">android</span><span class="o">/</span><span class="n">repository</span><span class="o">/</span><span class="n">platform</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">darwin</span><span class="o">.</span><span class="n">zip</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># Windows
-</span></span><span class="line"><span class="cl">https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+</span></span><span class="line"><span class="cl"><span class="c1"># Windows</span>
+</span></span><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">dl</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">android</span><span class="o">/</span><span class="n">repository</span><span class="o">/</span><span class="n">platform</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">windows</span><span class="o">.</span><span class="n">zip</span>
 </span></span></code></pre></div><ol start="3">
 <li>Execute the following code.</li>
 </ol>
