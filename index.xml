@@ -6,7 +6,53 @@
     <description>Recent content on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Nov 2023 03:00:31 -0500</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Nov 2023 16:10:07 -0500</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrade ChatGPT Plus bypassing restrictions</title>
+      <link>https://missuo.me/posts/upgrade-chatgpt-plus/</link>
+      <pubDate>Fri, 17 Nov 2023 16:10:07 -0500</pubDate>
+      
+      <guid>https://missuo.me/posts/upgrade-chatgpt-plus/</guid>
+      <description>在前段时间 ChatGPT 不再允许新用户订阅 ChatGPT Plus 方案，前几天我刷到了一个偷渡升级的方案，发在了我的 Twitter，但是没具体说如何执行这段代码，本篇文章主要就是介绍完整的操作流程。
+登录帐号 直接访问 https://chat.openai.com/api/auth/session，你可以在这里面找到一个 accessToken 的数据。复制 accessToken 的 Value。如果你是小白，不知道怎么找到的话，建议你复制到 https://jsonformatter.org 后查看，或者安装 Chrome 插件 JSON Viewer。
+你应该完整的复制 eyxxxx 开头的字符串。
+补全代码 粘贴到 {accessToken} 处，注意不要保留 {}。
+await fetch(&amp;#34;https://chat.openai.com/backend-api/payments/checkout&amp;#34;, { method: &amp;#34;POST&amp;#34;, headers: { &amp;#34;User-Agent&amp;#34;: &amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36&amp;#34;, &amp;#34;Authorization&amp;#34;: &amp;#34;Bearer {accessToken}&amp;#34; }, redirect: &amp;#39;follow&amp;#39;, referrerPolicy: &amp;#39;no-referrer&amp;#39; }) .then(response =&amp;gt; response.text()) .then(result =&amp;gt; console.log(result)) .catch(error =&amp;gt; console.log(&amp;#39;error&amp;#39;, error)); 执行代码 复制完整的代码，打开浏览器，确保这个浏览器已经登录过你的 ChatGPT 帐号，右击选择 检查元素，或者直接按下 F12，选择 Console，粘贴代码，按下回车。顺利的话会看到生成了一个链接。</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>在前段时间 ChatGPT 不再允许新用户订阅 ChatGPT Plus 方案，前几天我刷到了一个偷渡升级的方案，发在了我的 Twitter，但是没具体说如何执行这段代码，本篇文章主要就是介绍完整的操作流程。</p>
+</blockquote>
+<h3 id="登录帐号">登录帐号</h3>
+<p>直接访问 <a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a>，你可以在这里面找到一个 <strong>accessToken</strong> 的数据。复制 <strong>accessToken</strong> 的 Value。如果你是小白，不知道怎么找到的话，建议你复制到 <a href="https://jsonformatter.org">https://jsonformatter.org</a> 后查看，或者安装 Chrome 插件 <a href="https://chrome.google.com/webstore/detail/gbmdgpbipfallnflgajpaliibnhdgobh">JSON Viewer</a>。</p>
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20231117dUCdKY.png" alt="20231117dUCdKY"  />
+</p>
+<p>你应该完整的复制 <strong>eyxxxx</strong> 开头的字符串。</p>
+<h3 id="补全代码">补全代码</h3>
+<p>粘贴到 {accessToken} 处，注意不要保留 {}。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">&#34;https://chat.openai.com/backend-api/payments/checkout&#34;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">method</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;User-Agent&#34;</span><span class="o">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Authorization&#34;</span><span class="o">:</span> <span class="s2">&#34;Bearer {accessToken}&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">redirect</span><span class="o">:</span> <span class="s1">&#39;follow&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">referrerPolicy</span><span class="o">:</span> <span class="s1">&#39;no-referrer&#39;</span> 
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span> 
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</span></span></code></pre></div><h3 id="执行代码">执行代码</h3>
+<p>复制完整的代码，打开浏览器，确保这个浏览器已经登录过你的 ChatGPT 帐号，右击选择 <strong>检查元素</strong>，或者直接按下 <strong>F12</strong>，选择 <code>Console</code>，粘贴代码，按下回车。顺利的话会看到生成了一个链接。</p>
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20231117sZDlvt.png" alt="20231117sZDlvt"  />
+</p>
+<p>点击这个链接，你就会跳转到熟悉的界面。</p>
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/20231117ZJpsYv.png" alt="20231117ZJpsYv"  />
+</p>
+<p>大胆的输入你的卡片信息即可成功订阅。</p>
+<h3 id="总结">总结</h3>
+<p>ChatGPT 官方似乎没有完全关闭订阅通道，这个方案直到美国东部时间(EDT) 2023年11月17日 16:25 可行，想要订阅抓紧时间，不要错过机会了。</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>F1 student successfully applied for SSN despite not having any employment</title>
       <link>https://missuo.me/posts/ssn-apply/</link>
