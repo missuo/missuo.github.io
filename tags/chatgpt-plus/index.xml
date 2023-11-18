@@ -27,8 +27,8 @@ await fetch(&amp;#34;https://chat.openai.com/backend-api/payments/checkout&amp;#
 <p><strong>如果出现帐号封禁等任何异常的情况，我不承担任何责任，后果自负。如果您担心这样的事情发生，您可以关闭这个页面了。</strong></p>
 <h3 id="最新方案">最新方案</h3>
 <p>登录帐号，点击 <a href="https://chat.openai.com/invite/accepted">https://chat.openai.com/invite/accepted</a>，会发生奇妙的故事。</p>
-<p><strong>请忽略下面的废话</strong></p>
 <hr>
+<p><strong>请忽略下面的废话</strong></p>
 <h3 id="登录帐号">登录帐号</h3>
 <p>直接访问 <a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a>，你可以在这里面找到一个 <strong>accessToken</strong> 的数据。复制 <strong>accessToken</strong> 的 Value。如果你是小白，不知道怎么找到的话，建议你复制到 <a href="https://jsonformatter.org">https://jsonformatter.org</a> 后查看，或者安装 Chrome 插件 <a href="https://chrome.google.com/webstore/detail/gbmdgpbipfallnflgajpaliibnhdgobh">JSON Viewer</a>。</p>
 <p><img loading="lazy" src="https://r2.qwq.mx/blog/20231117dUCdKY.png" alt="20231117dUCdKY"  />
