@@ -15,17 +15,18 @@
       <guid>https://missuo.me/posts/upgrade-chatgpt-plus/</guid>
       <description>在前段时间 ChatGPT 不再允许新用户订阅 ChatGPT Plus 方案，前几天我刷到了一个偷渡升级的方案，发在了我的 Twitter，但是没具体说如何执行这段代码，本篇文章主要就是介绍完整的操作流程。
 如果出现帐号封禁等任何异常的情况，我不承担任何责任，后果自负。如果您担心这样的事情发生，您可以关闭这个页面了。
-更新 登录帐号，点击 https://chat.openai.com/invite/accepted，会发生奇妙的故事。
-登录帐号 直接访问 https://chat.openai.com/api/auth/session，你可以在这里面找到一个 accessToken 的数据。复制 accessToken 的 Value。如果你是小白，不知道怎么找到的话，建议你复制到 https://jsonformatter.org 后查看，或者安装 Chrome 插件 JSON Viewer。
+最新方案 登录帐号，点击 https://chat.openai.com/invite/accepted，会发生奇妙的故事。
+请忽略下面的废话 登录帐号 直接访问 https://chat.openai.com/api/auth/session，你可以在这里面找到一个 accessToken 的数据。复制 accessToken 的 Value。如果你是小白，不知道怎么找到的话，建议你复制到 https://jsonformatter.org 后查看，或者安装 Chrome 插件 JSON Viewer。
 你应该完整的复制 eyxxxx 开头的字符串。
 补全代码 粘贴到 {accessToken} 处，注意不要保留 {}。
-await fetch(&amp;#34;https://chat.openai.com/backend-api/payments/checkout&amp;#34;, { method: &amp;#34;POST&amp;#34;, headers: { &amp;#34;User-Agent&amp;#34;: &amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36&amp;#34;, &amp;#34;Authorization&amp;#34;: &amp;#34;Bearer {accessToken}&amp;#34; }, redirect: &amp;#39;follow&amp;#39;, referrerPolicy: &amp;#39;no-referrer&amp;#39; }) .then(response =&amp;gt; response.text()) .then(result =&amp;gt; console.log(result)) .catch(error =&amp;gt; console.</description>
+await fetch(&amp;#34;https://chat.openai.com/backend-api/payments/checkout&amp;#34;, { method: &amp;#34;POST&amp;#34;, headers: { &amp;#34;User-Agent&amp;#34;: &amp;#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36&amp;#34;, &amp;#34;Authorization&amp;#34;: &amp;#34;Bearer {accessToken}&amp;#34; }, redirect: &amp;#39;follow&amp;#39;, referrerPolicy: &amp;#39;no-referrer&amp;#39; }) .then(response =&amp;gt; response.text()) .then(result =&amp;gt; console.log(result)) .</description>
       <content:encoded><![CDATA[<blockquote>
 <p>在前段时间 ChatGPT 不再允许新用户订阅 ChatGPT Plus 方案，前几天我刷到了一个偷渡升级的方案，发在了我的 Twitter，但是没具体说如何执行这段代码，本篇文章主要就是介绍完整的操作流程。</p>
 </blockquote>
 <p><strong>如果出现帐号封禁等任何异常的情况，我不承担任何责任，后果自负。如果您担心这样的事情发生，您可以关闭这个页面了。</strong></p>
-<h3 id="更新">更新</h3>
+<h3 id="最新方案">最新方案</h3>
 <p>登录帐号，点击 <a href="https://chat.openai.com/invite/accepted">https://chat.openai.com/invite/accepted</a>，会发生奇妙的故事。</p>
+<h2 id="请忽略下面的废话"><strong>请忽略下面的废话</strong></h2>
 <h3 id="登录帐号">登录帐号</h3>
 <p>直接访问 <a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a>，你可以在这里面找到一个 <strong>accessToken</strong> 的数据。复制 <strong>accessToken</strong> 的 Value。如果你是小白，不知道怎么找到的话，建议你复制到 <a href="https://jsonformatter.org">https://jsonformatter.org</a> 后查看，或者安装 Chrome 插件 <a href="https://chrome.google.com/webstore/detail/gbmdgpbipfallnflgajpaliibnhdgobh">JSON Viewer</a>。</p>
 <p><img loading="lazy" src="https://r2.qwq.mx/blog/20231117dUCdKY.png" alt="20231117dUCdKY"  />
