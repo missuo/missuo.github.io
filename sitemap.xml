@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/posts/summary-2023/</loc>
+    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/2023/</loc>
+    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/2024/</loc>
+    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/posts/japan-evisa/</loc>
     <lastmod>2023-12-08T15:02:02-05:00</lastmod>
   </url><url>
@@ -14,16 +32,7 @@
     <loc>https://missuo.me/tags/new-york/</loc>
     <lastmod>2023-12-08T15:02:02-05:00</lastmod>
   </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-12-08T15:02:02-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-12-08T15:02:02-05:00</lastmod>
-  </url><url>
     <loc>https://missuo.me/tags/us/</loc>
-    <lastmod>2023-12-08T15:02:02-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2023-12-08T15:02:02-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/chatgpt/</loc>
@@ -312,9 +321,6 @@
     <lastmod>2023-01-01T00:16:35+00:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/summary-2022/</loc>
-    <lastmod>2023-01-01T00:16:35+00:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/2023/</loc>
     <lastmod>2023-01-01T00:16:35+00:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/english-name-passport/</loc>
