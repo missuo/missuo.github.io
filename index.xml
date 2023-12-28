@@ -6,7 +6,98 @@
     <description>Recent content on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Dec 2023 02:16:55 -0500</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 22:50:50 +0800</lastBuildDate><atom:link href="https://missuo.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Servers I am using</title>
+      <link>https://missuo.me/posts/server-recommendation/</link>
+      <pubDate>Thu, 28 Dec 2023 22:50:50 +0800</pubDate>
+      
+      <guid>https://missuo.me/posts/server-recommendation/</guid>
+      <description>本文纯属是我自己使用的 VPS 的分享，不涉及任何 AFF 的链接。
+商家 地区 配置 价格 购买理由 DMIT Los Angeles 1C/1G/10G/450G 36.9USD/年 CN2 GIA 线路 GreenCloud Tokyo 1C/1G/20G/750G 24.0USD/年 IIJ 线路 GreenCloud Tokyo 5C/10G/100G/2T 100.0USD/3年 IIJ 线路 / 7763 CPU 配置高 CenterHop Singapore 1C/0.5G/10G/1T 1.5USD/月 便宜 / IP 解锁 Netflix iFog Toronto 1C/0.5G/20G/500G 3.75CHF/月 支持 BGP Session BuyVM Las Vegas 1C/1G/270G/UNLIMITED 3.75CAD/月 便宜 / 支持 BGP Session Vultr Seattle 1C/0.5G/10G/1T Free 白嫖 Oracle Seoul / Chuncheon 2C/1G/40G/10T Free 白嫖了很多台 BeroHost Hessen 8C/24G/420G/25T 10EUR/月 7443P 配置高 目前在跑服务的主要是 BeroHost 和 GreenCloud。</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>本文纯属是我自己使用的 VPS 的分享，不涉及任何 AFF 的链接。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>商家</th>
+<th>地区</th>
+<th>配置</th>
+<th>价格</th>
+<th>购买理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DMIT</td>
+<td>Los Angeles</td>
+<td>1C/1G/10G/450G</td>
+<td>36.9USD/年</td>
+<td>CN2 GIA 线路</td>
+</tr>
+<tr>
+<td>GreenCloud</td>
+<td>Tokyo</td>
+<td>1C/1G/20G/750G</td>
+<td>24.0USD/年</td>
+<td>IIJ 线路</td>
+</tr>
+<tr>
+<td>GreenCloud</td>
+<td>Tokyo</td>
+<td>5C/10G/100G/2T</td>
+<td>100.0USD/3年</td>
+<td>IIJ 线路 / 7763 CPU 配置高</td>
+</tr>
+<tr>
+<td>CenterHop</td>
+<td>Singapore</td>
+<td>1C/0.5G/10G/1T</td>
+<td>1.5USD/月</td>
+<td>便宜 / IP 解锁 Netflix</td>
+</tr>
+<tr>
+<td>iFog</td>
+<td>Toronto</td>
+<td>1C/0.5G/20G/500G</td>
+<td>3.75CHF/月</td>
+<td>支持 BGP Session</td>
+</tr>
+<tr>
+<td>BuyVM</td>
+<td>Las Vegas</td>
+<td>1C/1G/270G/UNLIMITED</td>
+<td>3.75CAD/月</td>
+<td>便宜 / 支持 BGP Session</td>
+</tr>
+<tr>
+<td>Vultr</td>
+<td>Seattle</td>
+<td>1C/0.5G/10G/1T</td>
+<td>Free</td>
+<td>白嫖</td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>Seoul / Chuncheon</td>
+<td>2C/1G/40G/10T</td>
+<td>Free</td>
+<td>白嫖了很多台</td>
+</tr>
+<tr>
+<td>BeroHost</td>
+<td>Hessen</td>
+<td>8C/24G/420G/25T</td>
+<td>10EUR/月</td>
+<td>7443P 配置高</td>
+</tr>
+</tbody>
+</table>
+<p><strong>目前在跑服务的主要是 BeroHost 和 GreenCloud。</strong></p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>2023 year-end summary</title>
       <link>https://missuo.me/posts/summary-2023/</link>

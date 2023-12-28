@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/server/</loc>
+    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/server-recommendation/</loc>
+    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/vps/</loc>
+    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/tags/2023/</loc>
     <lastmod>2023-12-12T02:16:55-05:00</lastmod>
   </url><url>
@@ -9,15 +27,6 @@
     <lastmod>2023-12-12T02:16:55-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/2024/</loc>
-    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-12-12T02:16:55-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2023-12-12T02:16:55-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/japan-evisa/</loc>
@@ -66,9 +75,6 @@
     <lastmod>2023-10-12T21:43:56-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/looking-glass/</loc>
-    <lastmod>2023-10-12T21:43:56-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/vps/</loc>
     <lastmod>2023-10-12T21:43:56-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/computer-science/</loc>

@@ -6,7 +6,27 @@
     <description>Recent content in Tags on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Dec 2023 02:16:55 -0500</lastBuildDate><atom:link href="https://missuo.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 22:50:50 +0800</lastBuildDate><atom:link href="https://missuo.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Server</title>
+      <link>https://missuo.me/tags/server/</link>
+      <pubDate>Thu, 28 Dec 2023 22:50:50 +0800</pubDate>
+      
+      <guid>https://missuo.me/tags/server/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>VPS</title>
+      <link>https://missuo.me/tags/vps/</link>
+      <pubDate>Thu, 28 Dec 2023 22:50:50 +0800</pubDate>
+      
+      <guid>https://missuo.me/tags/vps/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
     <item>
       <title>2023</title>
       <link>https://missuo.me/tags/2023/</link>
@@ -133,16 +153,6 @@
       <pubDate>Thu, 12 Oct 2023 21:43:56 -0400</pubDate>
       
       <guid>https://missuo.me/tags/looking-glass/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>VPS</title>
-      <link>https://missuo.me/tags/vps/</link>
-      <pubDate>Thu, 12 Oct 2023 21:43:56 -0400</pubDate>
-      
-      <guid>https://missuo.me/tags/vps/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
