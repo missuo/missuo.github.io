@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/tags/japan/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/tokyo/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/travel/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/travel-in-japan/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2024-01-14T09:53:10-05:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/tags/chatgpt/</loc>
     <lastmod>2024-01-14T09:31:34-05:00</lastmod>
   </url><url>
@@ -11,16 +32,7 @@
     <loc>https://missuo.me/tags/gpt-4/</loc>
     <lastmod>2024-01-14T09:31:34-05:00</lastmod>
   </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
-  </url><url>
     <loc>https://missuo.me/posts/copilot-chat/</loc>
-    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2024-01-14T09:31:34-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/server/</loc>
@@ -45,9 +57,6 @@
     <lastmod>2023-12-08T15:02:02-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/evisa/</loc>
-    <lastmod>2023-12-08T15:02:02-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/japan/</loc>
     <lastmod>2023-12-08T15:02:02-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/new-york/</loc>
@@ -132,9 +141,6 @@
     <lastmod>2023-09-09T02:23:38-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/new-zealand/</loc>
-    <lastmod>2023-08-25T16:55:59-04:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/travel/</loc>
     <lastmod>2023-08-25T16:55:59-04:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/travel-in-nz/</loc>
