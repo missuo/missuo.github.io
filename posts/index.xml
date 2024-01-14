@@ -6,7 +6,42 @@
     <description>Recent content in Posts on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Dec 2023 22:50:50 +0800</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2024 09:31:34 -0500</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Use Copilot for free unlimited use of GPT-4 API</title>
+      <link>https://missuo.me/posts/copilot-chat/</link>
+      <pubDate>Sun, 14 Jan 2024 09:31:34 -0500</pubDate>
+      
+      <guid>https://missuo.me/posts/copilot-chat/</guid>
+      <description>Copilot 是 GitHub 提供的一项 AI 代码补全的工具，不久之前增加了 Chat 的功能。正是因为支持了 Chat 功能，所以可以把 Copilot Chat 的 API 转换为 OpenAI 官方的 API。重要的是，还支持 GPT-4，虽然不是最新版本的 GPT-4 模型，但是基本也够用。
+准备工作 GitHub 帐号 （有 Copilot 权限的，我用的是 GitHub Student Pack） 海外 VPS （确保能访问 Copilot Chat API） 部署 在开始之前，先获取你的 Copilot Token。
+bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/aaamoon/copilot-gpt4-service/master/shells/get_copilot_token.sh)&amp;#34; 接下来主要使用的是 aaamoon/copilot-gpt4-service，GitHub 目前的版本还没有合并我的 PR，所以在部署之后，每次请求都应该携带在上一步获取的 Copilot Token。我改进之后的版本是当你在环境变量或者配置文件中填写了 Copilot Token，则无需在每次请求时携带，会优先使用环境变量或者配置文件提供的 Token。
+mkdir copilot-gpt4-service &amp;amp;&amp;amp; cd copilot-gpt4-service wget -O compose.yaml https://raw.githubusercontent.com/missuo/copilot-gpt4-service/dev/docker-compose.yml nano compose.yaml # 修改成你自己的 COPILOT_TOKEN docker compose up -d 部署完成后即可在任何支持 OpenAI API 的 App 中填写你的 API Endpoint，如果 API Key 不能留空的话可以随便写。</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>Copilot 是 GitHub 提供的一项 AI 代码补全的工具，不久之前增加了 Chat 的功能。正是因为支持了 Chat 功能，所以可以把 Copilot Chat 的 API 转换为 OpenAI 官方的 API。重要的是，还支持 GPT-4，虽然不是最新版本的 GPT-4 模型，但是基本也够用。</p>
+</blockquote>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>GitHub 帐号 （有 Copilot 权限的，我用的是 GitHub Student Pack）</li>
+<li>海外 VPS （确保能访问 Copilot Chat API）</li>
+</ul>
+<h2 id="部署">部署</h2>
+<p>在开始之前，先获取你的 Copilot Token。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/aaamoon/copilot-gpt4-service/master/shells/get_copilot_token.sh<span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>接下来主要使用的是 <a href="https://github.com/aaamoon/copilot-gpt4-service">aaamoon/copilot-gpt4-service</a>，GitHub 目前的版本还没有合并我的 PR，所以在部署之后，每次请求都应该携带在上一步获取的 <strong>Copilot Token</strong>。我改进之后的版本是当你在环境变量或者配置文件中填写了 Copilot Token，则无需在每次请求时携带，会优先使用环境变量或者配置文件提供的 Token。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir copilot-gpt4-service <span class="o">&amp;&amp;</span> <span class="nb">cd</span> copilot-gpt4-service
+</span></span><span class="line"><span class="cl">wget -O compose.yaml https://raw.githubusercontent.com/missuo/copilot-gpt4-service/dev/docker-compose.yml
+</span></span><span class="line"><span class="cl">nano compose.yaml <span class="c1"># 修改成你自己的 COPILOT_TOKEN</span>
+</span></span><span class="line"><span class="cl">docker compose up -d
+</span></span></code></pre></div><p>部署完成后即可在任何支持 OpenAI API 的 App 中填写你的 API Endpoint，如果 API Key 不能留空的话可以随便写。</p>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li>如果你使用了我改进的版本部署，请注意你的 API 是完全开放的，不要泄露你的 API</li>
+<li>建议不要使用 GitHub 大号的 Token，否则可能会封号，我是直接买了一个帐号，花费 40CNY</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Servers I am using</title>
       <link>https://missuo.me/posts/server-recommendation/</link>

@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/tags/chatgpt/</loc>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/copilot/</loc>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/gpt-4/</loc>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/posts/</loc>
-    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/copilot-chat/</loc>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2024-01-14T09:31:34-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/server/</loc>
     <lastmod>2023-12-28T22:50:50+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/server-recommendation/</loc>
-    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2023-12-28T22:50:50+08:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2023-12-28T22:50:50+08:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/vps/</loc>
@@ -43,9 +55,6 @@
   </url><url>
     <loc>https://missuo.me/tags/us/</loc>
     <lastmod>2023-12-08T15:02:02-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/chatgpt/</loc>
-    <lastmod>2023-11-17T16:10:07-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/chatgpt-plus/</loc>
     <lastmod>2023-11-17T16:10:07-05:00</lastmod>
