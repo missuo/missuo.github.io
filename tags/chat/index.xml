@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Chat on Vincent&#39;s Notes</title>
+    <link>https://missuo.me/tags/chat/</link>
+    <description>Recent content in Chat on Vincent&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jan 2024 22:15:53 -0500</lastBuildDate><atom:link href="https://missuo.me/tags/chat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chat With Strangers</title>
+      <link>https://missuo.me/posts/chat-with-strangers/</link>
+      <pubDate>Fri, 19 Jan 2024 22:15:53 -0500</pubDate>
+      
+      <guid>https://missuo.me/posts/chat-with-strangers/</guid>
+      <description>之前有看到 GeekPlux 一直有在和陌生人聊天。我最近也比较无聊，所以也搞了一个预约聊天的页面。欢迎大家来和我聊天。
+聊天内容 留学 润学 工作 其他任何话题 聊天方式 仅支持语音的方式，推荐使用 Google Meet，我们可以聊任何话题。如果您所处的网络无法使用 Google Meet，可以改用别的语音聊天工具，当然聊天的内容会受限。
+如何预约 您可以点击 这个链接 预约任何空闲的时间，预约成功之后请给我 发邮件 告诉我您想聊得大概内容。如果临时有事情需要改时间请通过邮件联系我。</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>之前有看到 <a href="https://geekplux.com/">GeekPlux</a> 一直有在和陌生人聊天。我最近也比较无聊，所以也搞了一个预约聊天的页面。欢迎大家来和我聊天。</p>
+</blockquote>
+<h2 id="聊天内容">聊天内容</h2>
+<ul>
+<li>留学</li>
+<li>润学</li>
+<li>工作</li>
+<li>其他任何话题</li>
+</ul>
+<h2 id="聊天方式">聊天方式</h2>
+<p>仅支持语音的方式，推荐使用 Google Meet，我们可以聊任何话题。如果您所处的网络无法使用 Google Meet，可以改用别的语音聊天工具，当然聊天的内容会受限。</p>
+<h2 id="如何预约">如何预约</h2>
+<p>您可以点击 <a href="https://cal.com/missuo/talk">这个链接</a> 预约任何空闲的时间，预约成功之后请给我 <a href="mailto:me@missuo.me">发邮件</a> 告诉我您想聊得大概内容。如果临时有事情需要改时间请通过邮件联系我。</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
