@@ -6,7 +6,56 @@
     <description>Recent content in Posts on Vincent&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Jan 2024 22:15:53 -0500</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jan 2024 20:25:20 -0500</lastBuildDate><atom:link href="https://missuo.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Palworld Dedicated Server Setup</title>
+      <link>https://missuo.me/posts/palworld-server/</link>
+      <pubDate>Tue, 23 Jan 2024 20:25:20 -0500</pubDate>
+      
+      <guid>https://missuo.me/posts/palworld-server/</guid>
+      <description>今天朋友问我能不能用我家的服务器搭建一个 Palworld，我看了一下网上的教程，用 Linux 还挺麻烦。直到我找到了 GitHub 的 Docker 版本。
+准备工作 性能还不错的 Linux 服务器 （我这边是家里的服务器） 安装了 Docker 启动 mkdir palworld &amp;amp;&amp;amp; cd palworld nano compose.yaml services: palworld: image: thijsvanloef/palworld-server-docker:latest restart: unless-stopped container_name: palworld-server ports: - 8211:8211/udp - 27015:27015/udp environment: - PUID=1000 - PGID=1000 - PORT=8211 # Optional but recommended - PLAYERS=16 # Optional but recommended - MULTITHREADING=true - RCON_ENABLED=true - RCON_PORT=25575 - ADMIN_PASSWORD=&amp;#34;adminPasswordHere&amp;#34; - COMMUNITY=false # Enable this if you want your server to show up in the community servers tab, USE WITH SERVER_PASSWORD!</description>
+      <content:encoded><![CDATA[<blockquote>
+<p>今天朋友问我能不能用我家的服务器搭建一个 Palworld，我看了一下网上的教程，用 Linux 还挺麻烦。直到我找到了 GitHub 的 Docker 版本。</p>
+</blockquote>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>性能还不错的 Linux 服务器 （我这边是家里的服务器）</li>
+<li>安装了 Docker</li>
+</ul>
+<h2 id="启动">启动</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir palworld <span class="o">&amp;&amp;</span> <span class="nb">cd</span> palworld
+</span></span><span class="line"><span class="cl">nano compose.yaml
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">services</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="n">palworld</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">image</span><span class="p">:</span> <span class="n">thijsvanloef</span><span class="o">/</span><span class="n">palworld</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">docker</span><span class="p">:</span><span class="n">latest</span>
+</span></span><span class="line"><span class="cl">      <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
+</span></span><span class="line"><span class="cl">      <span class="n">container_name</span><span class="p">:</span> <span class="n">palworld</span><span class="o">-</span><span class="n">server</span>
+</span></span><span class="line"><span class="cl">      <span class="n">ports</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="o">-</span> <span class="mi">8211</span><span class="p">:</span><span class="mi">8211</span><span class="o">/</span><span class="n">udp</span>
+</span></span><span class="line"><span class="cl">        <span class="o">-</span> <span class="mi">27015</span><span class="p">:</span><span class="mi">27015</span><span class="o">/</span><span class="n">udp</span>
+</span></span><span class="line"><span class="cl">      <span class="n">environment</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">PUID</span><span class="o">=</span><span class="mi">1000</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">PGID</span><span class="o">=</span><span class="mi">1000</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">PORT</span><span class="o">=</span><span class="mi">8211</span> <span class="c1"># Optional but recommended</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">PLAYERS</span><span class="o">=</span><span class="mi">16</span> <span class="c1"># Optional but recommended</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">MULTITHREADING</span><span class="o">=</span><span class="bp">true</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">RCON_ENABLED</span><span class="o">=</span><span class="bp">true</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">RCON_PORT</span><span class="o">=</span><span class="mi">25575</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">ADMIN_PASSWORD</span><span class="o">=</span><span class="s2">&#34;adminPasswordHere&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="n">COMMUNITY</span><span class="o">=</span><span class="bp">false</span>  <span class="c1"># Enable this if you want your server to show up in the community servers tab, USE WITH SERVER_PASSWORD!</span>
+</span></span><span class="line"><span class="cl">         <span class="c1"># Enable the environment variables below if you have COMMUNITY=true</span>
+</span></span><span class="line"><span class="cl">         <span class="c1"># - SERVER_PASSWORD=&#34;worldofpals&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="c1"># - SERVER_NAME=&#34;World of Pals&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">volumes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="o">-</span> <span class="o">./</span><span class="n">palworld</span><span class="p">:</span><span class="o">/</span><span class="n">palworld</span><span class="o">/</span>
+</span></span></code></pre></div><p>复制粘贴上面的内容，可以修改一下 <strong>ADMIN_PASSWORD</strong>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose up -d
+</span></span></code></pre></div><p>最后记得开放一下 8211 和 27015 端口，记得开启 UDP。</p>
+<p>PS: 美国东部的朋友可以用我搭建的服务器。</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>Chat with Strangers</title>
       <link>https://missuo.me/posts/chat-with-strangers/</link>
