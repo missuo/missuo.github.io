@@ -53,6 +53,11 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker compose up -d
 </span></span></code></pre></div><p>最后记得开放一下 8211 和 27015 端口，记得开启 UDP。</p>
 <p>PS: 美国东部的朋友可以用我搭建的服务器。</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/thijsvanloef/palworld-server-docker">https://github.com/thijsvanloef/palworld-server-docker</a></li>
+<li><a href="https://github.com/jammsen/docker-palworld-dedicated-server">https://github.com/jammsen/docker-palworld-dedicated-server</a></li>
+</ul>
 ]]></content:encoded>
     </item>
     
