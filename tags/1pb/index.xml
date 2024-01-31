@@ -39,7 +39,9 @@
 </p>
 <p>随意找到了一张图片，或者是 Origin 的站点，毫无疑问 99% 都是中文色情网站。这让我感到失望，初衷是希望大家可以利用这个公共图床写写博客或者是分享一些有趣的图片，而不是用来传播色情。而很夸张的是，我发现知名的色情论坛，t66y 也在使用我的图床，甚至有些用户的头像用的正是我的域名。</p>
 <p>为了防止被滥用，我修改了一些 Nginx 的配置，例如我限制了一些图片格式，限制了 Origin。24 小时内流量从 50T 降到了 不到 4T。我也在 Cloudflare 的控制面板上设置了一些规则。</p>
-<p>我的好朋友 <a href="https://twitter.com/steveyiyo">SteveYi</a> 也在第一时间私信我，愿意提供 VM。在这里特别感谢小易。</p>
+<p>我的好朋友 <a href="https://twitter.com/steveyiyo">SteveYi</a> 也在第一时间私信我，愿意提供 VM。在这里特别感谢小易。直到目前为止，已经迁移到加州的服务器，10Gbps 的带宽，不再依赖 Cloudflare。</p>
+<p><img loading="lazy" src="https://r2.qwq.mx/blog/202401308yg7H3.png" alt="202401308yg7H3"  />
+</p>
 <p>我不知道还能支撑多久，毕竟这样的公益图床站点没有收益，而且还要承担很大的风险，也许有一天会永久关闭，且用且珍惜吧。</p>
 <p>感谢 Telegraph 和 Cloudflare 过去提供的免费服务。</p>
 ]]></content:encoded>
