@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://missuo.me/tags/airline-ticket/</loc>
+    <lastmod>2024-02-04T02:16:31-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/mysterious-airline-ticket/</loc>
+    <lastmod>2024-02-04T02:16:31-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/posts/</loc>
+    <lastmod>2024-02-04T02:16:31-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/tags/</loc>
+    <lastmod>2024-02-04T02:16:31-05:00</lastmod>
+  </url><url>
+    <loc>https://missuo.me/</loc>
+    <lastmod>2024-02-04T02:16:31-05:00</lastmod>
+  </url><url>
     <loc>https://missuo.me/tags/1pb/</loc>
     <lastmod>2024-01-30T14:45:27-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/tags/cloudflare/</loc>
-    <lastmod>2024-01-30T14:45:27-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/posts/</loc>
-    <lastmod>2024-01-30T14:45:27-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/tags/</loc>
-    <lastmod>2024-01-30T14:45:27-05:00</lastmod>
-  </url><url>
-    <loc>https://missuo.me/</loc>
     <lastmod>2024-01-30T14:45:27-05:00</lastmod>
   </url><url>
     <loc>https://missuo.me/posts/cloudflare-1pb/</loc>
