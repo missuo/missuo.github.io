@@ -111,7 +111,7 @@
 <li><a href="https://github.com/missuo/ClaudeProxy">ClaudeProxy</a>：Claude API 代理，让所有向 Claude API 发送的请求都来自一个 IP，避免被封号。</li>
 <li><a href="https://github.com/missuo/FreeGPT35">FreeGPT35</a>：利用免登录使用 ChatGPT 实现的免费 GPT-3.5-Turbo API，目前可能随时失效。</li>
 </ul>
-<p>以上项目如果在使用过程中遇到任何问题，请在 GitHub 上提 issue，我会在空余时间尽快解决。如果你有别的觉得有必要的需求，也可以在评论区留言，我会考虑实现。</p>
+<p>以上项目如果在使用过程中遇到任何问题，请在 GitHub 上提 issue，我会在空余时间尽快解决。如果你有别的需求，也可以在评论区留言，我会考虑实现。</p>
 <h2 id="一些经验">一些经验</h2>
 <p>建议不要使用美国以外的 IP 请求 Claude 的 API，否则很容易被封号。建议使用美国 Residential IP，实在没条件也可以使用 Business IP。实际测试下来 ChatGPT 和 Claude 帐号可以共享给很多人使用，并不会封号。目前我的帐号大概有 10 个朋友在用，都是来自美国家宽的 IP，已经持续超过半年的时间，没有任何问题。</p>
 ]]></content:encoded>
