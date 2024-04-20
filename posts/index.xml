@@ -104,8 +104,8 @@
 </ul>
 <h2 id="我的项目">我的项目</h2>
 <ul>
-<li><a href="https://github.com/missuo/bob-plugin-cohere">bob-plugin-cohere</a>：Cohere 的 Bob 翻译插件，可以在 Bob 上使用 Cohere 的 Command R+ 模型，这是我目前最常用的翻译模型了。</li>
-<li><a href="https://github.com/missuo/bob-plugin-copilot">bob-plugin-copilot</a>：利用模拟 GitHub Copilot 的请求，可以在 Bob 上使用 OpenAI 的 GPT-4 模型进行翻译，<strong>目前已经不再维护</strong>。</li>
+<li><a href="https://github.com/missuo/bob-plugin-cohere">bob-plugin-cohere</a>：Cohere 的 Bob 翻译插件，在 Bob 上使用 Cohere 的 Command R+ 模型，目前最常用的翻译模型了。</li>
+<li><a href="https://github.com/missuo/bob-plugin-copilot">bob-plugin-copilot</a>：利用模拟 GitHub Copilot 的请求，在 Bob 上使用 OpenAI 的 GPT-4 模型进行翻译，<strong>目前已经不再维护</strong>。</li>
 <li><a href="https://github.com/missuo/cohere2openai">cohere2openai</a>：将 Cohere 的 API 转换成兼容 OpenAI 的 API，方便在任何兼容 OpenAI 的应用中调用 Cohere 模型。</li>
 <li><a href="https://github.com/missuo/claude2openai">claude2openai</a>：将 Claude 的 API 转换成兼容 OpenAI 的 API，方便在任何兼容 OpenAI 的应用中调用 Claude 模型。</li>
 <li><a href="https://github.com/missuo/ClaudeProxy">ClaudeProxy</a>：Claude API 代理，让所有向 Claude API 发送的请求都来自一个 IP，避免被封号。</li>
