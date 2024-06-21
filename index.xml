@@ -31,7 +31,7 @@ sendcmd 1 DB set PDTCTUSERINFO 0 Status 0 sendcmd 1 DB set PDTCTUSERINFO 0 Resul
 </blockquote>
 <p>收到光猫之后，顺利地填写了 LOID，注册 OLT 成功，测试了一下，路由器拨号成功，获取到了公网 IP。本以为这就结束了。结果疑难杂症这就来了，我可以使用部分不需要 DNS 解析的服务，但是涉及到 DNS 解析的服务都不行。</p>
 <p>一开始以为是联通那边做了验证，我换了光猫，设备的 SN 和 MAC 地址都变了，联通阻止了我的连接，我又通过 Telnet 修改了新光猫的 SN 和 MAC 地址，伪装成和老光猫完全一直，但是还是存在一样的问题。</p>
-<p>最后我发现，<code>nslookup baidu.com</code> 和 <code>nslookup bilibili.com</code> 都是由 <strong>119.29.29.29#53</strong> 解析的，但是返回的 IP 却永远是 192.168.1.1，我的网络环境是光猫桥接，路由器拨号，路由器的 DHCP 服务器分配的是 119.29.29.29 和 223.6.6.6。奇怪的是，为什么会被 DNS 劫持解析成 192.168.1.1 呢？</p>
+<p>最后我发现，<code>nslookup baidu.com</code> 和 <code>nslookup bilibili.com</code> 都是由 <strong>119.29.29.29#53</strong> 解析的，但是返回的 IP 却永远是 <code>192.168.1.1</code>，我的网络环境是光猫桥接，路由器拨号，路由器的 DHCP 服务器分配的是 <code>119.29.29.29</code> 和 <code>223.6.6.6</code>。奇怪的是，为什么会被 DNS 劫持解析成 <code>192.168.1.1</code> 呢？</p>
 <p>后来在 Google 搜索之后，恩山论坛也有类似的情况。原来是在设备注册的时候，到 30% 卡住了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">到 ITMS 的通道不通，请联系客户经理或拨打 10000。
 </span></span></code></pre></div><p>我当时在网上搜索和咨询卖家之后，发现这个 ITMS 只是电信用来远程管理光猫的，加上我是联通宽带，我并不希望 ITMS 注册成功，而且并不会影响桥接使用。结果，恶心的事情是，如果光猫的 ITMS 是“未注册”的状态，DNS 解析就会被劫持，不管你访问任何的网站理论上都会跳转到“设备注册”的页面。</p>
