@@ -3696,31 +3696,128 @@ Twitter: <a href="https://twitter.com/m1ssuo">m1ssuo</a><br>
 Instagram: <a href="https://instagram.com/missuo.me">missuo.me</a><br>
 GitHub: <a href="https://github.com/missuo">missuo</a></p>
 <h2 id="-my-device">📱 My device</h2>
-<p>Mac Studio 2022 (🇺🇸 US)<br>
-MacBook Pro 2021 (🇺🇸 US)<br>
-Mac mini 2020 (🇺🇸 US)<br>
-iPad mini 6 (🇺🇸 US)<br>
-iPhone 15 Pro Max (🇺🇸 US)<br>
-iPhone 12 Pro (🇺🇸 US)<br>
-iPhone SE 3 (🇺🇸 US)<br>
-Google Pixel 6a (🇺🇸 US)<br>
-Xiaomi Civi (🇨🇳 CN)<br>
-Apple Watch Series 9 (🇺🇸 US)<br>
-AirPods Pro 2 (🇺🇸 US)<br>
-Magic Keyboard (🇺🇸 US)<br>
-Magic Keyboard with Touch ID (🇺🇸 US)<br>
-Magic Trackpad (🇺🇸 US)<br>
-LG Monitor 27UL550-W (🇺🇸 US)<br>
-Readmi Router AX6000 (🇨🇳 CN)<br>
-NETGEAR Router R6700AXS (🇺🇸 US)<br>
-ASUS Router RT-AX1800S (🇺🇸 US)<br>
-Lenovo ThinkStation P520 (🇺🇸 US)<br>
-<del>Apple Watch SE</del>
-<del>AirPods 2</del><br>
-<del>KeyChron K2</del><br>
-<del>Macbook Pro 2019</del><br>
-<del>iPad Air 4</del><br>
-<del>SONGREN 4K Display</del></p>
+<h3 id="still-in-service">Still in service</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac Studio 2022</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>MacBook Pro 2021</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Mac mini 2020</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>iPad mini 6</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>iPhone 15 Pro Max</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>iPhone 12 Pro</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>iPhone SE 3</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Google Pixel 6a</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Xiaomi Civi</td>
+<td>🇨🇳 CN</td>
+</tr>
+<tr>
+<td>Apple Watch Series 9</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>AirPods Pro 2</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Magic Keyboard</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Magic Keyboard with Touch ID</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Magic Trackpad</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>LG Monitor 27UL550-W</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Readmi Router AX6000</td>
+<td>🇨🇳 CN</td>
+</tr>
+<tr>
+<td>NETGEAR Router R6700AXS</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>ASUS Router RT-AX1800S</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>Lenovo ThinkStation P520</td>
+<td>🇺🇸 US</td>
+</tr>
+</tbody>
+</table>
+<h3 id="retired">Retired</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple Watch SE</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>AirPods 2</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>KeyChron K2</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>MacBook Pro 2019</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>iPad Air 4</td>
+<td>🇺🇸 US</td>
+</tr>
+<tr>
+<td>SONGREN 4K Display</td>
+<td>🇨🇳 CN</td>
+</tr>
+</tbody>
+</table>
 <h2 id="-sponsor">💰 Sponsor</h2>
 <iframe src="https://github.com/sponsors/missuo/button" title="Sponsor missuo" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>]]></content:encoded>
     </item>
